@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GCC & Venture Exit Consulting | Sanjeev Sharma</title>
+  <title>GCC & Venture Exit Consulting | GCC Ventures India</title>
   <style>
     :root {
       --primary: #1a1a2e;
@@ -16,7 +16,6 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', sans-serif; color: var(--text); background: var(--white); }
 
-    /* NAVBAR */
     nav {
       background: var(--primary);
       padding: 16px 40px;
@@ -32,7 +31,6 @@
     nav ul li a { color: var(--white); text-decoration: none; font-size: 15px; transition: color 0.3s; }
     nav ul li a:hover { color: var(--gold); }
 
-    /* HERO */
     .hero {
       background: linear-gradient(135deg, var(--primary) 60%, #16213e);
       color: var(--white);
@@ -55,22 +53,10 @@
     }
     .btn:hover { background: var(--gold); color: var(--primary); }
 
-    /* SECTION TITLES */
     section { padding: 60px 40px; }
-    section h2 {
-      text-align: center;
-      font-size: 32px;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-    .underline {
-      width: 60px; height: 4px;
-      background: var(--accent);
-      margin: 0 auto 40px;
-      border-radius: 2px;
-    }
+    section h2 { text-align: center; font-size: 32px; color: var(--primary); margin-bottom: 10px; }
+    .underline { width: 60px; height: 4px; background: var(--accent); margin: 0 auto 40px; border-radius: 2px; }
 
-    /* SERVICES GRID */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -90,7 +76,6 @@
     .card h3 { font-size: 20px; color: var(--primary); margin-bottom: 10px; }
     .card p { font-size: 15px; line-height: 1.7; }
 
-    /* PROBLEM-SOLUTION BLOCK */
     .problem-block {
       background: #fff8f0;
       border-left: 6px solid var(--gold);
@@ -104,7 +89,6 @@
     .problem-block ul li { font-size: 15px; margin-bottom: 10px; line-height: 1.7; }
     .problem-block ul li span { color: var(--accent); font-weight: 700; }
 
-    /* SAFEGUARD TABLE */
     .table-wrap { overflow-x: auto; max-width: 1000px; margin: 0 auto; }
     table { width: 100%; border-collapse: collapse; font-size: 15px; }
     thead tr { background: var(--primary); color: var(--white); }
@@ -113,7 +97,6 @@
     tbody td { padding: 14px 18px; border-bottom: 1px solid #ddd; }
     tbody td strong { color: var(--accent); }
 
-    /* STATS STRIP */
     .stats-strip {
       background: var(--primary);
       color: var(--white);
@@ -127,7 +110,6 @@
     .stat .num { font-size: 40px; font-weight: 700; color: var(--gold); }
     .stat .label { font-size: 15px; margin-top: 6px; opacity: 0.85; }
 
-    /* CTA */
     .cta-section {
       background: linear-gradient(135deg, #e94560, #f5a623);
       color: var(--white);
@@ -144,11 +126,9 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 16px;
-      transition: background 0.3s;
     }
     .btn-white:hover { background: var(--primary); color: var(--white); }
 
-    /* FOOTER */
     footer {
       background: var(--primary);
       color: #aaa;
@@ -158,7 +138,6 @@
     }
     footer a { color: var(--gold); text-decoration: none; }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       .hero h1 { font-size: 28px; }
       nav ul { gap: 14px; }
@@ -170,71 +149,60 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
-  <div class="logo">Sanjeev Sharma | GCC Advisory</div>
+  <div class="logo">GCC Ventures India</div>
   <ul>
+    <li><a href="index.html">Home</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#safeguard">Safeguards</a></li>
-    <li><a href="#stats">Track Record</a></li>
-    <li><a href="#cta">Contact</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <h1>GCC Setup + <span>Venture Exit Protection</span><br/>Finance-Led. Legally Structured. <span>Conglo-Proof.</span></h1>
   <p>20+ years in Finance Operations across Cargill, Oracle & EMEA/APAC GCCs. We set up your Global Capability Centre and protect your venture exits from conglomerate traps.</p>
-  <a href="#cta" class="btn">Book a Discovery Call →</a>
+  <a href="contact.html" class="btn">Talk to Us — WhatsApp Now →</a>
 </div>
 
-<!-- SERVICES -->
 <section id="services">
   <h2>Our Services</h2>
   <div class="underline"></div>
   <div class="services-grid">
-
     <div class="card">
       <div class="icon">🏗️</div>
       <h3>GCC Setup Advisory</h3>
       <p>End-to-end setup of Global Capability Centres in India — entity, talent, ops, compliance. SAP S/4HANA, O2C, P2P, and RPA-ready from Day 1.</p>
     </div>
-
     <div class="card">
       <div class="icon">📤</div>
       <h3>Venture Exit Consulting</h3>
       <p>Structured 3-year exit roadmaps for founder-led startups. From valuation to buyer negotiation — we protect your upside against conglomerate incubation traps.</p>
     </div>
-
     <div class="card">
       <div class="icon">🛡️</div>
       <h3>Exit Safeguard Framework</h3>
       <p>Legal + commercial guardrails: MSA/SOW drafting, put/call options, non-circumvention clauses, milestone gates — before you sign with any funder.</p>
     </div>
-
     <div class="card">
       <div class="icon">💰</div>
       <h3>Finance Due Diligence</h3>
       <p>Pre-exit financial hygiene: AR/AP reconciliation, DSO reduction, working capital optimization. Buyer-ready books = stronger valuation.</p>
     </div>
-
     <div class="card">
       <div class="icon">🔄</div>
       <h3>BOT Model GCC</h3>
       <p>Build-Operate-Transfer for conglomerate-funded ventures. We build your GCC ops, run it for 12–24 months, then transfer ownership cleanly.</p>
     </div>
-
     <div class="card">
       <div class="icon">🎓</div>
       <h3>Finance Ops Coaching</h3>
       <p>1-on-1 coaching for finance leaders scaling GCCs: collections, O2C transformation, RPA tools, and team leadership for 60+ member ops.</p>
     </div>
-
   </div>
 </section>
 
-<!-- PROBLEM-SOLUTION -->
-<section id="safeguard" style="background: #fff;">
+<section id="safeguard" style="background: var(--white);">
   <h2>The Conglomerate Problem — Solved</h2>
   <div class="underline"></div>
   <div class="problem-block">
@@ -256,7 +224,6 @@
   </div>
 </section>
 
-<!-- SAFEGUARD TABLE -->
 <section style="background: var(--light);">
   <h2>Legal Safeguard Toolkit</h2>
   <div class="underline"></div>
@@ -270,43 +237,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><strong>MSA + SOW</strong></td>
-          <td>Defines scope, fees, milestones before work starts</td>
-          <td>Unpaid effort, scope creep</td>
-        </tr>
-        <tr>
-          <td><strong>Put/Call Option</strong></td>
-          <td>Forces exit at pre-agreed valuation after 3 years</td>
-          <td>Conglo blocking exit</td>
-        </tr>
-        <tr>
-          <td><strong>Non-Circumvention</strong></td>
-          <td>Prevents Conglo direct buy without paying advisor</td>
-          <td>Internal incubation-to-buy</td>
-        </tr>
-        <tr>
-          <td><strong>Exit Veto Clause</strong></td>
-          <td>Rejection without cause = full fee still owed</td>
-          <td>Arbitrary rejection</td>
-        </tr>
-        <tr>
-          <td><strong>IP Retention</strong></td>
-          <td>Work product stays with advisor until paid</td>
-          <td>IP theft post-exit</td>
-        </tr>
-        <tr>
-          <td><strong>SIAC Arbitration</strong></td>
-          <td>Fast commercial dispute resolution</td>
-          <td>Slow Indian court delays</td>
-        </tr>
+        <tr><td><strong>MSA + SOW</strong></td><td>Defines scope, fees, milestones before work starts</td><td>Unpaid effort, scope creep</td></tr>
+        <tr><td><strong>Put/Call Option</strong></td><td>Forces exit at pre-agreed valuation after 3 years</td><td>Conglo blocking exit</td></tr>
+        <tr><td><strong>Non-Circumvention</strong></td><td>Prevents Conglo direct buy without paying advisor</td><td>Internal incubation-to-buy</td></tr>
+        <tr><td><strong>Exit Veto Clause</strong></td><td>Rejection without cause = full fee still owed</td><td>Arbitrary rejection</td></tr>
+        <tr><td><strong>IP Retention</strong></td><td>Work product stays with advisor until paid</td><td>IP theft post-exit</td></tr>
+        <tr><td><strong>SIAC Arbitration</strong></td><td>Fast commercial dispute resolution</td><td>Slow Indian court delays</td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<div class="stats-strip" id="stats">
+<div class="stats-strip">
   <div class="stat"><div class="num">20+</div><div class="label">Years Finance Operations</div></div>
   <div class="stat"><div class="num">25+</div><div class="label">EMEA Countries Managed</div></div>
   <div class="stat"><div class="num">60+</div><div class="label">Team Members Led</div></div>
@@ -314,16 +256,14 @@
   <div class="stat"><div class="num">2</div><div class="label">GCC Setups Delivered</div></div>
 </div>
 
-<!-- CTA -->
-<div class="cta-section" id="cta">
+<div class="cta-section">
   <h2>Ready to Build Your GCC or Protect Your Exit?</h2>
-  <p>Book a free 30-min discovery call with Sanjeev — Bengaluru-based, globally experienced.</p>
-  <a href="https://topmate.io/sanjeev_sharma" class="btn-white">Book Discovery Call →</a>
+  <p>WhatsApp Sanjeev or Nagraj directly — Bengaluru-based, globally experienced.</p>
+  <a href="contact.html" class="btn-white">Contact Us Now →</a>
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 Sanjeev Sharma GCC Advisory | Bengaluru, India |
+  <p>© 2026 GCC Ventures India | Bengaluru, India |
     <a href="https://linkedin.com/in/sanjeev-sharma" target="_blank">LinkedIn</a> |
     <a href="mailto:sanjeev@gcc-advisory.com">sanjeev@gcc-advisory.com</a>
   </p>
