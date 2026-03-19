@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | GCC Ventures India</title>
+  <style>
+    :root {
+      --primary: #1a1a2e;
+      --accent: #e94560;
+      --gold: #f5a623;
+      --light: #f4f4f4;
+      --white: #ffffff;
+      --text: #333333;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; color: var(--text); background: var(--white); }
+
+    nav {
+      background: var(--primary);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .logo { color: var(--gold); font-size: 20px; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav ul li a { color: var(--white); text-decoration: none; font-size: 15px; transition: color 0.3s; }
+    nav ul li a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--accent);
+      padding: 8px 20px;
+      border-radius: 5px;
+      color: var(--white) !important;
+      font-weight: 600;
+    }
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary), #16213e);
+      color: var(--white);
+      text-align: center;
+      padding: 60px 40px;
+    }
+    .page-hero h1 { font-size: 38px; margin-bottom: 12px; }
+    .page-hero h1 span { color: var(--gold); }
+    .page-hero p { font-size: 17px; opacity: 0.88; max-width: 580px; margin: 0 auto; }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 40px;
+    }
+
+    .form-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 36px 32px;
+      border-top: 5px solid var(--accent);
+    }
+    .form-box h2 { font-size: 22px; color: var(--primary); margin-bottom: 22px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+    .form-group input,
+    .form-group textarea,
+    .form-group sele
