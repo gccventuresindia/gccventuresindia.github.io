@@ -2,271 +2,251 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GCC & Venture Exit Consulting | GCC Ventures India</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | GCC Ventures India</title>
+  <meta name="description" content="Innovation Center Setup, M&A Advisory, Venture Exit, and Executive Coaching by GCC Ventures India." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #1a1a2e;
-      --accent: #e94560;
-      --gold: #f5a623;
-      --light: #f4f4f4;
-      --white: #ffffff;
-      --text: #333333;
+    :root{
+      --navy:#1a1a2e;
+      --navy2:#20243f;
+      --red:#e94560;
+      --orange:#ff9500;
+      --gold:#f5a623;
+      --white:#ffffff;
+      --off:#fafafd;
+      --text:#1c1c2e;
+      --muted:#64647a;
+      --border:#e2e2ec;
+      --radius:20px;
+      --shadow:0 14px 48px rgba(26,26,46,.09);
+      --max:1180px;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', sans-serif; color: var(--text); background: var(--white); }
-
-    nav {
-      background: var(--primary);
-      padding: 16px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.65}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(calc(100% - 28px),var(--max));margin:0 auto}
+    .section{padding:clamp(64px,9vw,96px) 0}
+    h1,h2{font-family:'Playfair Display',serif;line-height:1.1;color:var(--navy)}
+    h1{font-size:clamp(2.8rem,6vw,4.8rem)}
+    h2{font-size:clamp(1.8rem,3.6vw,2.8rem)}
+    h3{font-size:1.25rem;color:var(--navy)}
+    p{color:var(--muted)}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 14px;border-radius:999px;
+      font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase
     }
-    nav .logo { color: var(--gold); font-size: 20px; font-weight: 700; letter-spacing: 1px; }
-    nav ul { list-style: none; display: flex; gap: 28px; }
-    nav ul li a { color: var(--white); text-decoration: none; font-size: 15px; transition: color 0.3s; }
-    nav ul li a:hover { color: var(--gold); }
-
-    .hero {
-      background: linear-gradient(135deg, var(--primary) 60%, #16213e);
-      color: var(--white);
-      padding: 80px 40px;
-      text-align: center;
+    .pill-red{background:rgba(233,69,96,.1);color:var(--red)}
+    .pill-orange{background:rgba(255,149,0,.12);color:var(--orange)}
+    .pill-gold{background:rgba(245,166,35,.14);color:#c88800}
+    .pill-navy{background:rgba(26,26,46,.08);color:var(--navy)}
+    .site-header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(26,26,46,.96);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.07)
     }
-    .hero h1 { font-size: 42px; margin-bottom: 16px; line-height: 1.3; }
-    .hero h1 span { color: var(--gold); }
-    .hero p { font-size: 18px; max-width: 720px; margin: 0 auto 30px; opacity: 0.9; }
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--white);
-      padding: 14px 36px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      transition: background 0.3s;
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0}
+    .brand-name{font-weight:800;font-size:1.05rem;color:#fff;letter-spacing:.01em}
+    .brand-name small{display:block;font-size:10.5px;color:#9fa3c4;text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
+    .nav-links{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+    .nav-links a{
+      padding:8px 12px;border-radius:8px;
+      font-size:13.5px;color:#c9cce8;font-weight:500;min-height:44px;display:inline-flex;align-items:center;
+      transition:.15s
     }
-    .btn:hover { background: var(--gold); color: var(--primary); }
-
-    section { padding: 60px 40px; }
-    section h2 { text-align: center; font-size: 32px; color: var(--primary); margin-bottom: 10px; }
-    .underline { width: 60px; height: 4px; background: var(--accent); margin: 0 auto 40px; border-radius: 2px; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-      max-width: 1100px;
-      margin: 0 auto;
+    .nav-links a:hover{background:rgba(255,255,255,.07);color:#fff}
+    .bar{height:4px;background:linear-gradient(90deg,var(--red),var(--orange),var(--gold))}
+    .hero{
+      background:linear-gradient(135deg,#0e0e1f,#1a1a2e 55%,#1e1230);
+      color:#fff;
+      padding:clamp(72px,10vw,110px) 0
     }
-    .card {
-      background: var(--light);
-      border-radius: 10px;
-      padding: 32px 28px;
-      border-left: 5px solid var(--accent);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .hero h1{color:#fff;max-width:10ch}
+    .hero p{color:#c8ccde;max-width:760px}
+    .grid{display:grid;gap:20px}
+    .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:30px}
+    .service-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden
     }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
-    .card .icon { font-size: 36px; margin-bottom: 14px; }
-    .card h3 { font-size: 20px; color: var(--primary); margin-bottom: 10px; }
-    .card p { font-size: 15px; line-height: 1.7; }
-
-    .problem-block {
-      background: #fff8f0;
-      border-left: 6px solid var(--gold);
-      border-radius: 8px;
-      padding: 36px 40px;
-      max-width: 900px;
-      margin: 0 auto;
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+    .card-red::before{background:linear-gradient(90deg,var(--red),#ff6b87)}
+    .card-orange::before{background:linear-gradient(90deg,var(--orange),#ffb347)}
+    .card-gold::before{background:linear-gradient(90deg,var(--gold),#ffd060)}
+    .card-navy::before{background:linear-gradient(90deg,var(--navy),#6c6fa8)}
+    .service-card p{margin-top:10px}
+    .service-card ul{margin-top:16px;list-style:none;padding-left:0}
+    .service-card li{
+      display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--border);color:var(--muted);font-size:.94rem
     }
-    .problem-block h3 { font-size: 22px; color: var(--primary); margin-bottom: 16px; }
-    .problem-block ul { padding-left: 20px; }
-    .problem-block ul li { font-size: 15px; margin-bottom: 10px; line-height: 1.7; }
-    .problem-block ul li span { color: var(--accent); font-weight: 700; }
-
-    .table-wrap { overflow-x: auto; max-width: 1000px; margin: 0 auto; }
-    table { width: 100%; border-collapse: collapse; font-size: 15px; }
-    thead tr { background: var(--primary); color: var(--white); }
-    thead th { padding: 14px 18px; text-align: left; }
-    tbody tr:nth-child(even) { background: #f0f4ff; }
-    tbody td { padding: 14px 18px; border-bottom: 1px solid #ddd; }
-    tbody td strong { color: var(--accent); }
-
-    .stats-strip {
-      background: var(--primary);
-      color: var(--white);
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 40px 20px;
-      gap: 20px;
+    .service-card li:last-child{border-bottom:0}
+    .mark-red{color:var(--red);font-weight:900}
+    .mark-orange{color:var(--orange);font-weight:900}
+    .mark-gold{color:var(--gold);font-weight:900}
+    .mark-navy{color:var(--navy);font-weight:900}
+    .service-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      min-height:50px;padding:14px 24px;border-radius:999px;
+      font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:.2s ease
     }
-    .stat { text-align: center; }
-    .stat .num { font-size: 40px; font-weight: 700; color: var(--gold); }
-    .stat .label { font-size: 15px; margin-top: 6px; opacity: 0.85; }
-
-    .cta-section {
-      background: linear-gradient(135deg, #e94560, #f5a623);
-      color: var(--white);
-      text-align: center;
-      padding: 60px 40px;
+    .btn-red{background:var(--red);color:#fff}
+    .btn-orange{background:var(--orange);color:#fff}
+    .btn-dark{background:var(--navy);color:#fff}
+    .btn:hover{transform:translateY(-1px)}
+    .section-head{max-width:760px;margin:0 auto 8px}
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      margin-top:34px
     }
-    .cta-section h2 { font-size: 32px; margin-bottom: 14px; }
-    .cta-section p { font-size: 18px; margin-bottom: 28px; }
-    .btn-white {
-      background: var(--white);
-      color: var(--accent);
-      padding: 14px 40px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
+    .box{
+      background:var(--off);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:24px
     }
-    .btn-white:hover { background: var(--primary); color: var(--white); }
-
-    footer {
-      background: var(--primary);
-      color: #aaa;
-      text-align: center;
-      padding: 24px;
-      font-size: 14px;
+    .box h3{margin-bottom:12px}
+    .box ol,.box ul{padding-left:18px;color:var(--muted)}
+    .box li{margin:10px 0}
+    .footer{padding:26px 0 36px}
+    .footer-rule{
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+      padding-top:18px;border-top:1px solid var(--border);
+      font-size:.88rem;color:var(--muted)
     }
-    footer a { color: var(--gold); text-decoration: none; }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 28px; }
-      nav ul { gap: 14px; }
-      section { padding: 40px 20px; }
-      .problem-block { padding: 24px 20px; }
-      .stats-strip { flex-direction: column; align-items: center; }
+    @media(max-width:960px){
+      .services-grid,.split{grid-template-columns:1fr}
+    }
+    @media(max-width:760px){
+      .nav{flex-direction:column;align-items:flex-start}
+      .nav-links{overflow-x:auto;white-space:nowrap;width:100%;padding-bottom:4px;gap:0}
+      .btn{width:100%}
+    }
+    @media(max-width:520px){
+      .wrap{width:calc(100% - 18px)}
+      .service-card,.box{padding:20px}
+      h1{font-size:clamp(2.2rem,11vw,3rem)}
     }
   </style>
 </head>
 <body>
+<a href="#main" class="sr-only">Skip to content</a>
 
-<nav>
-  <div class="logo">GCC Ventures India</div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#safeguard">Safeguards</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
-
-<div class="hero">
-  <h1>GCC Setup + <span>Venture Exit Protection</span><br/>Finance-Led. Legally Structured. <span>Conglo-Proof.</span></h1>
-  <p>20+ years in GCC Setup for Global, US MNCs. We set up your Global Capability Centre and protect your venture exits from conglomerate traps.</p>
-  <a href="contact.html" class="btn">Talk to Us —> WhatsApp Now →</a>
-</div>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="underline"></div>
-  <div class="services-grid">
-    <div class="card">
-      <div class="icon">🏗️</div>
-      <h3>GCC Setup Advisory</h3>
-      <p>End-to-end setup of Global Capability Centres in India —> entity, talent, ops, compliance. SAP S/4HANA, Finance Ops and RPA-ready from Day 1.</p>
-    </div>
-    <div class="card">
-      <div class="icon">📤</div>
-      <h3>Venture Exit Consulting</h3>
-      <p>Structured 3-year exit roadmaps for founder-led startups. From valuation to buyer negotiation —> we protect your upside against conglomerate incubation traps.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🛡️</div>
-      <h3>Exit Safeguard Framework</h3>
-      <p>Legal + commercial guardrails: MSA/SOW drafting, put/call options, non-circumvention clauses, milestone gates —> before you sign with any funder.</p>
-    </div>
-    <div class="card">
-      <div class="icon">💰</div>
-      <h3>Finance Due Diligence</h3>
-      <p>Pre-exit financial hygiene: AR/AP reconciliation, DSO reduction, working capital optimization. Buyer-ready books = stronger valuation.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🔄</div>
-      <h3>BOT Model GCC</h3>
-      <p>Build-Operate-Transfer for conglomerate-funded ventures. We build your GCC ops, run it for 12–24 months, then transfer ownership cleanly.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🎓</div>
-      <h3>Finance Ops Coaching</h3>
-      <p>1-on-1 coaching for finance leaders scaling GCCs: Finance operations, Finance transformation, RPA tools, and team leadership for 120+ member ops.</p>
-    </div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand-name">GCC Ventures India<small>Innovation Center Setup · M&A · Exit · Coaching</small></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
-</section>
+</header>
 
-<section id="safeguard" style="background: var(--white);">
-  <h2>The Conglomerate Problem — Solved</h2>
-  <div class="underline"></div>
-  <div class="problem-block">
-    <h3>⚠️ What Happens Without Safeguards</h3>
-    <ul>
-      <li><span>Scenario 1:</span> You build a venture for 3 years with Conglomerate funding. They reject the exit — keeping all your growth work, paying you nothing.</li>
-      <li><span>Scenario 2:</span> They incubate the venture using your effort, then buy it internally at a low valuation —> bypassing your advisory fee entirely.</li>
-      <li><span>Result:</span> 3 years of effort, zero upside. No legal recourse without pre-signed protections.</li>
-    </ul>
-    <br/>
-    <h3>✅ How We Protect You</h3>
-    <ul>
-      <li><strong>Retainer + Success Fee split</strong> — you earn monthly regardless of exit outcome.</li>
-      <li><strong>Non-Circumvention Agreement</strong> — Conglo cannot buy directly without paying your fee.</li>
-      <li><strong>Exit Veto Clause</strong> — rejection without cause triggers 100% fee payment.</li>
-      <li><strong>IP Ownership</strong> — all models, decks, and strategy documents are yours until paid.</li>
-      <li><strong>Milestone Gates</strong> — 6-month Go/No-Go reviews to exit engagement early if needed.</li>
-    </ul>
+<div class="bar"></div>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <span class="pill pill-orange">Services</span>
+      <h1 style="margin:16px 0 14px;">Services built for transformation, not just setup.</h1>
+      <p>From innovation center strategy to venture exit support, GCC Ventures India helps leaders make better long-term decisions.</p>
+
+      <div class="services-grid">
+        <article class="service-card card-red">
+          <span class="pill pill-red">01</span>
+          <h3 style="margin-top:14px;">Innovation Center Setup</h3>
+          <p>Design your India innovation house with the right structure, governance, talent, operating model, and execution roadmap from day one.</p>
+          <ul>
+            <li><span class="mark-red">▸</span>Innovation house strategy and business case development</li>
+            <li><span class="mark-red">▸</span>Location strategy and operating model design for innovation-led work</li>
+            <li><span class="mark-red">▸</span>Talent planning, leadership structure, and governance framework</li>
+            <li><span class="mark-red">▸</span>Entity setup, compliance, transition planning, and scale-up support</li>
+          </ul>
+        </article>
+
+        <article class="service-card card-orange">
+          <span class="pill pill-orange">02</span>
+          <h3 style="margin-top:14px;">M&amp;A Advisory</h3>
+          <p>Strategic support for transactions, diligence, structuring, negotiation planning, and decision-ready execution.</p>
+          <ul>
+            <li><span class="mark-orange">▸</span>Deal readiness and transaction structuring support</li>
+            <li><span class="mark-orange">▸</span>Commercial and operational diligence coordination</li>
+            <li><span class="mark-orange">▸</span>Negotiation preparation and business case review</li>
+            <li><span class="mark-orange">▸</span>Buy-side, sell-side, and restructuring advisory support</li>
+          </ul>
+        </article>
+
+        <article class="service-card card-gold">
+          <span class="pill pill-gold">03</span>
+          <h3 style="margin-top:14px;">Venture Exit</h3>
+          <p>Specialist support for structured 3-year venture exits with legal safeguards, valuation protection, exit frameworks, and buyer negotiation support.</p>
+          <ul>
+            <li><span class="mark-gold">▸</span>Structured 3-year exit planning and roadmap</li>
+            <li><span class="mark-gold">▸</span>Legal safeguards and documentation readiness</li>
+            <li><span class="mark-gold">▸</span>Conglomerate and shareholder exit framework thinking</li>
+            <li><span class="mark-gold">▸</span>Valuation protection and buyer negotiation support</li>
+          </ul>
+        </article>
+
+        <article class="service-card card-navy">
+          <span class="pill pill-navy">04</span>
+          <h3 style="margin-top:14px;">Executive Coaching</h3>
+          <p>Focused guidance for experienced professionals and domain experts building consulting practices, advisory visibility, and international client-facing careers.</p>
+          <ul>
+            <li><span class="mark-navy">▸</span>Consulting and advisory career positioning</li>
+            <li><span class="mark-navy">▸</span>Professional branding and market-facing clarity</li>
+            <li><span class="mark-navy">▸</span>Client conversation preparation and credibility building</li>
+            <li><span class="mark-navy">▸</span>Mentoring targets: domain experts with 15+ yrs experience who are interested in creating an advisory or consulting role for themselves</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="split">
+        <div class="box">
+          <h3>Who we help</h3>
+          <ol>
+            <li>Global companies building or expanding India capability centers.</li>
+            <li>Businesses that want a more structured and lower-risk launch path.</li>
+            <li>Leaders who need practical advisory beyond workspace and hiring support.</li>
+            <li>Founders and stakeholders planning a clean and structured exit.</li>
+            <li>Senior professionals moving into consulting or advisory roles.</li>
+          </ol>
+        </div>
+        <div class="box">
+          <h3>How we work</h3>
+          <ul>
+            <li>Hands-on, founder-led engagement.</li>
+            <li>BOT-led thinking for innovation center setup.</li>
+            <li>Clear operating model, governance, and execution discipline.</li>
+            <li>Focused support, not generic consulting language.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="bar"></div>
+
+<footer class="footer">
+  <div class="wrap footer-rule">
+    <span>© 2026 GCC Ventures India · Bengaluru, India</span>
+    <span>Innovation Center Setup · M&A Advisory · Venture Exit · Executive Coaching</span>
   </div>
-</section>
-
-<section style="background: var(--light);">
-  <h2>Legal Safeguard Toolkit</h2>
-  <div class="underline"></div>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Safeguard</th>
-          <th>What It Does</th>
-          <th>Protects Against</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>MSA + SOW</strong></td><td>Defines scope, fees, milestones before work starts</td><td>Unpaid effort, scope creep</td></tr>
-        <tr><td><strong>Put/Call Option</strong></td><td>Forces exit at pre-agreed valuation after 3 years</td><td>Conglo blocking exit</td></tr>
-        <tr><td><strong>Non-Circumvention</strong></td><td>Prevents Conglo direct buy without paying advisor</td><td>Internal incubation-to-buy</td></tr>
-        <tr><td><strong>Exit Veto Clause</strong></td><td>Rejection without cause = full fee still owed</td><td>Arbitrary rejection</td></tr>
-        <tr><td><strong>IP Retention</strong></td><td>Work product stays with advisor until paid</td><td>IP theft post-exit</td></tr>
-        <tr><td><strong>SIAC Arbitration</strong></td><td>Fast commercial dispute resolution</td><td>Slow Indian court delays</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<div class="stats-strip">
-  <div class="stat"><div class="num">20+</div><div class="label">Years Finance Operations</div></div>
-  <div class="stat"><div class="num">25+</div><div class="label">EMEA Countries Managed</div></div>
-  <div class="stat"><div class="num">60+</div><div class="label">Team Members Led</div></div>
-  <div class="stat"><div class="num">5</div><div class="label">Venture Exits Planned</div></div>
-  <div class="stat"><div class="num">2</div><div class="label">GCC Setups Delivered</div></div>
-</div>
-
-<div class="cta-section">
-  <h2>Ready to Build Your GCC or Protect Your Exit?</h2>
-  <p>WhatsApp Sanjeev or Nagaraj directly —> Bengaluru-based, globally experienced.</p>
-  <a href="contact.html" class="btn-white">Contact Us Now →</a>
-</div>
-
-<footer>
-  <p>© 2026 GCC Ventures India | Bengaluru, India |
-    <a href="https://linkedin.com/in/sanjeev-sharma" target="_blank">LinkedIn</a> |
-    <a href="mailto:sanjeev@gcc-advisory.com">sanjeev@gcc-advisory.com</a>
-  </p>
 </footer>
 
 </body>
