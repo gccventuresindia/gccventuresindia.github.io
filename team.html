@@ -83,22 +83,23 @@
       backdrop-filter:blur(8px);
       overflow:hidden
     }
- .member-photo{
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 18px;
-  border: 3px solid rgba(255,255,255,0.16);
-  background: #26263b;
-}
-.member-photo img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-}
+    .member-photo{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      overflow:hidden;
+      margin:0 auto 18px;
+      border:3px solid rgba(255,255,255,.16);
+      background:#26263b;
+      box-shadow:0 10px 24px rgba(0,0,0,.18)
+    }
+    .member-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      display:block
+    }
     .team-card h3{
       text-align:center;
       color:#fff;
@@ -147,7 +148,7 @@
     @media(max-width:520px){
       .wrap{width:calc(100% - 18px)}
       .team-card{padding:20px}
-      .member-photo{width:140px;height:140px}
+      .member-photo{width:105px;height:105px}
       h1{font-size:clamp(2.2rem,11vw,3rem)}
     }
   </style>
@@ -180,7 +181,7 @@
       <div class="team-grid">
         <article class="team-card">
           <div class="member-photo">
-            <img src="images/sanjeev.jpg" alt="Sanjeev" />
+            <img src="images/sanjeev.jpg" alt="Sanjeev Sharma" />
           </div>
           <h3>Sanjeev</h3>
           <span class="role role-red">Fractional CFO & Coach</span>
