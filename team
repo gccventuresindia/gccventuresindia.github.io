@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team | GCC Ventures India</title>
+  <meta name="description" content="Meet the GCC Ventures India team: Sanjeev and Nagaraj." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#1a1a2e;
+      --navy2:#20243f;
+      --red:#e94560;
+      --orange:#ff9500;
+      --gold:#f5a623;
+      --white:#ffffff;
+      --off:#fafafd;
+      --text:#1c1c2e;
+      --muted:#64647a;
+      --border:#e2e2ec;
+      --radius:20px;
+      --shadow:0 14px 48px rgba(26,26,46,.09);
+      --max:1180px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.65}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .wrap{width:min(calc(100% - 28px),var(--max));margin:0 auto}
+    .section{padding:clamp(64px,9vw,96px) 0}
+    h1,h2{font-family:'Playfair Display',serif;line-height:1.1;color:var(--navy)}
+    h1{font-size:clamp(2.8rem,6vw,4.8rem)}
+    h2{font-size:clamp(1.8rem,3.6vw,2.8rem)}
+    p{color:var(--muted)}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 14px;border-radius:999px;
+      font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase
+    }
+    .pill-red{background:rgba(233,69,96,.1);color:var(--red)}
+    .pill-orange{background:rgba(255,149,0,.12);color:var(--orange)}
+    .site-header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(26,26,46,.96);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.07)
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0}
+    .brand-name{font-weight:800;font-size:1.05rem;color:#fff;letter-spacing:.01em}
+    .brand-name small{display:block;font-size:10.5px;color:#9fa3c4;text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
+    .nav-links{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+    .nav-links a{
+      padding:8px 12px;border-radius:8px;
+      font-size:13.5px;color:#c9cce8;font-weight:500;min-height:44px;display:inline-flex;align-items:center;
+      transition:.15s
+    }
+    .nav-links a:hover{background:rgba(255,255,255,.07);color:#fff}
+    .bar{height:4px;background:linear-gradient(90deg,var(--red),var(--orange),var(--gold))}
+    .team-section{
+      background:var(--navy);
+      padding:clamp(64px,9vw,96px) 0
+    }
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:28px;
+      max-width:900px;
+      margin:36px auto 0
+    }
+    .team-card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:26px;
+      padding:28px 24px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      min-height:520px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start
+    }
+    .team-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+    .team-card.tc-red::after{background:linear-gradient(90deg,var(--red),#ff6b87)}
+    .team-card.tc-orange::after{background:linear-gradient(90deg,var(--orange),#ffb347)}
+    .team-img{
+      width:140px;height:140px;border-radius:50%;
+      object-fit:cover;object-position:top center;
+      margin:0 auto 18px;
+      border:3px solid rgba(255,255,255,.15)
+    }
+    .team-name{color:#fff;font-size:1.4rem;font-weight:800;margin-bottom:4px}
+    .team-role{
+      font-size:11.5px;
+      font-weight:800;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:6px 14px;
+      border-radius:999px;
+      display:inline-block;
+      margin-bottom:14px
+    }
+    .role-red{background:rgba(233,69,96,.18);color:#ff8fa3}
+    .role-orange{background:rgba(255,149,0,.18);color:#ffc46b}
+    .team-bio{
+      color:#a0a4c0;
+      font-size:.95rem;
+      line-height:1.75;
+      margin-top:4px
+    }
+    .team-links{
+      margin-top:auto;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px
+    }
+    .team-links a{
+      color:#7cc7ff;
+      font-weight:700;
+      font-size:.92rem;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(124,199,255,.25);
+      background:rgba(124,199,255,.06)
+    }
+    .team-links a:hover{color:#fff;border-color:rgba(255,255,255,.35)}
+    .li-icon{width:16px;height:16px;display:inline-block;flex:0 0 auto}
+    .section-head{max-width:760px;margin:0 auto;text-align:center}
+    .footer{padding:26px 0 36px}
+    .footer-rule{
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+      padding-top:18px;border-top:1px solid var(--border);
+      font-size:.88rem;color:var(--muted)
+    }
+    @media(max-width:960px){
+      .team-grid{grid-template-columns:1fr;max-width:560px}
+    }
+    @media(max-width:760px){
+      .nav{flex-direction:column;align-items:flex-start}
+      .nav-links{overflow-x:auto;white-space:nowrap;width:100%;padding-bottom:4px;gap:0}
+    }
+    @media(max-width:520px){
+      .wrap{width:calc(100% - 18px)}
+      .team-card{padding:20px;min-height:auto}
+      h1{font-size:clamp(2.2rem,11vw,3rem)}
+    }
+  </style>
+</head>
+<body>
+<a href="#main" class="sr-only">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand-name">GCC Ventures India<small>Innovation Center Setup · M&A · Exit · Coaching</small></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="bar"></div>
+
+<main id="main">
+  <section class="team-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="pill pill-orange">Our Team</span>
+        <h1 style="color:#fff;margin:16px 0 10px;">The people behind GCC Ventures India.</h1>
+        <p style="color:#b0b4cc;">Two focused leaders, each bringing deep operating experience and a clear advisory point of view.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card tc-red">
+          <img src="7-sanjeev-Big-2.jpg" alt="Sanjeev" class="team-img" />
+          <div class="team-name">Sanjeev</div>
+          <span class="team-role role-red">Fractional CFO &amp; Coach</span>
+          <p class="team-bio">Fractional CFO &amp; Coach helping leaders build financial clarity and growth confidence.<br/>22+ years in GCC FinOps transformation, automation, and people leadership.<br/>8+ years as a Merchant Navy Officer (Europe), with global experience across EMEA, Japan, and APAC.</p>
+          <p class="team-links">
+            <a href="https://www.linkedin.com/in/sanjeevkumarsharmasan/" target="_blank" rel="noopener noreferrer">
+              <svg class="li-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.1 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8.5h4.6V24H.2V8.5zM8.2 8.5h4.4v2.1h.1c.6-1.1 2.2-2.3 4.5-2.3 4.8 0 5.7 3.2 5.7 7.4V24h-4.6v-6.9c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24H8.2V8.5z"/></svg>
+              LinkedIn
+            </a>
+          </p>
+        </div>
+
+        <div class="team-card tc-orange">
+          <img src="Nagaraj-pic.jpg" alt="Nagaraj" class="team-img" />
+          <div class="team-name">Nagaraj</div>
+          <span class="team-role role-orange">Venture Exit Consulting Lead</span>
+          <p class="team-bio">Specialist in structured venture exits, conglomerate frameworks, legal safeguards, and valuation protection. Guides founders and stakeholders through planned exit journeys.</p>
+          <p class="team-links">
+            <a href="https://www.linkedin.com/in/nagaraj-ceo-performance-catalyst-exit-strategy-architect/" target="_blank" rel="noopener noreferrer">
+              <svg class="li-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.1 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8.5h4.6V24H.2V8.5zM8.2 8.5h4.4v2.1h.1c.6-1.1 2.2-2.3 4.5-2.3 4.8 0 5.7 3.2 5.7 7.4V24h-4.6v-6.9c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24H8.2V8.5z"/></svg>
+              LinkedIn
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="bar"></div>
+
+<footer class="footer">
+  <div class="wrap footer-rule">
+    <span>© 2026 GCC Ventures India · Bengaluru, India</span>
+    <span>Innovation Center Setup · M&A Advisory · Venture Exit · Executive Coaching</span>
+  </div>
+</footer>
+
+</body>
+</html>
