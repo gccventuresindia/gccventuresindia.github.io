@@ -31,7 +31,7 @@
     body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.65}
     a{text-decoration:none;color:inherit}
     .wrap{width:min(calc(100% - 28px),var(--max));margin:0 auto}
-    .section{padding:clamp(64px,9vw,96px) 0}
+    .section{padding:clamp(40px,6vw,64px) 0}
     h1,h2{font-family:'Playfair Display',serif;line-height:1.1;color:var(--navy)}
     h1{font-size:clamp(2.8rem,6vw,4.8rem)}
     h2{font-size:clamp(1.8rem,3.6vw,2.8rem)}
@@ -45,20 +45,23 @@
     .pill-orange{background:rgba(255,149,0,.12);color:var(--orange)}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      min-height:50px;padding:14px 24px;border-radius:999px;
+      min-height:46px;padding:10px 18px;border-radius:999px;
       font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:.2s ease
     }
     .btn-red{background:var(--red);color:#fff}
     .btn-orange{background:var(--orange);color:#fff}
     .btn-whatsapp{background:#25d366;color:#fff}
+    .btn-whatsapp.small-round{min-height:40px;min-width:120px;padding:0.45rem 0.9rem;border-radius:999px;font-size:0.95rem}
+
+    .btn-email{background:#0066cc;color:#fff}
     .btn-dark{background:var(--navy);color:#fff}
     .site-header{
       position:sticky;top:0;z-index:30;
-      background:rgba(26,26,46,.96);backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,.07)
+      background:rgba(26,26,46,.96);backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06)
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0}
-    .brand-name{font-weight:800;font-size:1.05rem;color:#fff;letter-spacing:.01em}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+    .brand-name{font-weight:800;font-size:1rem;color:#fff;letter-spacing:.01em}
     .brand-name small{display:block;font-size:10.5px;color:#9fa3c4;text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
     .nav-links{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
     .nav-links a{
@@ -70,7 +73,7 @@
     .bar{height:4px;background:linear-gradient(90deg,var(--red),var(--orange),var(--gold))}
     .contact-section{
       background:linear-gradient(135deg,#0e0e1f,#1a1a2e 55%,#1e1230);
-      border-radius:32px;padding:clamp(30px,5vw,52px);position:relative;overflow:hidden
+      border-radius:24px;padding:clamp(24px,4vw,40px);position:relative;overflow:hidden
     }
     .contact-section::before{
       content:'';position:absolute;inset:0;
@@ -80,14 +83,14 @@
     .contact-inner{position:relative;z-index:1}
     .contact-section h1{color:#fff;margin:16px 0 10px}
     .contact-section p{color:#b0b4cc;max-width:760px}
-    .contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+    .contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
     .contact-card{
-      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
-      border-radius:20px;padding:22px
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;padding:18px
     }
     .contact-card h3{color:#fff;font-size:1.15rem}
     .contact-card p{color:#b0b4cc;margin-top:8px;line-height:1.7}
-    .contact-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .contact-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
     .footer{padding:26px 0 36px}
     .footer-rule{
       display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
@@ -145,8 +148,8 @@
           <div class="contact-cards">
             <div class="contact-card">
               <h3>Nagaraj &amp; Sanjeev</h3>
-              <p>GCC Ventures India, Bengaluru<br/>Phone: +91 96119 91902<br/>Email GCC: contactgccventuresindia
-                <a class="mail-inline" href="mailto:contactgccventuresindia@gmail.com" title="Write an email" aria-label="Write an email">
+              <p>GCC Ventures India, Bengaluru<br/>Phone: +91 96119 91902<br/>Email GCC: contact@gccventuresindia.com
+                <a class="mail-inline" href="mailto:contact@gccventuresindia.com" title="Write an email" aria-label="Write an email">
                   <svg class="mail-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4.5-8 5-8-5V6l8 5 8-5v2.5z"/>
                   </svg>
@@ -161,9 +164,9 @@
           </div>
 
           <div class="contact-ctas">
-            <a href="mailto:contactgccventuresindia@gmail.com" class="btn btn-red">Email now</a>
+            <a href="mailto:contact@gccventuresindia.com" class="btn btn-email">Email now</a>
             <a href="tel:+919611991902" class="btn btn-orange">Call now</a>
-            <a href="https://wa.me/919611991902" class="btn btn-whatsapp">WhatsApp</a>
+            <a href="https://wa.me/919611991902?text=Hi%20Sanjeev%2C%20I%20found%20GCC%20Ventures%20India%20and%20would%20like%20to%20connect." target="_blank" rel="noopener" class="btn btn-whatsapp small-round">WhatsApp</a>
             <a href="index.html" class="btn btn-dark">Back to Home</a>
           </div>
         </div>
