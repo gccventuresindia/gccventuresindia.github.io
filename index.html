@@ -191,6 +191,14 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 .btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:52px;min-width:220px;padding:0.75rem 1.5rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;letter-spacing:0.02em;background:#25D366;color:#fff;transition:all 180ms var(--ease);white-space:nowrap}.btn-whatsapp:hover{background:#1da851;transform:translateY(-1px);box-shadow:0 8px 24px oklch(0.55 0.18 150 / 0.35)}
 
+/* Smaller, pill-shaped WhatsApp used in header/footer */
+.btn-whatsapp.small-round{min-height:40px;min-width:120px;padding:0.45rem 0.9rem;border-radius:999px;font-size:0.95rem}
+.cta-actions .btn.btn-whatsapp.small-round{min-width:120px}
+
+/* Email button (header) */
+.btn-email{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:40px;min-width:120px;padding:0.45rem 0.9rem;border-radius:999px;font-size:0.95rem;font-weight:600;background:#0066cc;color:#fff;border:1px solid rgba(0,0,0,0.06);transition:all 160ms var(--ease)}
+.btn-email:hover{background:#0056b3}
+
 .btn-outline-orange{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:52px;min-width:220px;padding:0.75rem 1.5rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;letter-spacing:0.02em;color:var(--orange);border:1px solid var(--orange);background:transparent;transition:all 180ms var(--ease);white-space:nowrap}.btn-outline-orange:hover{background:oklch(from var(--orange) l c h / 0.12);border-color:var(--orange-h);transform:translateY(-1px)}
 
 .team-email{display:inline-block;margin-top:var(--space-2);margin-bottom:var(--space-4);font-size:var(--text-xs);color:var(--teal);text-decoration:underline;text-decoration-color:oklch(from var(--teal) l c h / 0.35);letter-spacing:0.02em;transition:color 150ms}
@@ -293,10 +301,11 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
         <a href="#team" role="listitem">Team</a>
         <a href="#contact" role="listitem">Contact</a>
       </div>
-      <a href="https://wa.me/919611991902?text=Hi%20Sanjeev%2C%20I%20came%20across%20GCC%20Ventures%20India%20and%20would%20like%20to%20explore%20further.%20Can%20we%20set%20up%20a%20brief%20call%3F" target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0">
+      <a href="https://wa.me/919611991902?text=Hi%20Sanjeev%2C%20I%20came%20across%20GCC%20Ventures%20India%20and%20would%20like%20to%20explore%20further.%20Can%20we%20set%20up%20a%20brief%20call%3F" target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta small-round"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0">
 <circle cx="16" cy="16" r="16" fill="#25D366"/>
 <path d="M23.5 8.5C21.6 6.6 19.1 5.5 16.4 5.5C10.9 5.5 6.4 10 6.4 15.5C6.4 17.4 6.9 19.2 7.8 20.8L6.3 26L11.6 24.5C13.1 25.3 14.7 25.8 16.4 25.8C21.9 25.8 26.4 21.3 26.4 15.8C26.4 13.1 25.4 10.5 23.5 8.5ZM16.4 24C14.9 24 13.4 23.6 12.1 22.8L11.8 22.6L8.7 23.5L9.6 20.5L9.4 20.2C8.5 18.8 8.1 17.2 8.1 15.5C8.1 10.9 11.8 7.2 16.4 7.2C18.6 7.2 20.7 8.1 22.2 9.6C23.7 11.1 24.7 13.2 24.7 15.5C24.7 20.1 21.1 24 16.4 24ZM21.1 17.8C20.8 17.6 19.4 16.9 19.1 16.8C18.8 16.7 18.6 16.6 18.4 16.9C18.2 17.2 17.7 17.8 17.5 18C17.3 18.2 17.1 18.2 16.8 18.1C16.5 17.9 15.6 17.6 14.5 16.6C13.7 15.9 13.1 15 12.9 14.7C12.7 14.4 12.9 14.2 13.1 14C13.3 13.8 13.5 13.6 13.6 13.4C13.7 13.2 13.8 13.1 13.9 12.9C14 12.7 13.9 12.5 13.8 12.4C13.7 12.2 13.1 10.8 12.9 10.3C12.7 9.8 12.4 9.9 12.2 9.9H11.7C11.5 9.9 11.2 10 10.9 10.3C10.6 10.6 9.9 11.3 9.9 12.7C9.9 14.1 10.9 15.5 11.1 15.7C11.3 15.9 13.1 18.7 15.9 19.9C16.6 20.2 17.1 20.4 17.5 20.5C18.2 20.7 18.8 20.7 19.3 20.6C19.9 20.5 21.1 19.9 21.3 19.2C21.6 18.5 21.6 18 21.5 17.9C21.4 17.8 21.3 17.8 21.1 17.8Z" fill="white"/>
-</svg> Book a Strategy Call</a>
+</svg> Contact</a>
+  <a href="mailto:contact@gccventuresindia.com" class="btn btn-email nav-cta">Contact Now</a>
       <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -562,10 +571,10 @@ With a foundation shaped by his early Merchant Navy experience in Europe and Jap
       <h2 class="cta-title">Ready to take the next step?</h2>
       <p class="cta-body">Whether you are planning a GCC, preparing for a leadership transition, or building toward a stronger exit — start with one clear conversation. No pressure. No jargon. Just the right questions.</p>
       <div class="cta-actions">
-        <a href="https://wa.me/919611991902?text=Hi%20Sanjeev%2C%20I%20came%20across%20GCC%20Ventures%20India%20and%20would%20like%20to%20explore%20further.%20Can%20we%20set%20up%20a%20brief%20call%3F" target="_blank" rel="noopener" class="btn btn-whatsapp"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0">
+        <a href="https://wa.me/919611991902?text=Hi%20Sanjeev%2C%20I%20came%20across%20GCC%20Ventures%20India%20and%20would%20like%20to%20explore%20further.%20Can%20we%20set%20up%20a%20brief%20call%3F" target="_blank" rel="noopener" class="btn btn-whatsapp small-round"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0">
 <circle cx="16" cy="16" r="16" fill="#25D366"/>
 <path d="M23.5 8.5C21.6 6.6 19.1 5.5 16.4 5.5C10.9 5.5 6.4 10 6.4 15.5C6.4 17.4 6.9 19.2 7.8 20.8L6.3 26L11.6 24.5C13.1 25.3 14.7 25.8 16.4 25.8C21.9 25.8 26.4 21.3 26.4 15.8C26.4 13.1 25.4 10.5 23.5 8.5ZM16.4 24C14.9 24 13.4 23.6 12.1 22.8L11.8 22.6L8.7 23.5L9.6 20.5L9.4 20.2C8.5 18.8 8.1 17.2 8.1 15.5C8.1 10.9 11.8 7.2 16.4 7.2C18.6 7.2 20.7 8.1 22.2 9.6C23.7 11.1 24.7 13.2 24.7 15.5C24.7 20.1 21.1 24 16.4 24ZM21.1 17.8C20.8 17.6 19.4 16.9 19.1 16.8C18.8 16.7 18.6 16.6 18.4 16.9C18.2 17.2 17.7 17.8 17.5 18C17.3 18.2 17.1 18.2 16.8 18.1C16.5 17.9 15.6 17.6 14.5 16.6C13.7 15.9 13.1 15 12.9 14.7C12.7 14.4 12.9 14.2 13.1 14C13.3 13.8 13.5 13.6 13.6 13.4C13.7 13.2 13.8 13.1 13.9 12.9C14 12.7 13.9 12.5 13.8 12.4C13.7 12.2 13.1 10.8 12.9 10.3C12.7 9.8 12.4 9.9 12.2 9.9H11.7C11.5 9.9 11.2 10 10.9 10.3C10.6 10.6 9.9 11.3 9.9 12.7C9.9 14.1 10.9 15.5 11.1 15.7C11.3 15.9 13.1 18.7 15.9 19.9C16.6 20.2 17.1 20.4 17.5 20.5C18.2 20.7 18.8 20.7 19.3 20.6C19.9 20.5 21.1 19.9 21.3 19.2C21.6 18.5 21.6 18 21.5 17.9C21.4 17.8 21.3 17.8 21.1 17.8Z" fill="white"/>
-</svg> Book a Strategy Call</a>
+</svg> Contact</a>
         <a href="mailto:Sanjeev.Sharma@gccventuresindia.com" class="btn btn-ghost">Connect with Sanjeev</a>
         <a href="mailto:Nagaraj@gccventuresindia.com" class="btn btn-ghost">Connect with Nagaraj</a>
       </div>
