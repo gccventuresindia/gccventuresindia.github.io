@@ -95,6 +95,12 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 /* ── HERO ── */
 #home{padding-block:clamp(var(--space-12),8vw,var(--space-16));padding-top:calc(clamp(var(--space-12),8vw,var(--space-16)) + 3.5rem);background:radial-gradient(ellipse 80% 60% at 50% -10%,oklch(0.28 0.08 240 / 0.5),transparent)}
 .hero-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10));text-align:center}
+.hero-ticker{overflow:hidden;margin-bottom:0.75rem}
+.ticker{display:inline-block;color:var(--orange);font-weight:700;font-size:1.125rem;letter-spacing:0.12em;line-height:1;white-space:nowrap;padding-left:100%;animation:scroll-left 12s linear infinite}
+@keyframes scroll-left{0%{transform:translateX(0%)}100%{transform:translateX(-100%)}}
+@media(max-width:900px){.ticker{font-size:1rem;animation-duration:9s}}
+@media(max-width:640px){.ticker{font-size:0.95rem;animation-duration:7s}}
+@media(prefers-reduced-motion:reduce){.ticker{animation:none}}
 .hero-tag{display:inline-flex;align-items:center;gap:var(--space-2);padding:0.4rem 1rem;background:oklch(1 0 0 / 0.05);border:1px solid var(--border);border-radius:var(--radius-full);font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);margin-bottom:var(--space-8)}
 .hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal)}
 .hero-headline{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:400;color:#fff;margin-bottom:var(--space-8);line-height:1.08}
@@ -326,9 +332,9 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 
 <!-- HERO -->
 <section id="home" aria-label="Hero">
-  <div class="hero-inner">
-    <div style="display:flex;align-items:center;justify-content:flex-start;gap:12px;margin:0 0 14px 0;">
-      <div style="color:#f28c28;font-weight:700;font-size:18px;letter-spacing:0.08em;line-height:1.1;">GCC VENTURES INDIA</div>
+    <div class="hero-inner">
+    <div class="hero-ticker" aria-hidden="true">
+      <div class="ticker">GCC VENTURES INDIA &nbsp; • &nbsp; GCC VENTURES INDIA &nbsp; • &nbsp;</div>
     </div>
     <div class="hero-tag">India's Partner for Coaching, GCC, and Ventures</div>
     <h1 class="hero-headline">
