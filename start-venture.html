@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Start Venture | GCC Ventures India | Venture Build-out & Launch Readiness</title>
+<meta name="description" content="Build ventures with clarity. From strategy to governance to launch-ready operations. GCC Ventures India guides you through every stage."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet"/>
+<style>
+/* ── DESIGN TOKENS (shared with homepage) ── */
+:root {
+  --navy:    #080e1c;
+  --navy-2:  #0d1628;
+  --navy-3:  #111e35;
+  --navy-4:  #162340;
+  --border:  oklch(1 0 0 / 0.08);
+  --orange:  #ff9500;
+  --orange-h:#e07800;
+  --teal:    #2ec4b6;
+  --gold:    #ffd700;
+  --text:    #e8e6e0;
+  --muted:   #8a8880;
+  --faint:   #4a4845;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-6: 1.5rem; --space-8: 2rem;   --space-10: 2.5rem;
+  --space-12: 3rem;  --space-16: 4rem;  --space-20: 5rem;
+  --space-24: 6rem;
+  --radius-sm: 0.375rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;  --radius-xl: 1rem;
+  --content-narrow: 640px; --content-default: 960px; --content-wide: 1200px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);font-size:var(--text-base);color:var(--text);background:var(--navy);line-height:1.65;min-height:100dvh}
+img,svg{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.15}
+p{text-wrap:pretty;max-width:68ch}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:var(--radius-sm)}
+
+/* ── LAYOUT ── */
+.container{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+.container--narrow{max-width:var(--content-default);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:52px;padding:0.75rem 1.5rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;letter-spacing:0.02em;transition:all 180ms var(--ease);white-space:nowrap}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-h);transform:translateY(-1px);box-shadow:0 8px 24px oklch(0.6 0.2 50 / 0.3)}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:oklch(1 0 0 / 0.2);background:oklch(1 0 0 / 0.04)}
+.btn:active{transform:translateY(0)}
+
+/* ── SECTION LABEL & TITLE ── */
+.label{font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
+.section-title{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--text);margin-top:var(--space-3);margin-bottom:var(--space-4)}
+.section-intro{font-size:var(--text-base);color:var(--muted);max-width:56ch;margin-bottom:var(--space-10)}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:oklch(0.08 0.02 240 / 0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem;gap:var(--space-4);padding-inline:calc(var(--space-2));}
+.brand{display:flex;flex-direction:row;align-items:center;gap:0.6rem;text-decoration:none}
+.brand-name{font-size:var(--text-sm);font-weight:700;color:var(--orange);letter-spacing:0.04em}
+.brand-tag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);opacity:0.7}
+.nav-links{display:flex;align-items:center;gap:var(--space-6)}
+.nav-links a{font-size:var(--text-sm);font-weight:500;color:var(--orange);letter-spacing:0.02em;transition:color 150ms}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{margin-left:var(--space-4)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:var(--space-2);cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 200ms var(--ease)}
+.mobile-menu{display:none;flex-direction:column;background:var(--navy-2);border-top:1px solid var(--border);padding:var(--space-6) clamp(var(--space-4),4vw,var(--space-10))}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:var(--text-base);color:var(--gold);padding:var(--space-3) 0;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+}
+
+/* ── HERO ── */
+#hero{padding-block:clamp(var(--space-12),8vw,var(--space-16));padding-top:calc(clamp(var(--space-12),8vw,var(--space-16)) + 3.5rem);background:radial-gradient(ellipse 80% 60% at 50% -10%,oklch(0.28 0.08 240 / 0.5),transparent)}
+.hero-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10));text-align:center}
+.hero-headline{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:400;color:#fff;margin-bottom:var(--space-8);line-height:1.08}
+.hero-headline em{font-style:italic;color:var(--orange)}
+.hero-sub{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin-bottom:var(--space-10);line-height:1.6}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap}.hero-actions .btn{min-width:220px}
+@media(max-width:900px){
+  .hero-actions{width:100%}
+  .hero-actions .btn{min-width:0;flex:1 1 100%;width:100%;font-size:0.96rem}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
+  .hero-headline{font-size:clamp(2.3rem, 10vw, 4.2rem)}
+  .hero-sub{font-size:var(--text-base)}
+}
+@media(max-width:640px){
+  #hero{padding-top:6.5rem;padding-bottom:4.5rem}
+  .hero-actions .btn{padding:0.9rem 1rem;font-size:0.95rem}
+  section{padding-block:4.5rem}
+}
+
+/* ── PROBLEM SECTION ── */
+#problem{background:var(--navy-2)}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:var(--space-8)}
+.problem-item{padding:var(--space-8);background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl)}
+.problem-icon{font-size:2.5rem;margin-bottom:var(--space-4);display:inline-block}
+.problem-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.problem-desc{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── HELP SECTION ── */
+#help{background:var(--navy)}
+.help-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-8)}
+.help-card{background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));display:flex;flex-direction:column}
+.help-num{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--orange);font-style:italic;margin-bottom:var(--space-4)}
+.help-title{font-size:var(--text-xl);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.help-body{font-size:var(--text-base);color:var(--muted);line-height:1.7;flex-grow:1}
+
+/* ── WHO SECTION ── */
+#who{background:var(--navy-2)}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:var(--space-6)}
+.who-card{padding:var(--space-8);background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl)}
+.who-icon{width:40px;height:40px;margin-bottom:var(--space-4);color:var(--teal)}
+.who-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.who-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── HOW WE WORK ── */
+#how{background:var(--navy)}
+.how-steps{display:flex;flex-direction:column;gap:0}
+.how-step{display:grid;grid-template-columns:3rem 1fr;gap:var(--space-6);padding:var(--space-8) 0;border-bottom:1px solid var(--border);align-items:start}
+.how-step:last-child{border-bottom:none}
+.how-step-num{font-family:var(--font-display);font-size:var(--text-xl);color:var(--orange);font-style:italic;padding-top:2px}
+.how-step-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-2)}
+.how-step-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── WHY MATTERS ── */
+#why{background:var(--navy-2)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8)}
+.why-item{display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-8);background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl)}
+.why-check{flex-shrink:0;width:20px;height:20px;margin-top:3px;color:var(--teal)}
+.why-text{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+.why-text strong{color:#fff;display:block;margin-bottom:var(--space-2)}
+@media(max-width:640px){.why-grid{grid-template-columns:1fr}}
+
+/* ── FAQ ── */
+#faq{background:var(--navy)}
+.faq-container{max-width:var(--content-default)}
+.faq-item{padding:var(--space-6) 0;border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none}
+.faq-question{font-size:var(--text-base);font-weight:700;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-4) 0}
+.faq-question:hover{color:var(--orange)}
+.faq-toggle{display:inline-block;font-size:1.5rem;transition:transform 200ms var(--ease)}
+.faq-item.open .faq-toggle{transform:rotate(180deg)}
+.faq-answer{font-size:var(--text-base);color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height 300ms var(--ease)}
+.faq-item.open .faq-answer{max-height:500px}
+
+/* ── CTA ── */
+#contact{background:var(--navy-2)}
+.cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-12),6vw,var(--space-20));text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-60%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(circle,oklch(0.65 0.2 50 / 0.06) 0%,transparent 70%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--space-6)}
+.cta-body{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin-inline:auto;margin-bottom:var(--space-10)}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap}.cta-actions .btn{min-width:220px}
+@media(max-width:900px){
+  .cta-actions{width:100%}
+  .cta-actions .btn{min-width:0;flex:1 1 100%;width:100%;font-size:0.96rem}
+  .cta-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
+}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--space-10) 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6)}
+.footer-brand{font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.footer-copy{font-size:var(--text-xs);color:var(--teal)}
+.footer-links{display:flex;gap:var(--space-6)}
+.footer-links a{font-size:var(--text-xs);color:var(--orange);letter-spacing:0.04em;transition:color 150ms}
+.footer-links a:hover{color:var(--text)}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+@media(max-width:640px){
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-links{flex-wrap:wrap;gap:1rem}
+  .help-card,.problem-item,.who-card,.why-item,.cta-box{padding:1.25rem}
+  .how-step{grid-template-columns:2.5rem 1fr;gap:1rem}
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="brand" aria-label="GCC Ventures India home">
+        <span class="brand-name">GCC VENTURES INDIA</span>
+        <span class="brand-tag">Advisory · Growth · Execution</span>
+      </a>
+      <div class="nav-links" role="list">
+        <a href="/" role="listitem">Home</a>
+        <a href="/#paths" role="listitem">Paths</a>
+        <a href="/#team" role="listitem">Team</a>
+        <a href="/#contact" role="listitem">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" role="navigation">
+    <a href="/">Home</a>
+    <a href="/#paths">Paths</a>
+    <a href="/#team">Team</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">
+      Build ventures with clarity.<br>
+      <em>From strategy to launch-ready.</em>
+    </h1>
+    <p class="hero-sub">GCC setup. GBS structure. Governance. Leadership. Launch readiness. One practical path.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Start Your Venture</a>
+      <a href="/#contact" class="btn btn-ghost">Talk to Nagaraj</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem" aria-label="The Venture Challenge">
+  <div class="container--narrow">
+    <h2 class="section-title reveal">The Challenge</h2>
+    <p class="section-intro reveal">Ventures fail not because the idea is bad. They fail because the operating model is unclear.</p>
+    <div class="problem-grid">
+      <div class="problem-item reveal">
+        <div class="problem-icon">🏗️</div>
+        <h3 class="problem-title">No Clear Structure</h3>
+        <p class="problem-desc">Should you build GCC-style or traditional startup? What's the right entity structure for India growth?</p>
+      </div>
+      <div class="problem-item reveal">
+        <div class="problem-icon">⚙️</div>
+        <h3 class="problem-title">Governance Gaps</h3>
+        <p class="problem-desc">How do you scale with speed while maintaining oversight? What does good governance look like at each stage?</p>
+      </div>
+      <div class="problem-item reveal">
+        <div class="problem-icon">👥</div>
+        <h3 class="problem-title">Leadership Uncertainty</h3>
+        <p class="problem-desc">Who leads what? How do you structure teams and decision-making when growing fast?</p>
+      </div>
+      <div class="problem-item reveal">
+        <div class="problem-icon">📊</div>
+        <h3 class="problem-title">Execution Blind Spots</h3>
+        <p class="problem-desc">You have the strategy. You have the capital. What are you missing operationally to launch?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE HELP WITH -->
+<section id="help" aria-label="What We Help With">
+  <div class="container--narrow">
+    <h2 class="section-title reveal">What We Help With</h2>
+    <p class="section-intro reveal">Practical support on the things that actually determine whether ventures succeed or stall.</p>
+    <div class="help-grid">
+      <div class="help-card reveal">
+        <div class="help-num">1</div>
+        <h3 class="help-title">GCC Setup Strategy</h3>
+        <p class="help-body">Structure your venture as a GCC from day one. Clear entity architecture, tax efficiency, scalable operating model.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-num">2</div>
+        <h3 class="help-title">GBS & Finance Operations</h3>
+        <p class="help-body">Build shared services and finance operations that scale with you. Processes, systems, team structure.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-num">3</div>
+        <h3 class="help-title">Governance Framework</h3>
+        <p class="help-body">Design governance that grows with your venture. Board structures, decision-making, compliance, oversight.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-num">4</div>
+        <h3 class="help-title">Leadership Structure</h3>
+        <p class="help-body">Get your org chart right from the start. Roles, accountability, capabilities you need to hire for.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-num">5</div>
+        <h3 class="help-title">Launch Readiness</h3>
+        <p class="help-body">Before you go to market, know you're ready. Operations, team, processes, risk mitigation.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-num">6</div>
+        <h3 class="help-title">Venture Coaching</h3>
+        <p class="help-body">Hands-on guidance through the chaos. Strategy calls, decision support, problem-solving with experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section id="who" aria-label="Who This Is For">
+  <div class="container--narrow">
+    <h2 class="section-title reveal">Who This Is For</h2>
+    <p class="section-intro reveal">We work with teams at these stages. If this is you, we can help.</p>
+    <div class="who-grid">
+      <div class="who-card reveal">
+        <svg class="who-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 18 L18 24 L28 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="who-title">Funded Ventures</h3>
+        <p class="who-body">You have Series A/B capital. You need to build the operating model that takes you to Series C with clarity.</p>
+      </div>
+      <div class="who-card reveal">
+        <svg class="who-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 18 L18 24 L28 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="who-title">India Expansion Play</h3>
+        <p class="who-body">You're a global company building a significant India operation. Get the structure and governance right now.</p>
+      </div>
+      <div class="who-card reveal">
+        <svg class="who-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 18 L18 24 L28 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="who-title">Pre-Launch Teams</h3>
+        <p class="who-body">You have the founding team and strategy. You need the operating structure before you hire and scale.</p>
+      </div>
+      <div class="who-card reveal">
+        <svg class="who-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 18 L18 24 L28 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="who-title">Scaleups in Growth</h3>
+        <p class="who-body">You're scaling fast and the seams are showing. Time to revisit governance and leadership structure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section id="how" aria-label="How We Work">
+  <div class="container--narrow">
+    <h2 class="section-title reveal">How We Work</h2>
+    <p class="section-intro reveal">Five focused phases. No long engagements. Real progress at each step.</p>
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <div class="how-step-num">1</div>
+        <div>
+          <h3 class="how-step-title">Clarity Call</h3>
+          <p class="how-step-body">One deep conversation. We understand your stage, your challenges, what you need most right now.</p>
+        </div>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step-num">2</div>
+        <div>
+          <h3 class="how-step-title">Operating Model Design</h3>
+          <p class="how-step-body">We map out your structure. GCC vs traditional. Entity setup. Shared services. Governance framework.</p>
+        </div>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step-num">3</div>
+        <div>
+          <h3 class="how-step-title">Leadership & Governance</h3>
+          <p class="how-step-body">Design org chart, roles, decision-making, and board/advisory structures that fit your stage.</p>
+        </div>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step-num">4</div>
+        <div>
+          <h3 class="how-step-title">Launch Readiness</h3>
+          <p class="how-step-body">Build the finance ops, systems, processes, and team capabilities you need to execute at scale.</p>
+        </div>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step-num">5</div>
+        <div>
+          <h3 class="how-step-title">Hands-On Support</h3>
+          <p class="how-step-body">We stay involved through execution. Regular coaching, problem-solving, adjustments as you learn.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS MATTERS -->
+<section id="why" aria-label="Why This Matters">
+  <div class="container--narrow">
+    <h2 class="section-title reveal">Why This Matters</h2>
+    <p class="section-intro reveal">Ventures with clear operating models and governance scale faster, raise easier, and exit stronger.</p>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <svg class="why-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10 L9 13 L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="why-text"><strong>Faster scaling.</strong>When your model is clear, hiring and execution are exponentially faster.</div>
+      </div>
+      <div class="why-item reveal">
+        <svg class="why-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10 L9 13 L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="why-text"><strong>Better fundraising.</strong>Investors back teams with clear governance and execution discipline.</div>
+      </div>
+      <div class="why-item reveal">
+        <svg class="why-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10 L9 13 L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="why-text"><strong>Lower risk.</strong>Good governance catches problems early. You avoid expensive pivots.</div>
+      </div>
+      <div class="why-item reveal">
+        <svg class="why-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10 L9 13 L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="why-text"><strong>Stronger exits.</strong>Buyers value operational clarity and governance maturity. It's worth real money.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-label="Frequently Asked Questions">
+  <div class="container--narrow">
+    <h2 class="section-title reveal">Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <span>What's the difference between building as a GCC vs traditional startup structure?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>GCC structure gives you operating cost efficiency, talent access, and a clear path to scale. It's ideal if you're part of a larger organization or planning significant India investment. Traditional startup structure is leaner but requires you to build everything yourself. We help you pick the right one for your situation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <span>How long does it take to get a venture launch-ready?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>3–6 months depending on your starting point. If you have a founding team and capital, that's fast. If you need everything designed from scratch, it takes longer. We work at your pace and don't hold you back.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <span>Do you help with fundraising strategy?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, but that's not our primary focus. What we do is make sure your operating model and governance are investor-grade. We help you articulate that clearly in fundraising conversations.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <span>What if we're already operational and just need a governance audit?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We do that. We can audit your current structure, identify gaps, and help you fix them. It's faster than a full redesign and often all you need.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <span>Can you help with GBS setup specifically?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes. Sanjeev's expertise is in GBS and shared services. Finance operations, O2C, P2P processes, automation. That's a natural part of venture build-out if you're thinking global from day one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" aria-label="Get Started">
+  <div class="container--narrow">
+    <div class="cta-box reveal">
+      <h2 class="cta-title">Ready to Build Right?</h2>
+      <p class="cta-body">Start with one clarity call. We'll map your venture, identify what matters most, and outline what launch readiness looks like for you.</p>
+      <div class="cta-actions">
+        <a href="mailto:Nagaraj@gccventuresindia.com" class="btn btn-primary">Email Nagaraj</a>
+        <a href="/" class="btn btn-ghost">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">GCC VENTURES INDIA</div>
+      <div class="footer-copy">© 2026 GCC Ventures India · <span style="color:#ffffff;">Bengaluru, India</span></div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/#paths">Paths</a>
+        <a href="/#team">Team</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Hamburger
+const btn = document.getElementById('hamburgerBtn');
+const menu = document.getElementById('mobileMenu');
+btn.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  menu.classList.remove('open');
+  btn.setAttribute('aria-expanded', false);
+}));
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      observer.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    q.closest('.faq-item').classList.toggle('open');
+  });
+});
+</script>
+</body>
+</html>
