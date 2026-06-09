@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Insights | GCC Ventures India</title>
+<meta name="description" content="GCC strategy, leadership, venture insights, and exit readiness. Practical wisdom for building in India."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet"/>
+<style>
+/* ── DESIGN TOKENS (shared with homepage) ── */
+:root {
+  --navy:    #080e1c;
+  --navy-2:  #0d1628;
+  --navy-3:  #111e35;
+  --navy-4:  #162340;
+  --border:  oklch(1 0 0 / 0.08);
+  --orange:  #ff9500;
+  --orange-h:#e07800;
+  --teal:    #2ec4b6;
+  --gold:    #ffd700;
+  --text:    #e8e6e0;
+  --muted:   #8a8880;
+  --faint:   #4a4845;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-6: 1.5rem; --space-8: 2rem;   --space-10: 2.5rem;
+  --space-12: 3rem;  --space-16: 4rem;  --space-20: 5rem;
+  --space-24: 6rem;
+  --radius-sm: 0.375rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;  --radius-xl: 1rem;
+  --content-narrow: 640px; --content-default: 960px; --content-wide: 1200px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);font-size:var(--text-base);color:var(--text);background:var(--navy);line-height:1.65;min-height:100dvh}
+img,svg{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.15}
+p{text-wrap:pretty;max-width:68ch}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:var(--radius-sm)}
+
+/* ── LAYOUT ── */
+.container{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+.container--narrow{max-width:var(--content-default);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:52px;padding:0.75rem 1.5rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;letter-spacing:0.02em;transition:all 180ms var(--ease);white-space:nowrap}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-h);transform:translateY(-1px);box-shadow:0 8px 24px oklch(0.6 0.2 50 / 0.3)}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:oklch(1 0 0 / 0.2);background:oklch(1 0 0 / 0.04)}
+.btn:active{transform:translateY(0)}
+
+/* ── SECTION LABEL & TITLE ── */
+.label{font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
+.section-title{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--text);margin-top:var(--space-3);margin-bottom:var(--space-4)}
+.section-intro{font-size:var(--text-base);color:var(--muted);max-width:56ch;margin-bottom:var(--space-10)}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:oklch(0.08 0.02 240 / 0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem;gap:var(--space-4);padding-inline:calc(var(--space-2));}
+.brand{display:flex;flex-direction:row;align-items:center;gap:0.6rem;text-decoration:none}
+.brand-name{font-size:var(--text-sm);font-weight:700;color:var(--orange);letter-spacing:0.04em}
+.brand-tag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);opacity:0.7}
+.nav-links{display:flex;align-items:center;gap:var(--space-6)}
+.nav-links a{font-size:var(--text-sm);font-weight:500;color:var(--orange);letter-spacing:0.02em;transition:color 150ms}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{margin-left:var(--space-4)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:var(--space-2);cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 200ms var(--ease)}
+.mobile-menu{display:none;flex-direction:column;background:var(--navy-2);border-top:1px solid var(--border);padding:var(--space-6) clamp(var(--space-4),4vw,var(--space-10))}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:var(--text-base);color:var(--gold);padding:var(--space-3) 0;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu .btn{margin-top:var(--space-4);align-self:flex-start}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+}
+
+/* ── HERO ── */
+#hero{padding-block:clamp(var(--space-12),8vw,var(--space-16));padding-top:calc(clamp(var(--space-12),8vw,var(--space-16)) + 3.5rem);background:radial-gradient(ellipse 80% 60% at 50% -10%,oklch(0.28 0.08 240 / 0.5),transparent)}
+.hero-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10));text-align:center}
+.hero-headline{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:400;color:#fff;margin-bottom:var(--space-8);line-height:1.08}
+.hero-headline em{font-style:italic;color:var(--orange)}
+.hero-sub{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin-bottom:var(--space-10);line-height:1.6}
+
+/* ── FILTERS ── */
+#filters{background:var(--navy-2);border-bottom:1px solid var(--border)}
+.filters-inner{display:flex;align-items:center;gap:var(--space-6);flex-wrap:wrap;padding:var(--space-8) 0;justify-content:center}
+.filter-btn{padding:0.5rem 1rem;border-radius:var(--radius-xl);border:1px solid var(--border);color:var(--muted);font-size:var(--text-sm);font-weight:600;transition:all 150ms var(--ease);cursor:pointer}
+.filter-btn.active{background:var(--orange);color:#000;border-color:var(--orange)}
+.filter-btn:hover{border-color:var(--orange)}
+
+/* ── FEATURED ARTICLE ── */
+#featured{background:var(--navy)}
+.featured-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:center}
+.featured-content{}
+.featured-tag{display:inline-block;font-size:var(--text-xs);color:var(--teal);font-weight:600;text-transform:uppercase;margin-bottom:var(--space-4)}
+.featured-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--space-4);line-height:1.2}
+.featured-excerpt{font-size:var(--text-base);color:var(--muted);line-height:1.7;margin-bottom:var(--space-6)}
+.featured-meta{font-size:var(--text-sm);color:var(--faint);margin-bottom:var(--space-6)}
+.featured-cta{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:600;color:var(--orange);transition:gap 150ms}
+.featured-cta:hover{gap:var(--space-4)}
+.featured-image{background:linear-gradient(135deg,var(--navy-4),var(--navy-3));border-radius:var(--radius-xl);height:300px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:var(--teal)}
+@media(max-width:900px){
+  .featured-card{grid-template-columns:1fr}
+  .featured-image{height:200px}
+}
+
+/* ── ARTICLE GRID ── */
+#articles{background:var(--navy-2)}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-6)}
+.article-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));transition:border-color 200ms var(--ease),transform 200ms var(--ease);display:flex;flex-direction:column}
+.article-card:hover{border-color:var(--orange);transform:translateY(-3px)}
+.article-tag{display:inline-block;font-size:var(--text-xs);color:var(--teal);font-weight:600;text-transform:uppercase;margin-bottom:var(--space-4);width:fit-content}
+.article-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3);line-height:1.3}
+.article-excerpt{font-size:var(--text-base);color:var(--muted);line-height:1.7;margin-bottom:var(--space-6);flex-grow:1}
+.article-meta{font-size:var(--text-sm);color:var(--faint)}
+.article-cta{display:inline-flex;align-items:center;gap:var(--space-2);margin-top:var(--space-6);font-size:var(--text-sm);font-weight:600;color:var(--orange);transition:gap 150ms}
+.article-cta:hover{gap:var(--space-4)}
+
+/* ── CTA ── */
+#contact{background:var(--navy)}
+.cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-12),6vw,var(--space-20));text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-60%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(circle,oklch(0.65 0.2 50 / 0.06) 0%,transparent 70%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--space-6)}
+.cta-body{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin-inline:auto;margin-bottom:var(--space-10)}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
+.cta-actions .btn{min-width:220px}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--space-10) 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6)}
+.footer-brand{font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.footer-copy{font-size:var(--text-xs);color:var(--teal)}
+.footer-links{display:flex;gap:var(--space-6)}
+.footer-links a{font-size:var(--text-xs);color:var(--orange);letter-spacing:0.04em;transition:color 150ms}
+.footer-links a:hover{color:var(--text)}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* ── RESPONSIVE ── */
+@media(max-width: 900px){
+  .hero-headline{font-size:clamp(2.3rem, 10vw, 4.2rem)}
+  .hero-sub{font-size:var(--text-base)}
+  .section-title{font-size:clamp(1.8rem, 6vw, 3rem)}
+  .articles-grid{grid-template-columns:1fr}
+  .cta-actions{width:100%}
+  .cta-actions .btn{min-width:0;flex:1 1 100%;width:100%;font-size:0.96rem}
+  .cta-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
+  .nav-inner{height:4.25rem}
+}
+
+@media(max-width: 640px){
+  section{padding-block:4.5rem}
+  #hero{padding-top:6.5rem;padding-bottom:4.5rem}
+  .hero-inner,.container,.container--narrow{padding-inline:1rem}
+  .hero-headline{line-height:1.04;letter-spacing:-0.02em}
+  .btn{min-height:48px}
+  .featured-card,.article-card,.cta-box{padding:1.25rem}
+  .filters-inner{padding:1rem 0}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-links{flex-wrap:wrap;gap:1rem}
+}
+
+@media(max-width: 420px){
+  .nav-links{display:none}
+  .hero-headline{font-size:2.1rem}
+  .cta-title{font-size:1.9rem}
+  .section-title{font-size:1.7rem}
+  .hero-sub,.section-intro,.featured-excerpt,.article-excerpt,.cta-body{font-size:0.98rem}
+  .filter-btn{padding:0.4rem 0.8rem;font-size:0.9rem}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── HEADER/NAV ── -->
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="brand">
+      <span class="brand-name">GCC VENTURES</span>
+      <span class="brand-tag">Insights</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#paths">Services</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="/#paths">Services</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Wisdom for building in <em>India.</em></h1>
+    <p class="hero-sub">Practical insights on GCC strategy, leadership, ventures, and exits. From people who've been there.</p>
+  </div>
+</section>
+
+<!-- ── CATEGORY FILTERS ── -->
+<section id="filters">
+  <div class="container">
+    <div class="filters-inner">
+      <button class="filter-btn active" onclick="filterArticles('all')">All</button>
+      <button class="filter-btn" onclick="filterArticles('gcc')">GCC Strategy</button>
+      <button class="filter-btn" onclick="filterArticles('leadership')">Leadership</button>
+      <button class="filter-btn" onclick="filterArticles('ventures')">Ventures</button>
+      <button class="filter-btn" onclick="filterArticles('exit')">Exit Readiness</button>
+      <button class="filter-btn" onclick="filterArticles('india')">India Market</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED ARTICLE ── -->
+<section id="featured">
+  <div class="container">
+    <div class="featured-card reveal">
+      <div class="featured-content">
+        <span class="featured-tag">GCC Strategy</span>
+        <h2 class="featured-title">GCC Leadership Beyond Operations</h2>
+        <p class="featured-excerpt">Most Global Capability Centers fail because they're built as operational cost centers. Learn how to position GCC as a strategic business unit with board-level credibility and autonomy.</p>
+        <p class="featured-meta">5 min read · By Sanjeev</p>
+        <a href="#" class="featured-cta">Read Article →</a>
+      </div>
+      <div class="featured-image">📊</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ARTICLE GRID ── -->
+<section id="articles">
+  <div class="container">
+    <span class="label">More Insights</span>
+    <h2 class="section-title">Latest articles and thinking.</h2>
+    <div class="articles-grid">
+      <div class="article-card reveal" data-category="leadership">
+        <span class="article-tag">Leadership</span>
+        <h3 class="article-title">Executive Presence for GCC Leaders</h3>
+        <p class="article-excerpt">How to show up in board rooms and investor conversations. The difference between operational competence and executive leadership.</p>
+        <p class="article-meta">4 min read</p>
+        <a href="#" class="article-cta">Read →</a>
+      </div>
+
+      <div class="article-card reveal" data-category="ventures">
+        <span class="article-tag">Ventures</span>
+        <h3 class="article-title">When to Raise vs. Bootstrap in India</h3>
+        <p class="article-excerpt">The capital equation looks different in India. Understand the investor landscape, valuation dynamics, and when venture capital actually makes sense.</p>
+        <p class="article-meta">6 min read</p>
+        <a href="#" class="article-cta">Read →</a>
+      </div>
+
+      <div class="article-card reveal" data-category="exit">
+        <span class="article-tag">Exit Readiness</span>
+        <h3 class="article-title">The Buyer's Perspective: What Gets Valued</h3>
+        <p class="article-excerpt">Due diligence isn't a gotcha. It's a conversation. Understand what strategic and financial buyers actually scrutinize and value.</p>
+        <p class="article-meta">5 min read</p>
+        <a href="#" class="article-cta">Read →</a>
+      </div>
+
+      <div class="article-card reveal" data-category="india">
+        <span class="article-tag">India Market</span>
+        <h3 class="article-title">India's Regulatory Landscape for Global Teams</h3>
+        <p class="article-excerpt">What international leaders get wrong about India compliance. Practical guidance on labor laws, tax, and governance.</p>
+        <p class="article-meta">7 min read</p>
+        <a href="#" class="article-cta">Read →</a>
+      </div>
+
+      <div class="article-card reveal" data-category="gcc">
+        <span class="article-tag">GCC Strategy</span>
+        <h3 class="article-title">Building a Bench: From Dependence to Depth</h3>
+        <p class="article-excerpt">How to transition a GCC from being dependent on a few key leaders to having organizational depth and sustainability.</p>
+        <p class="article-meta">5 min read</p>
+        <a href="#" class="article-cta">Read →</a>
+      </div>
+
+      <div class="article-card reveal" data-category="leadership">
+        <span class="article-tag">Leadership</span>
+        <h3 class="article-title">Delegation and Control: Finding Balance</h3>
+        <p class="article-excerpt">Indian leadership culture values relationships and control. How to delegate without losing strategic clarity or organizational alignment.</p>
+        <p class="article-meta">5 min read</p>
+        <a href="#" class="article-cta">Read →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="contact">
+  <div class="container--narrow">
+    <div class="cta-box">
+      <h2 class="cta-title">Want more insights?</h2>
+      <p class="cta-body">Get practical wisdom on GCC strategy, leadership, ventures, and India market dynamics. Delivered to your inbox.</p>
+      <div class="cta-actions">
+        <a href="/contact.html" class="btn btn-primary">Get In Touch</a>
+        <a href="/" class="btn btn-ghost">Return to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">GCC Ventures India</div>
+      <div class="footer-copy">Insights, strategy, and guidance for building in India.</div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Hamburger menu toggle
+document.querySelector('.hamburger')?.addEventListener('click', function(e) {
+  const menu = document.querySelector('.mobile-menu');
+  const isOpen = menu.classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen);
+});
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 60);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Filter articles
+function filterArticles(category) {
+  const cards = document.querySelectorAll('.article-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+  
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  cards.forEach(card => {
+    if (category === 'all' || card.getAttribute('data-category') === category) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>

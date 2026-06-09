@@ -1,188 +1,413 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | GCC Ventures India</title>
-  <meta name="description" content="Contact GCC Ventures India for innovation center setup, M&A advisory, venture exit, and executive coaching." />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#1a1a2e" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --navy:#1a1a2e;
-      --navy2:#20243f;
-      --red:#e94560;
-      --orange:#ff9500;
-      --gold:#f5a623;
-      --white:#ffffff;
-      --off:#fafafd;
-      --text:#1c1c2e;
-      --muted:#64647a;
-      --border:#e2e2ec;
-      --radius:20px;
-      --shadow:0 14px 48px rgba(26,26,46,.09);
-      --max:1180px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.65}
-    a{text-decoration:none;color:inherit}
-    .wrap{width:min(calc(100% - 28px),var(--max));margin:0 auto}
-    .section{padding:clamp(40px,6vw,64px) 0}
-    h1,h2{font-family:'Playfair Display',serif;line-height:1.1;color:var(--navy)}
-    h1{font-size:clamp(2.8rem,6vw,4.8rem)}
-    h2{font-size:clamp(1.8rem,3.6vw,2.8rem)}
-    p{color:var(--muted)}
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:7px 14px;border-radius:999px;
-      font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase
-    }
-    .pill-red{background:rgba(233,69,96,.1);color:var(--red)}
-    .pill-orange{background:rgba(255,149,0,.12);color:var(--orange)}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      min-height:46px;padding:10px 18px;border-radius:999px;
-      font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:.2s ease
-    }
-    .btn-red{background:var(--red);color:#fff}
-    .btn-orange{background:var(--orange);color:#fff}
-    .btn-whatsapp{background:#25d366;color:#fff}
-    .btn-whatsapp.small-round{min-height:40px;min-width:120px;padding:0.45rem 0.9rem;border-radius:999px;font-size:0.95rem}
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact | GCC Ventures India</title>
+<meta name="description" content="Get in touch with GCC Ventures India. Coaching, GCC setup, venture strategy, and exit readiness."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet"/>
+<style>
+/* ── DESIGN TOKENS (shared with homepage) ── */
+:root {
+  --navy:    #080e1c;
+  --navy-2:  #0d1628;
+  --navy-3:  #111e35;
+  --navy-4:  #162340;
+  --border:  oklch(1 0 0 / 0.08);
+  --orange:  #ff9500;
+  --orange-h:#e07800;
+  --teal:    #2ec4b6;
+  --gold:    #ffd700;
+  --text:    #e8e6e0;
+  --muted:   #8a8880;
+  --faint:   #4a4845;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-6: 1.5rem; --space-8: 2rem;   --space-10: 2.5rem;
+  --space-12: 3rem;  --space-16: 4rem;  --space-20: 5rem;
+  --space-24: 6rem;
+  --radius-sm: 0.375rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;  --radius-xl: 1rem;
+  --content-narrow: 640px; --content-default: 960px; --content-wide: 1200px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);font-size:var(--text-base);color:var(--text);background:var(--navy);line-height:1.65;min-height:100dvh}
+img,svg{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.15}
+p{text-wrap:pretty;max-width:68ch}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:var(--radius-sm)}
 
-    .btn-email{background:#0066cc;color:#fff}
-    .btn-dark{background:var(--navy);color:#fff}
-    .site-header{
-      position:sticky;top:0;z-index:30;
-      background:rgba(26,26,46,.96);backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.06)
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
-    .brand-name{font-weight:800;font-size:1rem;color:#fff;letter-spacing:.01em}
-    .brand-name small{display:block;font-size:10.5px;color:#9fa3c4;text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
-    .nav-links{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
-    .nav-links a{
-      padding:8px 12px;border-radius:8px;
-      font-size:13.5px;color:#c9cce8;font-weight:500;min-height:44px;display:inline-flex;align-items:center;
-      transition:.15s
-    }
-    .nav-links a:hover{background:rgba(255,255,255,.07);color:#fff}
-    .bar{height:4px;background:linear-gradient(90deg,var(--red),var(--orange),var(--gold))}
-    .contact-section{
-      background:linear-gradient(135deg,#0e0e1f,#1a1a2e 55%,#1e1230);
-      border-radius:24px;padding:clamp(24px,4vw,40px);position:relative;overflow:hidden
-    }
-    .contact-section::before{
-      content:'';position:absolute;inset:0;
-      background:radial-gradient(ellipse 60% 80% at 90% 20%,rgba(233,69,96,.2),transparent 55%),
-                 radial-gradient(ellipse 50% 50% at 5% 90%,rgba(255,149,0,.15),transparent 50%);
-    }
-    .contact-inner{position:relative;z-index:1}
-    .contact-section h1{color:#fff;margin:16px 0 10px}
-    .contact-section p{color:#b0b4cc;max-width:760px}
-    .contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
-    .contact-card{
-      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
-      border-radius:18px;padding:18px
-    }
-    .contact-card h3{color:#fff;font-size:1.15rem}
-    .contact-card p{color:#b0b4cc;margin-top:8px;line-height:1.7}
-    .contact-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .footer{padding:26px 0 36px}
-    .footer-rule{
-      display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-      padding-top:18px;border-top:1px solid var(--border);
-      font-size:.88rem;color:var(--muted)
-    }
-    .mail-inline{
-      display:inline-flex;align-items:center;gap:6px;
-      color:#7cc7ff;text-decoration:none
-    }
-    .mail-inline:hover{text-decoration:underline}
-    .mail-icon{width:18px;height:18px;display:inline-block;vertical-align:middle}
-    @media(max-width:960px){
-      .contact-cards{grid-template-columns:1fr}
-    }
-    @media(max-width:760px){
-      .nav{flex-direction:column;align-items:flex-start}
-      .nav-links{overflow-x:auto;white-space:nowrap;width:100%;padding-bottom:4px;gap:0}
-      .contact-ctas{flex-direction:column;align-items:stretch}
-      .btn{width:100%}
-    }
-    @media(max-width:520px){
-      .wrap{width:calc(100% - 18px)}
-      .contact-section,.contact-card{padding:20px}
-      h1{font-size:clamp(2.2rem,11vw,3rem)}
-    }
-  </style>
+/* ── LAYOUT ── */
+.container{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+.container--narrow{max-width:var(--content-default);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:52px;padding:0.75rem 1.5rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;letter-spacing:0.02em;transition:all 180ms var(--ease);white-space:nowrap}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-h);transform:translateY(-1px);box-shadow:0 8px 24px oklch(0.6 0.2 50 / 0.3)}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:oklch(1 0 0 / 0.2);background:oklch(1 0 0 / 0.04)}
+.btn:active{transform:translateY(0)}
+
+/* ── SECTION LABEL & TITLE ── */
+.label{font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
+.section-title{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--text);margin-top:var(--space-3);margin-bottom:var(--space-4)}
+.section-intro{font-size:var(--text-base);color:var(--muted);max-width:56ch;margin-bottom:var(--space-10)}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:oklch(0.08 0.02 240 / 0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem;gap:var(--space-4);padding-inline:calc(var(--space-2));}
+.brand{display:flex;flex-direction:row;align-items:center;gap:0.6rem;text-decoration:none}
+.brand-name{font-size:var(--text-sm);font-weight:700;color:var(--orange);letter-spacing:0.04em}
+.brand-tag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);opacity:0.7}
+.nav-links{display:flex;align-items:center;gap:var(--space-6)}
+.nav-links a{font-size:var(--text-sm);font-weight:500;color:var(--orange);letter-spacing:0.02em;transition:color 150ms}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{margin-left:var(--space-4)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:var(--space-2);cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 200ms var(--ease)}
+.mobile-menu{display:none;flex-direction:column;background:var(--navy-2);border-top:1px solid var(--border);padding:var(--space-6) clamp(var(--space-4),4vw,var(--space-10))}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:var(--text-base);color:var(--gold);padding:var(--space-3) 0;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu .btn{margin-top:var(--space-4);align-self:flex-start}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+}
+
+/* ── HERO ── */
+#hero{padding-block:clamp(var(--space-12),8vw,var(--space-16));padding-top:calc(clamp(var(--space-12),8vw,var(--space-16)) + 3.5rem);background:radial-gradient(ellipse 80% 60% at 50% -10%,oklch(0.28 0.08 240 / 0.5),transparent)}
+.hero-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10));text-align:center}
+.hero-headline{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:400;color:#fff;margin-bottom:var(--space-8);line-height:1.08}
+.hero-headline em{font-style:italic;color:var(--orange)}
+.hero-sub{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin-bottom:var(--space-10);line-height:1.6}
+
+/* ── CONTACT OPTIONS ── */
+#options{background:var(--navy-2)}
+.options-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-6)}
+.option-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));transition:border-color 200ms var(--ease),transform 200ms var(--ease)}
+.option-card:hover{border-color:oklch(1 0 0 / 0.18);transform:translateY(-3px)}
+.option-icon{font-size:2rem;margin-bottom:var(--space-6);display:inline-block}
+.option-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.option-body{font-size:var(--text-base);color:var(--muted);line-height:1.7;margin-bottom:var(--space-6)}
+.option-cta{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:600;color:var(--orange);transition:gap 150ms}
+.option-cta:hover{gap:var(--space-4)}
+
+/* ── CONTACT FORM ── */
+#form{background:var(--navy)}
+.form-container{max-width:var(--content-narrow);margin-inline:auto}
+.form-group{margin-bottom:var(--space-8)}
+label{display:block;font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-3);color:#fff}
+input,textarea,select{width:100%;padding:var(--space-4);border:1px solid var(--border);border-radius:var(--radius-md);background:var(--navy-2);color:var(--text);font-family:inherit;font-size:var(--text-base);transition:border-color 150ms}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--orange)}
+textarea{resize:vertical;min-height:120px}
+.form-actions{display:flex;gap:var(--space-4);flex-wrap:wrap}
+.form-actions .btn{min-width:180px}
+
+/* ── PATH SELECTOR ── */
+#paths{background:var(--navy-2)}
+.paths-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:var(--space-6)}
+.path-option{padding:var(--space-8);background:var(--navy-3);border:2px solid var(--border);border-radius:var(--radius-xl);cursor:pointer;transition:border-color 200ms var(--ease),transform 200ms var(--ease);text-align:center}
+.path-option:hover{border-color:var(--orange);transform:translateY(-2px)}
+.path-icon{font-size:2.5rem;margin-bottom:var(--space-4);display:inline-block}
+.path-name{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-2)}
+.path-desc{font-size:var(--text-sm);color:var(--muted)}
+
+/* ── FAQ-LITE ── */
+#faq{background:var(--navy)}
+.faq-container{max-width:var(--content-narrow);margin-inline:auto}
+.faq-item{background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl);margin-bottom:var(--space-6);overflow:hidden;transition:border-color 200ms var(--ease)}
+.faq-item.open{border-color:var(--orange)}
+.faq-question{padding:var(--space-8);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);font-size:var(--text-base);font-weight:600;color:#fff;user-select:none;transition:background 150ms}
+.faq-question:hover{background:oklch(1 0 0 / 0.04)}
+.faq-toggle{font-size:1.5rem;color:var(--orange);transition:transform 200ms var(--ease);flex-shrink:0}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 300ms var(--ease);}
+.faq-item.open .faq-answer{max-height:600px}
+.faq-answer-content{padding:0 var(--space-8) var(--space-8);color:var(--muted);line-height:1.7;font-size:var(--text-base)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--space-10) 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6)}
+.footer-brand{font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.footer-copy{font-size:var(--text-xs);color:var(--teal)}
+.footer-links{display:flex;gap:var(--space-6)}
+.footer-links a{font-size:var(--text-xs);color:var(--orange);letter-spacing:0.04em;transition:color 150ms}
+.footer-links a:hover{color:var(--text)}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* ── RESPONSIVE ── */
+@media(max-width: 900px){
+  .hero-headline{font-size:clamp(2.3rem, 10vw, 4.2rem)}
+  .hero-sub{font-size:var(--text-base)}
+  .section-title{font-size:clamp(1.8rem, 6vw, 3rem)}
+  .options-grid,.paths-grid{grid-template-columns:1fr}
+  .form-actions{flex-direction:column;gap:var(--space-3)}
+  .form-actions .btn{width:100%}
+  .nav-inner{height:4.25rem}
+}
+
+@media(max-width: 640px){
+  section{padding-block:4.5rem}
+  #hero{padding-top:6.5rem;padding-bottom:4.5rem}
+  .hero-inner,.container,.container--narrow{padding-inline:1rem}
+  .hero-headline{line-height:1.04;letter-spacing:-0.02em}
+  .btn{min-height:48px}
+  .option-card,.path-option,.faq-item{padding:1.25rem}
+  .faq-question{padding:1rem}
+  .faq-answer-content{padding:0 1rem 1rem}
+  input,textarea,select{padding:0.75rem}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-links{flex-wrap:wrap;gap:1rem}
+}
+
+@media(max-width: 420px){
+  .nav-links{display:none}
+  .hero-headline{font-size:2.1rem}
+  .section-title{font-size:1.7rem}
+  .hero-sub,.section-intro,.option-body,.path-desc,.faq-answer-content{font-size:0.98rem}
+}
+
+</style>
 </head>
 <body>
-<a href="#main" class="sr-only">Skip to content</a>
 
-<header class="site-header">
-  <div class="wrap nav">
-    <a href="index.html" class="brand-name">GCC Ventures India<small>Innovation Center Setup · M&A · Exit · Coaching</small></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#team">Team</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+<!-- ── HEADER/NAV ── -->
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="brand">
+      <span class="brand-name">GCC VENTURES</span>
+      <span class="brand-tag">Contact</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#paths">Services</a>
+      <a href="/about.html">About</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
-</header>
+  <div class="mobile-menu">
+    <a href="/#paths">Services</a>
+    <a href="/about.html">About</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
 
-<div class="bar"></div>
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Let's talk about <em>your situation.</em></h1>
+    <p class="hero-sub">Whether you're building a GCC, scaling a venture, preparing for exit, or coaching on strategy—we're here to help. Pick your path and get clarity fast.</p>
+  </div>
+</section>
 
-<main id="main">
-  <section class="section">
-    <div class="wrap">
-      <div class="contact-section">
-        <div class="contact-inner">
-          <span class="pill pill-orange">Contact</span>
-          <h1>Contact GCC Ventures India</h1>
-          <p>For innovation center setup, M&amp;A advisory, venture exit, or executive coaching, reach out directly and we will respond with the right next step.</p>
+<!-- ── CONTACT OPTIONS ── -->
+<section id="options">
+  <div class="container">
+    <span class="label">Get In Touch</span>
+    <h2 class="section-title">How to reach us.</h2>
+    <div class="options-grid">
+      <div class="option-card reveal">
+        <div class="option-icon">📧</div>
+        <h3 class="option-title">Email</h3>
+        <p class="option-body">For questions about coaching, GCC setup, ventures, or exit readiness—reach out directly to the right leader.</p>
+        <a href="mailto:Sanjeev@gccventuresindia.com" class="option-cta">Sanjeev (Coaching & GCC) →</a>
+        <div style="margin-top:var(--space-4)">
+          <a href="mailto:Nagaraj@gccventuresindia.com" class="option-cta">Nagaraj (Ventures & Exit) →</a>
+        </div>
+      </div>
+      <div class="option-card reveal">
+        <div class="option-icon">📞</div>
+        <h3 class="option-title">Phone</h3>
+        <p class="option-body">Prefer a quick call? Schedule directly with Sanjeev or Nagaraj. Let's talk through your situation.</p>
+        <p style="font-size:var(--text-sm);color:var(--teal);margin-top:var(--space-4);font-weight:600">Call or message to schedule</p>
+      </div>
+      <div class="option-card reveal">
+        <div class="option-icon">🗓️</div>
+        <h3 class="option-title">Calendar</h3>
+        <p class="option-body">Available for 30-minute discovery calls. No pressure. Just clarity on where you stand and what's next.</p>
+        <p style="font-size:var(--text-sm);color:var(--teal);margin-top:var(--space-4);font-weight:600">Book a time that works</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <div class="contact-cards">
-            <div class="contact-card">
-              <h3>Nagaraj &amp; Sanjeev</h3>
-              <p>GCC Ventures India, Bengaluru<br/>Phone: +91 96119 91902<br/>Email GCC: contact@gccventuresindia.com
-                <a class="mail-inline" href="mailto:contact@gccventuresindia.com" title="Write an email" aria-label="Write an email">
-                  <svg class="mail-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4.5-8 5-8-5V6l8 5 8-5v2.5z"/>
-                  </svg>
-                </a>
-              </p>
-            </div>
+<!-- ── CONTACT FORM ── -->
+<section id="form">
+  <div class="container--narrow">
+    <span class="label">Quick Message</span>
+    <h2 class="section-title">Send us a message.</h2>
+    <form class="form-container reveal" onsubmit="event.preventDefault(); alert('Thank you. We\'ll be in touch within 24 hours.');">
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required placeholder="Your name"/>
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required placeholder="you@company.com"/>
+      </div>
+      <div class="form-group">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" placeholder="Your company"/>
+      </div>
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required placeholder="Tell us a bit about your situation..."></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <button type="reset" class="btn btn-ghost">Clear</button>
+      </div>
+    </form>
+  </div>
+</section>
 
-            <div class="contact-card">
-              <h3>Coverage</h3>
-              <p>India, EMEA, Japan and APAC conversations welcome.<br/>Executive advisory with a practical, operations-grounded business lens.</p>
-            </div>
-          </div>
+<!-- ── PATH SELECTOR ── -->
+<section id="paths">
+  <div class="container">
+    <span class="label">What's Your Path?</span>
+    <h2 class="section-title">Help us understand your focus.</h2>
+    <p class="section-intro">Select the area that matches your situation. We'll route you to the right expert.</p>
+    <div class="paths-grid">
+      <div class="path-option reveal" onclick="document.getElementById('path').value='GCC Setup'; document.getElementById('path').style.borderColor='var(--orange)';">
+        <div class="path-icon">⚙️</div>
+        <div class="path-name">GCC Setup</div>
+        <div class="path-desc">Building or scaling a Global Capability Center</div>
+      </div>
+      <div class="path-option reveal" onclick="document.getElementById('path').value='Leadership Coaching'; document.getElementById('path').style.borderColor='var(--orange)';">
+        <div class="path-icon">📈</div>
+        <div class="path-name">Leadership Coaching</div>
+        <div class="path-desc">Executive coaching and strategic guidance</div>
+      </div>
+      <div class="path-option reveal" onclick="document.getElementById('path').value='Ventures & Exit'; document.getElementById('path').style.borderColor='var(--orange)';">
+        <div class="path-icon">🚀</div>
+        <div class="path-name">Ventures & Exit</div>
+        <div class="path-desc">Venture strategy, exit readiness, or transaction support</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <div class="contact-ctas">
-            <a href="mailto:contact@gccventuresindia.com" class="btn btn-email">Email now</a>
-            <a href="tel:+919611991902" class="btn btn-orange">Call now</a>
-            <a href="https://wa.me/919611991902?text=Hi%20Sanjeev%2C%20I%20found%20GCC%20Ventures%20India%20and%20would%20like%20to%20connect." target="_blank" rel="noopener" class="btn btn-whatsapp small-round">WhatsApp</a>
-            <a href="index.html" class="btn btn-dark">Back to Home</a>
-          </div>
+<!-- ── FAQ-LITE ── -->
+<section id="faq">
+  <div class="container--narrow">
+    <span class="label">Questions</span>
+    <h2 class="section-title">Before you reach out.</h2>
+    <div class="faq-container">
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What's the typical response time?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">We aim to respond within 24 hours. For urgent matters, call or message directly. For scheduled calls, we typically have availability within 3-5 business days.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>Do you work with companies outside India?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">Yes. Many of our clients are global companies building India capabilities. We also work with founders and leaders anywhere who are expanding in India or planning transactions involving India.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>Is there a cost for the initial call?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">No. The first conversation is free. 30 minutes to understand your situation and see if there's a fit. We'll be transparent about what we can help with and the investment if you decide to work together.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>How quickly can you get started?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">Depends on your timeline and scope. Some engagements start within 1-2 weeks. Others need more planning. In the initial call, we'll discuss what your timeline looks like and what's realistic.</div>
         </div>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
-<div class="bar"></div>
-
-<footer class="footer">
-  <div class="wrap footer-rule">
-    <span>© 2026 GCC Ventures India · Bengaluru, India</span>
-    <span>Innovation Center Setup · M&A Advisory · Venture Exit · Executive Coaching</span>
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">GCC Ventures India</div>
+      <div class="footer-copy">Coaching, GCC setup, and venture strategy.</div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
   </div>
 </footer>
+
+<script>
+// Hamburger menu toggle
+document.querySelector('.hamburger')?.addEventListener('click', function(e) {
+  const menu = document.querySelector('.mobile-menu');
+  const isOpen = menu.classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen);
+});
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 60);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.faq-item');
+    item.classList.toggle('open');
+  });
+});
+</script>
 
 </body>
 </html>
