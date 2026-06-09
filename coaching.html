@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Executive Coaching | GCC Ventures India</title>
+<meta name="description" content="Personal coaching for experienced leaders. From GCC leadership to C-suite preparation. Clarity, confidence, and strategic momentum."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet"/>
+<style>
+/* ── DESIGN TOKENS (shared with homepage) ── */
+:root {
+  --navy:    #080e1c;
+  --navy-2:  #0d1628;
+  --navy-3:  #111e35;
+  --navy-4:  #162340;
+  --border:  oklch(1 0 0 / 0.08);
+  --orange:  #ff9500;
+  --orange-h:#e07800;
+  --teal:    #2ec4b6;
+  --gold:    #ffd700;
+  --text:    #e8e6e0;
+  --muted:   #8a8880;
+  --faint:   #4a4845;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-6: 1.5rem; --space-8: 2rem;   --space-10: 2.5rem;
+  --space-12: 3rem;  --space-16: 4rem;  --space-20: 5rem;
+  --space-24: 6rem;
+  --radius-sm: 0.375rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;  --radius-xl: 1rem;
+  --content-narrow: 640px; --content-default: 960px; --content-wide: 1200px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);font-size:var(--text-base);color:var(--text);background:var(--navy);line-height:1.65;min-height:100dvh}
+img,svg{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.15}
+p{text-wrap:pretty;max-width:68ch}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:var(--radius-sm)}
+
+/* ── LAYOUT ── */
+.container{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+.container--narrow{max-width:var(--content-default);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:52px;padding:0.75rem 1.5rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;letter-spacing:0.02em;transition:all 180ms var(--ease);white-space:nowrap}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-h);transform:translateY(-1px);box-shadow:0 8px 24px oklch(0.6 0.2 50 / 0.3)}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:oklch(1 0 0 / 0.2);background:oklch(1 0 0 / 0.04)}
+.btn:active{transform:translateY(0)}
+
+/* ── SECTION LABEL & TITLE ── */
+.label{font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
+.section-title{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--text);margin-top:var(--space-3);margin-bottom:var(--space-4)}
+.section-intro{font-size:var(--text-base);color:var(--muted);max-width:56ch;margin-bottom:var(--space-10)}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:oklch(0.08 0.02 240 / 0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem;gap:var(--space-4);padding-inline:calc(var(--space-2));}
+.brand{display:flex;flex-direction:row;align-items:center;gap:0.6rem;text-decoration:none}
+.brand-name{font-size:var(--text-sm);font-weight:700;color:var(--orange);letter-spacing:0.04em}
+.brand-tag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);opacity:0.7}
+.nav-links{display:flex;align-items:center;gap:var(--space-6)}
+.nav-links a{font-size:var(--text-sm);font-weight:500;color:var(--orange);letter-spacing:0.02em;transition:color 150ms}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{margin-left:var(--space-4)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:var(--space-2);cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 200ms var(--ease)}
+.mobile-menu{display:none;flex-direction:column;background:var(--navy-2);border-top:1px solid var(--border);padding:var(--space-6) clamp(var(--space-4),4vw,var(--space-10))}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:var(--text-base);color:var(--gold);padding:var(--space-3) 0;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu .btn{margin-top:var(--space-4);align-self:flex-start}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+}
+
+/* ── HERO ── */
+#hero{padding-block:clamp(var(--space-12),8vw,var(--space-16));padding-top:calc(clamp(var(--space-12),8vw,var(--space-16)) + 3.5rem);background:radial-gradient(ellipse 80% 60% at 50% -10%,oklch(0.28 0.08 240 / 0.5),transparent)}
+.hero-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10));text-align:center}
+.hero-headline{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:400;color:#fff;margin-bottom:var(--space-8);line-height:1.08}
+.hero-headline em{font-style:italic;color:var(--orange)}
+.hero-sub{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin-bottom:var(--space-10);line-height:1.6}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
+.hero-actions .btn{min-width:220px}
+
+/* ── CHALLENGE CARDS ── */
+#challenge{background:var(--navy-2)}
+.challenge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-6)}
+.challenge-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));transition:border-color 200ms var(--ease),transform 200ms var(--ease)}
+.challenge-card:hover{border-color:oklch(1 0 0 / 0.18);transform:translateY(-3px)}
+.challenge-icon{font-size:2rem;margin-bottom:var(--space-6);display:inline-block;color:var(--teal)}
+.challenge-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.challenge-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── COACHING COVERS ── */
+#covers{background:var(--navy)}
+.covers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:var(--space-6)}
+.covers-card{padding:var(--space-8);border-radius:var(--radius-xl);border:1px solid var(--border);background:var(--navy-2);transition:border-color 200ms var(--ease),transform 200ms var(--ease)}
+.covers-card:hover{border-color:oklch(1 0 0 / 0.18);transform:translateY(-2px)}
+.covers-num{font-family:var(--font-display);font-size:var(--text-lg);color:var(--orange);font-style:italic;margin-bottom:var(--space-4)}
+.covers-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.covers-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── WHO THIS IS FOR ── */
+#who{background:var(--navy-2)}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-6)}
+.who-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));transition:border-color 200ms var(--ease)}
+.who-card:hover{border-color:var(--teal)}
+.who-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-4)}
+.who-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── OUTCOMES ── */
+#outcomes{background:var(--navy)}
+.outcomes-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)}
+.outcome-item{display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-8);background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl)}
+.outcome-check{flex-shrink:0;width:20px;height:20px;margin-top:3px;color:var(--teal)}
+.outcome-text{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+.outcome-text strong{color:#fff;display:block;margin-bottom:var(--space-2)}
+@media(max-width:640px){.outcomes-grid{grid-template-columns:1fr}}
+
+/* ── APPROACH STEPS ── */
+#approach{background:var(--navy-2)}
+.approach-steps{display:flex;flex-direction:column;gap:0}
+.approach-step{display:grid;grid-template-columns:3rem 1fr;gap:var(--space-6);padding:var(--space-8) 0;border-bottom:1px solid var(--border);align-items:start}
+.approach-step:last-child{border-bottom:none}
+.step-num{font-family:var(--font-display);font-size:var(--text-xl);color:var(--orange);font-style:italic;padding-top:2px}
+.step-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.step-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── FAQ ── */
+#faq{background:var(--navy)}
+.faq-container{max-width:var(--content-narrow);margin-inline:auto}
+.faq-item{background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl);margin-bottom:var(--space-6);overflow:hidden;transition:border-color 200ms var(--ease)}
+.faq-item.open{border-color:var(--orange)}
+.faq-question{padding:var(--space-8);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);font-size:var(--text-base);font-weight:600;color:#fff;user-select:none;transition:background 150ms}
+.faq-question:hover{background:oklch(1 0 0 / 0.04)}
+.faq-toggle{font-size:1.5rem;color:var(--orange);transition:transform 200ms var(--ease);flex-shrink:0}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 300ms var(--ease);}
+.faq-item.open .faq-answer{max-height:600px}
+.faq-answer-content{padding:0 var(--space-8) var(--space-8);color:var(--muted);line-height:1.7;font-size:var(--text-base)}
+
+/* ── CTA ── */
+#contact{background:var(--navy-2)}
+.cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-12),6vw,var(--space-20));text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-60%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(circle,oklch(0.65 0.2 50 / 0.06) 0%,transparent 70%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--space-6)}
+.cta-body{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin-inline:auto;margin-bottom:var(--space-10)}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
+.cta-actions .btn{min-width:220px}
+.cta-detail{margin-top:var(--space-8);font-size:var(--text-sm);color:var(--faint)}
+.cta-detail a{color:var(--teal);text-decoration:underline;text-decoration-color:oklch(from var(--teal) l c h / 0.4)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--space-10) 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6)}
+.footer-brand{font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.footer-copy{font-size:var(--text-xs);color:var(--teal)}
+.footer-links{display:flex;gap:var(--space-6)}
+.footer-links a{font-size:var(--text-xs);color:var(--orange);letter-spacing:0.04em;transition:color 150ms}
+.footer-links a:hover{color:var(--text)}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* ── RESPONSIVE ── */
+@media(max-width: 900px){
+  .hero-actions{width:100%}
+  .hero-actions .btn{min-width:0;flex:1 1 100%;width:100%;font-size:0.96rem}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
+  .hero-headline{font-size:clamp(2.3rem, 10vw, 4.2rem)}
+  .hero-sub{font-size:var(--text-base)}
+  .section-title{font-size:clamp(1.8rem, 6vw, 3rem)}
+  .challenge-grid,.covers-grid,.who-grid{grid-template-columns:1fr}
+  .outcomes-grid{grid-template-columns:1fr}
+  .cta-actions{width:100%}
+  .cta-actions .btn{min-width:0;flex:1 1 100%;width:100%;font-size:0.96rem}
+  .cta-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
+  .nav-inner{height:4.25rem}
+}
+
+@media(max-width: 640px){
+  section{padding-block:4.5rem}
+  #hero{padding-top:6.5rem;padding-bottom:4.5rem}
+  .hero-inner,.container,.container--narrow{padding-inline:1rem}
+  .hero-headline{line-height:1.04;letter-spacing:-0.02em}
+  .hero-actions .btn{padding:0.9rem 1rem;font-size:0.95rem}
+  .btn{min-height:48px}
+  .challenge-card,.covers-card,.who-card,.outcome-item,.cta-box{padding:1.25rem}
+  .approach-step{grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.25rem 0}
+  .faq-question{padding:1rem}
+  .faq-answer-content{padding:0 1rem 1rem}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-links{flex-wrap:wrap;gap:1rem}
+}
+
+@media(max-width: 420px){
+  .nav-links{display:none}
+  .hero-headline{font-size:2.1rem}
+  .cta-title{font-size:1.9rem}
+  .section-title{font-size:1.7rem}
+  .hero-sub,.section-intro,.step-body,.challenge-body,.covers-body,.who-body,.outcome-text,.cta-body{font-size:0.98rem}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── HEADER/NAV ── -->
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="brand">
+      <span class="brand-name">GCC VENTURES</span>
+      <span class="brand-tag">Coaching</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#paths">Services</a>
+      <a href="/#team">Team</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="/#paths">Services</a>
+    <a href="/#team">Team</a>
+    <a href="/#contact">Contact</a>
+    <button class="btn btn-primary" style="width:100%">Schedule Call</button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Clarity for <em>experienced</em> leaders. / Confidence for <em>next moves</em>.</h1>
+    <p class="hero-sub">You've built things. You've led teams. Now you're facing choices that matter. Strategic coaching to navigate the GCC world, board roles, C-suite transitions, and advisory paths.</p>
+    <div class="hero-actions">
+      <a href="mailto:Sanjeev@gccventuresindia.com" class="btn btn-primary">Schedule Coaching Call</a>
+      <a href="/" class="btn btn-ghost">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CORE CHALLENGE ── -->
+<section id="challenge">
+  <div class="container">
+    <span class="label">The Real Problem</span>
+    <h2 class="section-title">Leaders like you face unique challenges.</h2>
+    <p class="section-intro">You have experience. You have judgment. But the specific context—whether it's GCC dynamics, navigating India ecosystems, or preparing for board-level roles—can feel unfamiliar.</p>
+    <div class="challenge-grid">
+      <div class="challenge-card reveal">
+        <div class="challenge-icon">🎯</div>
+        <h3 class="challenge-title">GCC Complexity</h3>
+        <p class="challenge-body">Building or scaling a Global Capability Center requires more than operations knowledge. It's strategy, governance, people.</p>
+      </div>
+      <div class="challenge-card reveal">
+        <div class="challenge-icon">🌏</div>
+        <h3 class="challenge-title">India Context</h3>
+        <p class="challenge-body">Strategic thinking in India is different. Economics, regulatory paths, talent dynamics, investor expectations—it's its own game.</p>
+      </div>
+      <div class="challenge-card reveal">
+        <div class="challenge-icon">⚡</div>
+        <h3 class="challenge-title">Transition Clarity</h3>
+        <p class="challenge-body">Moving to board roles, advisory work, or C-suite positions requires clarity on fit, timing, and positioning. Guesswork is expensive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT COACHING COVERS ── -->
+<section id="covers">
+  <div class="container">
+    <span class="label">What We Dive Into</span>
+    <h2 class="section-title">Coaching tailored to your questions.</h2>
+    <p class="section-intro">This is not GCC setup consulting or operational advice. This is strategic coaching for your professional judgment and next moves.</p>
+    <div class="covers-grid">
+      <div class="covers-card reveal">
+        <div class="covers-num">1</div>
+        <h3 class="covers-title">GCC Strategy & Leadership</h3>
+        <p class="covers-body">Clarity on GCC positioning, leader role expectations, managing growth, stakeholder dynamics, and India-specific governance.</p>
+      </div>
+      <div class="covers-card reveal">
+        <div class="covers-num">2</div>
+        <h3 class="covers-title">Career Navigation</h3>
+        <p class="covers-body">Mapping paths to board roles, C-suite positions, advisory work. What roles fit? What's your unfair advantage? Timing and positioning.</p>
+      </div>
+      <div class="covers-card reveal">
+        <div class="covers-num">3</div>
+        <h3 class="covers-title">Executive Decision-Making</h3>
+        <p class="covers-body">Working through complex decisions. Organizational challenges. Team dynamics. When to move, when to stay. Confidence in judgment calls.</p>
+      </div>
+      <div class="covers-card reveal">
+        <div class="covers-num">4</div>
+        <h3 class="covers-title">India Market Intelligence</h3>
+        <p class="covers-body">Strategic understanding of India's business ecosystem, regulatory landscape, talent dynamics, and how to think about India-first opportunities.</p>
+      </div>
+      <div class="covers-card reveal">
+        <div class="covers-num">5</div>
+        <h3 class="covers-title">Personal Positioning</h3>
+        <p class="covers-body">How you show up. How you're perceived. Your executive presence, communication, and alignment with next-level roles.</p>
+      </div>
+      <div class="covers-card reveal">
+        <div class="covers-num">6</div>
+        <h3 class="covers-title">Strategic Thinking</h3>
+        <p class="covers-body">Developing frameworks for long-term thinking. Spotting opportunities others miss. Building conviction in uncertain scenarios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO THIS IS FOR ── -->
+<section id="who">
+  <div class="container">
+    <span class="label">You Fit If</span>
+    <h2 class="section-title">This coaching is for specific leaders.</h2>
+    <div class="who-grid">
+      <div class="who-card reveal">
+        <h3 class="who-title">GCC Leaders & Executives</h3>
+        <p class="who-body">Running or building Global Capability Centers. You want strategic clarity on culture, growth, leadership models, and managing up.</p>
+      </div>
+      <div class="who-card reveal">
+        <h3 class="who-title">Finance & Operations Leaders</h3>
+        <p class="who-body">CFOs, COOs, SVPs in operations. You manage India teams, navigate board conversations, and think about company strategy—not just execution.</p>
+      </div>
+      <div class="who-card reveal">
+        <h3 class="who-title">C-Suite Bound</h3>
+        <p class="who-body">Ready for or in transition to CEO, CFO, COO roles. You need strategic coaching on this specific step and personal positioning for it.</p>
+      </div>
+      <div class="who-card reveal">
+        <h3 class="who-title">Board & Advisory Ready</h3>
+        <p class="who-body">Building expertise and positioning for independent board roles or advisory work. You want a sounding board for strategic choices and credibility building.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPECTED OUTCOMES ── -->
+<section id="outcomes">
+  <div class="container">
+    <span class="label">You'll Walk Away With</span>
+    <h2 class="section-title">Clarity. Confidence. Strategic momentum.</h2>
+    <div class="outcomes-grid">
+      <div class="outcome-item reveal">
+        <svg class="outcome-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div class="outcome-text"><strong>Clarity on your path</strong> Where you're uniquely valuable. What's next for you. Why it matters.</div>
+      </div>
+      <div class="outcome-item reveal">
+        <svg class="outcome-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div class="outcome-text"><strong>Strategic frameworks</strong> How to think about complex scenarios. Tools for decision-making. Confidence in judgment calls.</div>
+      </div>
+      <div class="outcome-item reveal">
+        <svg class="outcome-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div class="outcome-text"><strong>India-specific insight</strong> How the ecosystem works. Where opportunities hide. What international leaders often miss.</div>
+      </div>
+      <div class="outcome-item reveal">
+        <svg class="outcome-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div class="outcome-text"><strong>Executive presence</strong> How to position yourself. What you should emphasize. How to show up for board and C-suite roles.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COACHING APPROACH ── -->
+<section id="approach">
+  <div class="container--narrow">
+    <span class="label">How It Works</span>
+    <h2 class="section-title">A straightforward process.</h2>
+    <div class="approach-steps">
+      <div class="approach-step reveal">
+        <div class="step-num">1</div>
+        <div>
+          <h3 class="step-title">Initial Conversation</h3>
+          <p class="step-body">30 minutes. You share what's on your mind. We listen. No agenda beyond understanding where you are and what matters to you.</p>
+        </div>
+      </div>
+      <div class="approach-step reveal">
+        <div class="step-num">2</div>
+        <div>
+          <h3 class="step-title">Coaching Plan</h3>
+          <p class="step-body">Based on our conversation, we design a customized plan. Focus areas, pace, outcomes. Transparency on time and investment.</p>
+        </div>
+      </div>
+      <div class="approach-step reveal">
+        <div class="step-num">3</div>
+        <div>
+          <h3 class="step-title">Deep Coaching Sessions</h3>
+          <p class="step-body">Typically 1-hour sessions. Strategic thinking. Framework building. Working through real scenarios from your world. Honest feedback.</p>
+        </div>
+      </div>
+      <div class="approach-step reveal">
+        <div class="step-num">4</div>
+        <div>
+          <h3 class="step-title">Between-Session Work</h3>
+          <p class="step-body">You practice. You apply learning. You come back with new insights and challenges. That's where breakthroughs happen.</p>
+        </div>
+      </div>
+      <div class="approach-step reveal">
+        <div class="step-num">5</div>
+        <div>
+          <h3 class="step-title">Review & Next Steps</h3>
+          <p class="step-body">After initial sessions, we review what's shifted. Clarity gained. Confidence built. What's next? Continue? New focus? Your choice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="container--narrow">
+    <span class="label">Questions</span>
+    <h2 class="section-title">Common questions answered.</h2>
+    <div class="faq-container">
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>How is this different from consulting?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">Consulting gives you a plan or recommendation. Coaching develops your judgment. You're the expert on your situation—we help you think it through clearly. Our focus is on you and your decision-making, not on delivering a report or implementation plan.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>Is this about GCC operations or GCC leadership?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">Leadership. Strategy. How to think about GCC as a business unit. We're not doing process optimization or ops reviews. If you need help designing a GCC structure or implementation, that's a different conversation—and we can point you to the right resource.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>How long does coaching typically take?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">Depends on your situation. Some leaders need 4-6 focused sessions around a specific decision. Others prefer 6-12 sessions for deeper strategic work. We'll discuss what makes sense after your first conversation. You're never locked in—you can always adjust or pause.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>Who coaches you?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">Sanjeev coaches most leaders in this space. He brings 20+ years of building and scaling GCCs, board experience, and direct knowledge of India's business landscape. Your coaching is with him—not handed off to someone else.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What's the investment?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">Coaching for executives typically runs $15K–$35K per engagement, depending on duration and focus. We'll be transparent about this in your initial conversation. Payment is flexible—upfront, or session-by-session. No surprises.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="contact">
+  <div class="container--narrow">
+    <div class="cta-box">
+      <h2 class="cta-title">Ready to think this through?</h2>
+      <p class="cta-body">Let's talk about where you are and what's next. No obligation. Just a conversation.</p>
+      <div class="cta-actions">
+        <a href="mailto:Sanjeev@gccventuresindia.com" class="btn btn-primary">Schedule Coaching Call</a>
+        <a href="/" class="btn btn-ghost">Return to Home</a>
+      </div>
+      <div class="cta-detail">Or call <a href="tel:+919876543210">directly</a> to schedule.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">GCC Ventures India</div>
+      <div class="footer-copy">Strategic coaching for leaders building in India.</div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/#team">Team</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Hamburger menu toggle
+document.querySelector('.hamburger')?.addEventListener('click', function(e) {
+  const menu = document.querySelector('.mobile-menu');
+  const isOpen = menu.classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen);
+});
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 60);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.faq-item');
+    item.classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>
