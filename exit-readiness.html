@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Exit Readiness | GCC Ventures India</title>
+<meta name="description" content="Prepare your company for exit. Governance, value protection, leadership transition, and buyer-readiness. From strategy to sale."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet"/>
+<style>
+/* ── DESIGN TOKENS (shared with homepage) ── */
+:root {
+  --navy:    #080e1c;
+  --navy-2:  #0d1628;
+  --navy-3:  #111e35;
+  --navy-4:  #162340;
+  --border:  oklch(1 0 0 / 0.08);
+  --orange:  #ff9500;
+  --orange-h:#e07800;
+  --teal:    #2ec4b6;
+  --gold:    #ffd700;
+  --text:    #e8e6e0;
+  --muted:   #8a8880;
+  --faint:   #4a4845;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-6: 1.5rem; --space-8: 2rem;   --space-10: 2.5rem;
+  --space-12: 3rem;  --space-16: 4rem;  --space-20: 5rem;
+  --space-24: 6rem;
+  --radius-sm: 0.375rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;  --radius-xl: 1rem;
+  --content-narrow: 640px; --content-default: 960px; --content-wide: 1200px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);font-size:var(--text-base);color:var(--text);background:var(--navy);line-height:1.65;min-height:100dvh}
+img,svg{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.15}
+p{text-wrap:pretty;max-width:68ch}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:var(--radius-sm)}
+
+/* ── LAYOUT ── */
+.container{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+.container--narrow{max-width:var(--content-default);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:52px;padding:0.75rem 1.5rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;letter-spacing:0.02em;transition:all 180ms var(--ease);white-space:nowrap}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-h);transform:translateY(-1px);box-shadow:0 8px 24px oklch(0.6 0.2 50 / 0.3)}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:oklch(1 0 0 / 0.2);background:oklch(1 0 0 / 0.04)}
+.btn:active{transform:translateY(0)}
+
+/* ── SECTION LABEL & TITLE ── */
+.label{font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
+.section-title{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--text);margin-top:var(--space-3);margin-bottom:var(--space-4)}
+.section-intro{font-size:var(--text-base);color:var(--muted);max-width:56ch;margin-bottom:var(--space-10)}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:oklch(0.08 0.02 240 / 0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem;gap:var(--space-4);padding-inline:calc(var(--space-2));}
+.brand{display:flex;flex-direction:row;align-items:center;gap:0.6rem;text-decoration:none}
+.brand-name{font-size:var(--text-sm);font-weight:700;color:var(--orange);letter-spacing:0.04em}
+.brand-tag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);opacity:0.7}
+.nav-links{display:flex;align-items:center;gap:var(--space-6)}
+.nav-links a{font-size:var(--text-sm);font-weight:500;color:var(--orange);letter-spacing:0.02em;transition:color 150ms}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{margin-left:var(--space-4)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:var(--space-2);cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 200ms var(--ease)}
+.mobile-menu{display:none;flex-direction:column;background:var(--navy-2);border-top:1px solid var(--border);padding:var(--space-6) clamp(var(--space-4),4vw,var(--space-10))}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:var(--text-base);color:var(--gold);padding:var(--space-3) 0;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu .btn{margin-top:var(--space-4);align-self:flex-start}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+}
+
+/* ── HERO ── */
+#hero{padding-block:clamp(var(--space-12),8vw,var(--space-16));padding-top:calc(clamp(var(--space-12),8vw,var(--space-16)) + 3.5rem);background:radial-gradient(ellipse 80% 60% at 50% -10%,oklch(0.28 0.08 240 / 0.5),transparent)}
+.hero-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10));text-align:center}
+.hero-headline{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:400;color:#fff;margin-bottom:var(--space-8);line-height:1.08}
+.hero-headline em{font-style:italic;color:var(--orange)}
+.hero-sub{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin-bottom:var(--space-10);line-height:1.6}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
+.hero-actions .btn{min-width:220px}
+
+/* ── MATTER CARDS ── */
+#matter{background:var(--navy-2)}
+.matter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-6)}
+.matter-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));transition:border-color 200ms var(--ease),transform 200ms var(--ease)}
+.matter-card:hover{border-color:oklch(1 0 0 / 0.18);transform:translateY(-3px)}
+.matter-icon{font-size:2rem;margin-bottom:var(--space-6);display:inline-block;color:var(--teal)}
+.matter-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.matter-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── HELP WITH CARDS ── */
+#help{background:var(--navy)}
+.help-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:var(--space-6)}
+.help-card{padding:var(--space-8);border-radius:var(--radius-xl);border:1px solid var(--border);background:var(--navy-2);transition:border-color 200ms var(--ease),transform 200ms var(--ease)}
+.help-card:hover{border-color:oklch(1 0 0 / 0.18);transform:translateY(-2px)}
+.help-num{font-family:var(--font-display);font-size:var(--text-lg);color:var(--orange);font-style:italic;margin-bottom:var(--space-4)}
+.help-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.help-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── WHO THIS IS FOR ── */
+#who{background:var(--navy-2)}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-6)}
+.who-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));transition:border-color 200ms var(--ease)}
+.who-card:hover{border-color:var(--teal)}
+.who-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-4)}
+.who-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── JOURNEY STEPS ── */
+#journey{background:var(--navy)}
+.journey-steps{display:flex;flex-direction:column;gap:0}
+.journey-step{display:grid;grid-template-columns:3rem 1fr;gap:var(--space-6);padding:var(--space-8) 0;border-bottom:1px solid var(--border);align-items:start}
+.journey-step:last-child{border-bottom:none}
+.step-num{font-family:var(--font-display);font-size:var(--text-xl);color:var(--orange);font-style:italic;padding-top:2px}
+.step-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.step-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── BENEFITS ── */
+#benefits{background:var(--navy-2)}
+.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)}
+.benefit-item{display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-8);background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl)}
+.benefit-check{flex-shrink:0;width:20px;height:20px;margin-top:3px;color:var(--orange)}
+.benefit-text{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+.benefit-text strong{color:#fff;display:block;margin-bottom:var(--space-2)}
+@media(max-width:640px){.benefits-grid{grid-template-columns:1fr}}
+
+/* ── FAQ ── */
+#faq{background:var(--navy)}
+.faq-container{max-width:var(--content-narrow);margin-inline:auto}
+.faq-item{background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl);margin-bottom:var(--space-6);overflow:hidden;transition:border-color 200ms var(--ease)}
+.faq-item.open{border-color:var(--orange)}
+.faq-question{padding:var(--space-8);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);font-size:var(--text-base);font-weight:600;color:#fff;user-select:none;transition:background 150ms}
+.faq-question:hover{background:oklch(1 0 0 / 0.04)}
+.faq-toggle{font-size:1.5rem;color:var(--orange);transition:transform 200ms var(--ease);flex-shrink:0}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 300ms var(--ease);}
+.faq-item.open .faq-answer{max-height:600px}
+.faq-answer-content{padding:0 var(--space-8) var(--space-8);color:var(--muted);line-height:1.7;font-size:var(--text-base)}
+
+/* ── CTA ── */
+#contact{background:var(--navy-2)}
+.cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-12),6vw,var(--space-20));text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-60%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(circle,oklch(0.65 0.2 50 / 0.06) 0%,transparent 70%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--space-6)}
+.cta-body{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin-inline:auto;margin-bottom:var(--space-10)}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
+.cta-actions .btn{min-width:220px}
+.cta-detail{margin-top:var(--space-8);font-size:var(--text-sm);color:var(--faint)}
+.cta-detail a{color:var(--teal);text-decoration:underline;text-decoration-color:oklch(from var(--teal) l c h / 0.4)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--space-10) 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6)}
+.footer-brand{font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.footer-copy{font-size:var(--text-xs);color:var(--teal)}
+.footer-links{display:flex;gap:var(--space-6)}
+.footer-links a{font-size:var(--text-xs);color:var(--orange);letter-spacing:0.04em;transition:color 150ms}
+.footer-links a:hover{color:var(--text)}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* ── RESPONSIVE ── */
+@media(max-width: 900px){
+  .hero-actions{width:100%}
+  .hero-actions .btn{min-width:0;flex:1 1 100%;width:100%;font-size:0.96rem}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
+  .hero-headline{font-size:clamp(2.3rem, 10vw, 4.2rem)}
+  .hero-sub{font-size:var(--text-base)}
+  .section-title{font-size:clamp(1.8rem, 6vw, 3rem)}
+  .matter-grid,.help-grid,.who-grid{grid-template-columns:1fr}
+  .benefits-grid{grid-template-columns:1fr}
+  .cta-actions{width:100%}
+  .cta-actions .btn{min-width:0;flex:1 1 100%;width:100%;font-size:0.96rem}
+  .cta-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
+  .nav-inner{height:4.25rem}
+}
+
+@media(max-width: 640px){
+  section{padding-block:4.5rem}
+  #hero{padding-top:6.5rem;padding-bottom:4.5rem}
+  .hero-inner,.container,.container--narrow{padding-inline:1rem}
+  .hero-headline{line-height:1.04;letter-spacing:-0.02em}
+  .hero-actions .btn{padding:0.9rem 1rem;font-size:0.95rem}
+  .btn{min-height:48px}
+  .matter-card,.help-card,.who-card,.benefit-item,.cta-box{padding:1.25rem}
+  .journey-step{grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.25rem 0}
+  .faq-question{padding:1rem}
+  .faq-answer-content{padding:0 1rem 1rem}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-links{flex-wrap:wrap;gap:1rem}
+}
+
+@media(max-width: 420px){
+  .nav-links{display:none}
+  .hero-headline{font-size:2.1rem}
+  .cta-title{font-size:1.9rem}
+  .section-title{font-size:1.7rem}
+  .hero-sub,.section-intro,.step-body,.matter-body,.help-body,.who-body,.benefit-text,.cta-body{font-size:0.98rem}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── HEADER/NAV ── -->
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="brand">
+      <span class="brand-name">GCC VENTURES</span>
+      <span class="brand-tag">Exit Ready</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#paths">Services</a>
+      <a href="/#team">Team</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="/#paths">Services</a>
+    <a href="/#team">Team</a>
+    <a href="/#contact">Contact</a>
+    <button class="btn btn-primary" style="width:100%">Schedule Conversation</button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Get your company <em>exit ready.</em> / Strategic clarity <em>before</em> the sale.</h1>
+    <p class="hero-sub">Exit readiness isn't last-minute work. It's governance, value protection, leadership structure, and buyer confidence built years ahead. We help you prepare systematically.</p>
+    <div class="hero-actions">
+      <a href="mailto:Nagaraj@gccventuresindia.com" class="btn btn-primary">Schedule Strategy Call</a>
+      <a href="/" class="btn btn-ghost">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY EXIT READINESS MATTERS ── -->
+<section id="matter">
+  <div class="container">
+    <span class="label">Why It Matters</span>
+    <h2 class="section-title">Most founders leave value on the table.</h2>
+    <p class="section-intro">Without exit readiness, you're vulnerable. Buyers see gaps. Your leverage drops. Negotiations take longer. Due diligence stalls. You lose months—and millions.</p>
+    <div class="matter-grid">
+      <div class="matter-card reveal">
+        <div class="matter-icon">💰</div>
+        <h3 class="matter-title">Value Erosion</h3>
+        <p class="matter-body">Unprepared governance, weak leadership bench, unclear documentation—these reduce what buyers will pay. Exit readiness compounds value.</p>
+      </div>
+      <div class="matter-card reveal">
+        <div class="matter-icon">⏱️</div>
+        <h3 class="matter-title">Time & Friction</h3>
+        <p class="matter-body">Due diligence delays. Renegotiations. Board concerns. Leadership gaps surface during buyer conversations. Months add up. Deals collapse.</p>
+      </div>
+      <div class="matter-card reveal">
+        <div class="matter-icon">🎯</div>
+        <h3 class="matter-title">Buyer Confidence</h3>
+        <p class="matter-body">Sophisticated buyers want to buy an organization, not just the founder's relationships. Exit readiness proves you've built something durable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT WE HELP WITH ── -->
+<section id="help">
+  <div class="container">
+    <span class="label">Our Focus</span>
+    <h2 class="section-title">Six areas that drive exit readiness.</h2>
+    <p class="section-intro">We work on the things that matter to buyers and protect your interests in the transaction.</p>
+    <div class="help-grid">
+      <div class="help-card reveal">
+        <div class="help-num">1</div>
+        <h3 class="help-title">Governance & Controls</h3>
+        <p class="help-body">Board structure, financial controls, compliance, documentation. Buyers want to see a professional organization.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-num">2</div>
+        <h3 class="help-title">Value Protection</h3>
+        <p class="help-body">Identifying risk areas. Strengthening IP. Protecting customer contracts. Reducing earn-out exposure. Negotiating on your terms.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-num">3</div>
+        <h3 class="help-title">Leadership Bench</h3>
+        <p class="help-body">Building a leadership team that works without the founder. Depth in operations, product, sales. Proven delegation. Succession clarity.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-num">4</div>
+        <h3 class="help-title">Financial Clarity</h3>
+        <p class="help-body">Clean financial statements. Predictable metrics. Unit economics clarity. Projections that hold up. What buyers actually want to see.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-num">5</div>
+        <h3 class="help-title">Buyer-Facing Readiness</h3>
+        <p class="help-body">How to pitch your company. Positioning for buyers. Managing due diligence. Negotiating confidently. Messaging throughout the process.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-num">6</div>
+        <h3 class="help-title">Transaction Strategy</h3>
+        <p class="help-body">Timing the market. Valuation frameworks. Deal structure. Earnout negotiation. Tax planning. Post-acquisition transition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO THIS IS FOR ── -->
+<section id="who">
+  <div class="container">
+    <span class="label">Your Situation</span>
+    <h2 class="section-title">This is for founders and leaders thinking ahead.</h2>
+    <div class="who-grid">
+      <div class="who-card reveal">
+        <h3 class="who-title">Growth-Stage Founders</h3>
+        <p class="who-body">You're building something valuable. You want to maximize exit value when the time comes. Start now, not later.</p>
+      </div>
+      <div class="who-card reveal">
+        <h3 class="who-title">CEOs & Business Leaders</h3>
+        <p class="who-body">You own or run a profitable company. You're thinking about what's next. Exit readiness gives you options.</p>
+      </div>
+      <div class="who-card reveal">
+        <h3 class="who-title">CFOs & Finance Leaders</h3>
+        <p class="who-body">You understand valuation and transactions. You know what buyers scrutinize. You want to strengthen those areas now.</p>
+      </div>
+      <div class="who-card reveal">
+        <h3 class="who-title">Ownership Groups</h3>
+        <p class="who-body">Partnerships that need clarity on value, governance, and exit strategy. How to structure for maximum value at sale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXIT READINESS JOURNEY ── -->
+<section id="journey">
+  <div class="container--narrow">
+    <span class="label">The Process</span>
+    <h2 class="section-title">Five phases to exit readiness.</h2>
+    <div class="journey-steps">
+      <div class="journey-step reveal">
+        <div class="step-num">1</div>
+        <div>
+          <h3 class="step-title">Assessment</h3>
+          <p class="step-body">We evaluate where you stand. Governance gaps. Leadership depth. Financial clarity. Value drivers. Buyer perspective on risk.</p>
+        </div>
+      </div>
+      <div class="journey-step reveal">
+        <div class="step-num">2</div>
+        <div>
+          <h3 class="step-title">Roadmap</h3>
+          <p class="step-body">Clear exit readiness plan. What matters most. Timeline. Actions. Investment required. Quick wins and deep work separated.</p>
+        </div>
+      </div>
+      <div class="journey-step reveal">
+        <div class="step-num">3</div>
+        <div>
+          <h3 class="step-title">Execution</h3>
+          <p class="step-body">We help you strengthen governance, build leadership bench, clarify financials, protect value. You implement. We advise and course-correct.</p>
+        </div>
+      </div>
+      <div class="journey-step reveal">
+        <div class="step-num">4</div>
+        <div>
+          <h3 class="step-title">Validation</h3>
+          <p class="step-body">Mock due diligence. Buyer perspective. What are we missing? What will buyers ask? Final refinements before you go to market.</p>
+        </div>
+      </div>
+      <div class="journey-step reveal">
+        <div class="step-num">5</div>
+        <div>
+          <h3 class="step-title">Transaction Support</h3>
+          <p class="step-body">When you're ready to sell, we guide you. Valuation strategy. Buyer conversations. Deal structure. Negotiation support. Closing readiness.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY EARLY PREPARATION MATTERS ── -->
+<section id="benefits">
+  <div class="container">
+    <span class="label">The Upside</span>
+    <h2 class="section-title">Why you should start now.</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item reveal">
+        <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div class="benefit-text"><strong>Higher valuation</strong> Buyers pay for professional, de-risked organizations. Exit readiness compounds your value.</div>
+      </div>
+      <div class="benefit-item reveal">
+        <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div class="benefit-text"><strong>Faster deal closure</strong> No surprises in due diligence. Cleaner documentation. Fewer renegotiations. Exit in months, not years.</div>
+      </div>
+      <div class="benefit-item reveal">
+        <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div class="benefit-text"><strong>Negotiation power</strong> You control the timeline. You're prepared. You negotiate from strength, not desperation.</div>
+      </div>
+      <div class="benefit-item reveal">
+        <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div class="benefit-text"><strong>Better business anyway</strong> Exit readiness makes your company better to run. Governance, clarity, leadership bench—these make you more valuable regardless of exit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="container--narrow">
+    <span class="label">Questions</span>
+    <h2 class="section-title">Exit readiness answered.</h2>
+    <div class="faq-container">
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>When should we start thinking about exit readiness?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">Now. Not when you're actively selling, but years before. Exit readiness is built over time. If you're profitable and growing, you should be thinking about it. If you think you'll exit in 3-5 years, start in year 1 or 2. It compounds your value and reduces friction when you do sell.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>How long does exit readiness take?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">Depends where you start. Some companies are 80% ready and need refinement (3-6 months). Others need deeper work (12-18 months). We assess your gaps and give you a clear timeline. The key: start early so you're not rushing.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>Do we need to be planning to sell soon?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">No. Many clients aren't planning an exit yet. They're building a better business and want options. Exit readiness isn't about forcing a sale—it's about having the leverage to sell when you're ready, on your terms. It also makes your business better to run.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What if we're not sure about our valuation?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">We help you understand valuation frameworks. Market multiples. What drives your value. What buyers actually pay for. By getting exit ready, you also improve your positioning and valuation power. Clarity on this is part of the process.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>Can you help us with the actual sale?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">Yes. We guide you through buyer conversations, valuation strategy, deal structure, and negotiation. We're not transaction lawyers or investment bankers, but we advise on strategic decisions and help you manage the process smartly. For legal and tax matters, you'll work with specialists.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="contact">
+  <div class="container--narrow">
+    <div class="cta-box">
+      <h2 class="cta-title">Let's get you exit ready.</h2>
+      <p class="cta-body">Whether you're thinking about exiting in 2 years or 5, now is the time to build readiness. Let's talk about where you stand and what matters most.</p>
+      <div class="cta-actions">
+        <a href="mailto:Nagaraj@gccventuresindia.com" class="btn btn-primary">Schedule Strategy Call</a>
+        <a href="/" class="btn btn-ghost">Return to Home</a>
+      </div>
+      <div class="cta-detail">Or call <a href="tel:+919876543210">directly</a> to discuss your situation.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">GCC Ventures India</div>
+      <div class="footer-copy">Exit strategy and buyer readiness for profitable companies.</div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/#team">Team</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Hamburger menu toggle
+document.querySelector('.hamburger')?.addEventListener('click', function(e) {
+  const menu = document.querySelector('.mobile-menu');
+  const isOpen = menu.classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen);
+});
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 60);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.faq-item');
+    item.classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>
