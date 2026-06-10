@@ -185,7 +185,7 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:var(--space-8);align-items:stretch}
 .team-card{background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));display:flex;flex-direction:column;min-height:360px}
 
-.team-photo{width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--border);margin-bottom:var(--space-6);box-shadow:0 4px 20px oklch(0 0 0 / 0.4)}
+.team-photo{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--border);margin-bottom:var(--space-6);box-shadow:0 4px 20px oklch(0 0 0 / 0.4)}
 
 .team-avatar{width:64px;height:64px;border-radius:50%;background:var(--navy-3);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:var(--text-xl);color:var(--orange);margin-bottom:var(--space-6)}
 .team-name{font-size:var(--text-xl);font-weight:700;color:#fff;margin-bottom:var(--space-2)}
@@ -320,9 +320,12 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
       </a>
       <div class="nav-links" role="list">
         <a href="#home" role="listitem">Home</a>
-        <a href="#paths" role="listitem">Paths</a>
-        <a href="#team" role="listitem">Team</a>
+        <a href="#gcc-setup" role="listitem">GCC Setup</a>
+        <a href="#leadership-coaching" role="listitem">Leadership Coaching</a>
+        <a href="#ventures-exit" role="listitem">Ventures / Exit</a>
+        <a href="about.html" role="listitem">About</a>
         <a href="#contact" role="listitem">Contact</a>
+        <a href="insights.html" role="listitem">Insights</a>
       </div>
       <a href="https://wa.me/919611991902?text=Hi%20Sanjeev%2C%20I%20came%20across%20GCC%20Ventures%20India%20and%20would%20like%20to%20explore%20further.%20Can%20we%20set%20up%20a%20brief%20call%3F" target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta small-round"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0">
 <circle cx="16" cy="16" r="16" fill="#25D366"/>
@@ -336,9 +339,12 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   </div>
   <div class="mobile-menu" id="mobileMenu" role="navigation">
     <a href="#home">Home</a>
-    <a href="#paths">Paths</a>
-    <a href="#team">Team</a>
+    <a href="#gcc-setup">GCC Setup</a>
+    <a href="#leadership-coaching">Leadership Coaching</a>
+    <a href="#ventures-exit">Ventures / Exit</a>
+    <a href="about.html">About</a>
     <a href="#contact">Contact</a>
+    <a href="insights.html">Insights</a>
   </div>
 </nav>
 
@@ -349,49 +355,48 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
       <div class="ticker">GCC VENTURES INDIA &nbsp; • &nbsp;</div>
     </div>
     <h1 class="hero-headline">
-      We coach companies.<br>
-      We build GCCs in India.<br>
-      <em>We guide ventures to exit.</em>
+      <em>One path to three opportunities.</em><br>
+      GCC Setup. Leadership Coaching. Ventures & Exit.
     </h1>
-    <p class="hero-sub">Pick your path. Get clarity in one conversation.</p>
+    <p class="hero-sub">Get clarity. Get connected. Move forward in one conversation.</p>
     <div class="hero-actions">
-      <a href="#paths" class="btn btn-primary">Explore Your Path</a>
-      <a href="#contact" class="btn btn-ghost">Schedule a Call</a>
+      <a href="#gcc-setup" class="btn btn-primary">Explore Your Path</a>
+      <a href="#contact" class="btn btn-ghost">Schedule Now</a>
     </div>
   </div>
 </section>
 
 <!-- THREE PRIMARY PATHS -->
-<section id="paths" aria-label="Three Primary Paths">
+<section id="gcc-setup" aria-label="Three Primary Paths">
   <div class="container--narrow">
     <div class="paths-grid">
       <div class="path-card reveal" data-leader="sanjeev">
         <div class="path-icon">⚙️</div>
         <h3 class="path-title">GCC Setup</h3>
-        <p class="path-desc">Build and scale Global Capability Centers in India. From planning through full operations.</p>
+        <p class="path-desc">Build and scale Global Capability Centers in India from planning through full operations.</p>
         <div class="path-leader">
-          <strong>With Sanjeev</strong><br>
-          <span style="font-size:var(--text-xs);color:var(--muted);">GCC & Finance Transformation</span>
+          <strong>Sanjeev Sharma</strong><br>
+          <span style="font-size:var(--text-xs);color:var(--muted);">GCC Finance Operations Leader, GCC Ventures India</span>
         </div>
         <a href="mailto:Sanjeev.Sharma@gccventuresindia.com" class="path-cta">Start Conversation →</a>
       </div>
-      <div class="path-card reveal" data-leader="sanjeev">
+      <div class="path-card reveal" data-leader="sanjeev" id="leadership-coaching">
         <div class="path-icon">📈</div>
         <h3 class="path-title">Leadership Coaching</h3>
-        <p class="path-desc">Move to C-suite and board-level roles. Proven guidance for experienced leaders (15+ years).</p>
+        <p class="path-desc">Advance to C-suite and board roles with proven guidance for senior leaders (15+ years experience).</p>
         <div class="path-leader">
-          <strong>With Sanjeev</strong><br>
-          <span style="font-size:var(--text-xs);color:var(--muted);">Global Operations Coach</span>
+          <strong>Sanjeev Sharma</strong><br>
+          <span style="font-size:var(--text-xs);color:var(--muted);">GCC Finance Operations Leader, GCC Ventures India</span>
         </div>
         <a href="mailto:Sanjeev.Sharma@gccventuresindia.com" class="path-cta">Start Conversation →</a>
       </div>
-      <div class="path-card reveal" data-leader="nagaraj">
+      <div class="path-card reveal" data-leader="nagaraj" id="ventures-exit">
         <div class="path-icon">🚀</div>
         <h3 class="path-title">Ventures & Exit</h3>
-        <p class="path-desc">Build value from startup strategy through transaction and exit maximization.</p>
+        <p class="path-desc">Build value from startup strategy through transaction execution and exit optimization.</p>
         <div class="path-leader">
-          <strong>With Nagaraj</strong><br>
-          <span style="font-size:var(--text-xs);color:var(--muted);">Ventures & M&A Advisor</span>
+          <strong>Nagaraj</strong><br>
+          <span style="font-size:var(--text-xs);color:var(--muted);">Ventures & M&A Advisor, GCC Ventures India</span>
         </div>
         <a href="mailto:Nagaraj@gccventuresindia.com" class="path-cta">Start Conversation →</a>
       </div>
@@ -402,26 +407,25 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 <!-- CREDIBILITY STRIP -->
 <section id="credibility" aria-label="Why Trust Us">
   <div class="container--narrow">
-    <h2 class="section-title reveal" style="text-align:center;margin-bottom:var(--space-12);">Founder-led. Execution-focused.</h2>
     <div class="credibility-grid">
       <div class="credibility-item reveal">
         <div class="cred-icon">✓</div>
         <strong>20+ years</strong><br>
-        Operating experience
+        Proven execution
       </div>
       <div class="credibility-item reveal">
         <div class="cred-icon">✓</div>
-        <strong>25+ countries</strong><br>
-        Global execution
+        <strong>Founder-led</strong><br>
+        Not consultants
       </div>
       <div class="credibility-item reveal">
         <div class="cred-icon">✓</div>
-        <strong>All three angles</strong><br>
+        <strong>3 disciplines</strong><br>
         Under one roof
       </div>
       <div class="credibility-item reveal">
         <div class="cred-icon">✓</div>
-        <strong>India-first thinking</strong><br>
+        <strong>India-first</strong><br>
         Globally connected
       </div>
     </div>
@@ -432,7 +436,26 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 <section id="why" aria-label="Why GCC Ventures India">
   <div class="container--narrow">
     <h2 class="section-title reveal">Why GCC Ventures India</h2>
-    <p class="section-intro reveal">We don't advise from the sidelines. We have built GCCs, managed global operations, coached leaders, and guided exits. We work alongside you with real execution experience — not theoretical frameworks.</p>
+    <div style="max-width:56ch; margin-top: var(--space-8);">
+      <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-6);">
+        <li class="reveal" style="display: flex; gap: var(--space-4); align-items: flex-start;">
+          <span style="color: var(--teal); flex-shrink: 0; margin-top: 2px;">•</span>
+          <span style="color: var(--muted); line-height: 1.6;"><strong style="color: #fff;">We have built GCCs, managed global operations, coached leaders, and guided exits.</strong> Execution experience, not theory.</span>
+        </li>
+        <li class="reveal" style="display: flex; gap: var(--space-4); align-items: flex-start;">
+          <span style="color: var(--teal); flex-shrink: 0; margin-top: 2px;">•</span>
+          <span style="color: var(--muted); line-height: 1.6;"><strong style="color: #fff;">One founder, two complementary experts.</strong> No outsourced decisions. We work alongside you.</span>
+        </li>
+        <li class="reveal" style="display: flex; gap: var(--space-4); align-items: flex-start;">
+          <span style="color: var(--teal); flex-shrink: 0; margin-top: 2px;">•</span>
+          <span style="color: var(--muted); line-height: 1.6;"><strong style="color: #fff;">Three paths, one network.</strong> GCC expertise, leadership coaching, and venture advisory under one roof.</span>
+        </li>
+        <li class="reveal" style="display: flex; gap: var(--space-4); align-items: flex-start;">
+          <span style="color: var(--teal); flex-shrink: 0; margin-top: 2px;">•</span>
+          <span style="color: var(--muted); line-height: 1.6;"><strong style="color: #fff;">India-first, globally connected.</strong> Deep local expertise with 25+ country execution network.</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
