@@ -222,7 +222,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 <section id="hero">
   <div class="hero-inner">
     <h1 class="hero-headline">Let's talk about <em>your situation.</em></h1>
-    <p class="hero-sub">Whether you're building a GCC, scaling a venture, preparing for exit, or coaching on strategy—we're here to help. Pick your path and get clarity fast.</p>
+    <p class="hero-sub">Whether you are building a global capability, exploring an opportunity, bringing domain expertise, or looking to transform and create value, let’s start with the right conversation.</p>
   </div>
 </section>
 
@@ -232,27 +232,45 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
     <span class="label">Get In Touch</span>
     <h2 class="section-title">How to reach us.</h2>
     <div class="options-grid">
-      <div class="option-card reveal">
-        <div class="option-icon">📧</div>
-        <h3 class="option-title">Email</h3>
-        <p class="option-body">For questions about coaching, GCC setup, ventures, or exit readiness—reach out directly to the right leader.</p>
-        <a href="mailto:Sanjeev@gccventuresindia.com" class="option-cta">Sanjeev (Coaching & GCC) →</a>
-        <div style="margin-top:var(--space-4)">
-          <a href="mailto:Nagaraj@gccventuresindia.com" class="option-cta">Nagaraj (Ventures & Exit) →</a>
-        </div>
-      </div>
-      <div class="option-card reveal">
-        <div class="option-icon">📞</div>
-        <h3 class="option-title">Phone</h3>
-        <p class="option-body">Prefer a quick call? Schedule directly with Sanjeev or Nagaraj. Let's talk through your situation.</p>
-        <p style="font-size:var(--text-sm);color:var(--teal);margin-top:var(--space-4);font-weight:600">Call or message to schedule</p>
-      </div>
-      <div class="option-card reveal">
-        <div class="option-icon">🗓️</div>
-        <h3 class="option-title">Calendar</h3>
-        <p class="option-body">Available for 30-minute discovery calls. No pressure. Just clarity on where you stand and what's next.</p>
-        <p style="font-size:var(--text-sm);color:var(--teal);margin-top:var(--space-4);font-weight:600">Book a time that works</p>
-      </div>
+
+  <!-- START A CONVERSATION -->
+  <div class="option-card reveal">
+    <div class="option-icon">✉</div>
+    <h3 class="option-title">Start a Conversation</h3>
+    <p class="option-body">
+      Have an opportunity, capability requirement, domain challenge or partnership idea? Tell us what you are exploring and we will connect the right practitioner.
+    </p>
+    <a href="mailto:contact@gccventuresindia.com?subject=Enquiry - GCC Ventures India">Contact GCC Ventures →</a>
+    </div>
+
+  <!-- VIRTUAL CONVERSATION -->
+  <div class="option-card reveal">
+    <div class="option-icon">◉</div>
+    <h3 class="option-title">Virtual Conversation</h3>
+    <p class="option-body">
+      Prefer to talk? Request a focused conversation to explore the opportunity, understand the context and identify the expertise that may be relevant.
+    </p>
+    <p style="font-size:var(--text-sm);color:var(--teal);margin-top:var(--space-4);font-weight:600;">
+      Microsoft Teams • Google Meet • Zoom
+    </p>
+    <a href="mailto:contact@gccventuresindia.com?subject=Request%20for%20Virtual%20Meeting" class="option-cta">
+      Request a Virtual Meeting →
+    </a>
+  </div>
+
+  <!-- EXPLORE A PARTNERSHIP -->
+  <div class="option-card reveal">
+    <div class="option-icon">◇</div>
+    <h3 class="option-title">Explore a Partnership</h3>
+    <p class="option-body">
+      Bringing domain expertise, an industry opportunity, investment perspective or ecosystem capability? Let’s explore where we can create value together.
+    </p>
+    <a href="mailto:contact@gccventuresindia.com?subject=Request%20for%20Partnership%20Opportunity"class="option-cta">
+      Explore a Partnership →
+    </a>
+  </div>
+
+</div>
     </div>
   </div>
 </section>
@@ -262,7 +280,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   <div class="container--narrow">
     <span class="label">Quick Message</span>
     <h2 class="section-title">Send us a message.</h2>
-    <form class="form-container reveal" onsubmit="event.preventDefault(); alert('Thank you. We\'ll be in touch within 24 hours.');">
+    <form class="form-container reveal" onsubmit="sendContactEmail(event)">
       <div class="form-group">
         <label for="name">Name *</label>
         <input type="text" id="name" name="name" required placeholder="Your name"/>
@@ -407,6 +425,28 @@ document.querySelectorAll('.faq-question').forEach(button => {
     item.classList.toggle('open');
   });
 });
+function sendContactEmail(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const company = document.getElementById('company').value;
+    const message = document.getElementById('message').value;
+
+    const subject = encodeURIComponent('GCC Ventures India Enquiry - ' + name);
+
+    const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Company: ' + (company || 'Not provided') + '\n\n' +
+        'Message:\n' + message
+    );
+
+    window.location.href =
+        'mailto:contact@gccventuresindia.com?subject=' + subject + '&body=' + body;
+}
+``
+  
 </script>
 
 </body>
