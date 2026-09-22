@@ -126,6 +126,7 @@ textarea{resize:vertical;min-height:120px}
 .paths-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:var(--space-6)}
 .path-option{padding:var(--space-8);background:var(--navy-3);border:2px solid var(--border);border-radius:var(--radius-xl);cursor:pointer;transition:border-color 200ms var(--ease),transform 200ms var(--ease);text-align:center}
 .path-option:hover{border-color:var(--orange);transform:translateY(-2px)}
+.path-option.selected{border-color:var(--orange);background:var(--navy-2);transform:translateY(-4px);box-shadow:0 10px 30px rgba(255,149,0,.12)} 
 .path-icon{font-size:2.5rem;margin-bottom:var(--space-4);display:inline-block}
 .path-name{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-2)}
 .path-desc{font-size:var(--text-sm);color:var(--muted)}
@@ -281,6 +282,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
     <span class="label">Quick Message</span>
     <h2 class="section-title">Send us a message.</h2>
     <form class="form-container reveal" onsubmit="sendContactEmail(event)">
+     <input type="hidden" id="path" name="path" value=""> 
       <div class="form-group">
         <label for="name">Name *</label>
         <input type="text" id="name" name="name" required placeholder="Your name"/>
@@ -305,32 +307,59 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   </div>
 </section>
 
-<!-- ── PATH SELECTOR ── -->
+<!-- OPPORTUNITY SELECTOR -->
 <section id="paths">
   <div class="container">
-    <span class="label">What's Your Path?</span>
-    <h2 class="section-title">Help us understand your focus.</h2>
-    <p class="section-intro">Select the area that matches your situation. We'll route you to the right expert.</p>
+
+    <span class="label">What Are You Exploring?</span>
+
+    <h2 class="section-title">Help us understand the opportunity.</h2>
+
+    <p class="section-intro">
+      Select the area closest to what you are exploring. It simply helps us bring the right practitioners into the conversation.
+    </p>
+
     <div class="paths-grid">
-      <div class="path-option reveal" onclick="document.getElementById('path').value='GCC Setup'; document.getElementById('path').style.borderColor='var(--orange)';">
-        <div class="path-icon">⚙️</div>
-        <div class="path-name">GCC Setup</div>
-        <div class="path-desc">Building or scaling a Global Capability Center</div>
+
+      <div class="path-option reveal" onclick="document.getElementById('path').value='BUILD - Global Capability & GCC';">
+        <div class="path-icon">◆</div>
+        <div class="path-name">BUILD</div>
+        <div class="path-desc">Global Capability &amp; GCC</div>
       </div>
-      <div class="path-option reveal" onclick="document.getElementById('path').value='Leadership Coaching'; document.getElementById('path').style.borderColor='var(--orange)';">
-        <div class="path-icon">📈</div>
-        <div class="path-name">Leadership Coaching</div>
-        <div class="path-desc">Executive coaching and strategic guidance</div>
+
+      <div class="path-option reveal" onclick="document.getElementById('path').value='INCUBATE - Capability Incubation';">
+        <div class="path-icon">◎</div>
+        <div class="path-name">INCUBATE</div>
+        <div class="path-desc">Capability Incubation</div>
       </div>
-      <div class="path-option reveal" onclick="document.getElementById('path').value='Ventures & Exit'; document.getElementById('path').style.borderColor='var(--orange)';">
-        <div class="path-icon">🚀</div>
-        <div class="path-name">Ventures & Exit</div>
-        <div class="path-desc">Venture strategy, exit readiness, or transaction support</div>
+
+      <div class="path-option reveal" onclick="document.getElementById('path').value='TRANSFORM - Business & Digital Transformation';">
+        <div class="path-icon">△</div>
+        <div class="path-name">TRANSFORM</div>
+        <div class="path-desc">Business &amp; Digital Transformation</div>
       </div>
+
+      <div class="path-option reveal" onclick="document.getElementById('path').value='INNOVATE - Domain-Led Innovation & IP';">
+        <div class="path-icon">✦</div>
+        <div class="path-name">INNOVATE</div>
+        <div class="path-desc">Domain-Led Innovation &amp; IP</div>
+      </div>
+
+      <div class="path-option reveal" onclick="document.getElementById('path').value='CREATE VALUE - Ventures & Enterprise Value';">
+        <div class="path-icon">◇</div>
+        <div class="path-name">CREATE VALUE</div>
+        <div class="path-desc">Ventures &amp; Enterprise Value</div>
+      </div>
+
+      <div class="path-option reveal" onclick="document.getElementById('path').value='CONNECT - Experts, Ecosystems & Partnerships';">
+        <div class="path-icon">○</div>
+        <div class="path-name">CONNECT</div>
+        <div class="path-desc">Experts, Ecosystems &amp; Partnerships</div>
+      </div>
+
     </div>
   </div>
 </section>
-
 <!-- ── FAQ-LITE ── -->
 <section id="faq">
   <div class="container--narrow">
@@ -432,20 +461,30 @@ function sendContactEmail(event) {
     const email = document.getElementById('email').value;
     const company = document.getElementById('company').value;
     const message = document.getElementById('message').value;
+    const path = document.getElementById('path').value;
 
     const subject = encodeURIComponent('GCC Ventures India Enquiry - ' + name);
 
     const body = encodeURIComponent(
         'Name: ' + name + '\n' +
         'Email: ' + email + '\n' +
-        'Company: ' + (company || 'Not provided') + '\n\n' +
+        'Company: ' + (company || 'Not provided') + '\n' +
+        'Interest: ' + (path || 'Not selected') + '\n\n' +
         'Message:\n' + message
     );
 
     window.location.href =
         'mailto:contact@gccventuresindia.com?subject=' + subject + '&body=' + body;
 }
-``
+document.querySelectorAll('.path-option').forEach(card => {
+card.addEventListener('click', function () {
+document.querySelectorAll('.path-option').forEach(item => {
+item.classList.remove('selected');
+});
+this.classList.add('selected');
+});
+});
+  
   
 </script>
 
