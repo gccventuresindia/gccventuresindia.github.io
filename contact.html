@@ -202,34 +202,38 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   }
 }
 
-/* Mobile - force 1 card per row */
-@media (max-width: 600px) {
-.paths-grid {
-display: grid !important;
-grid-template-columns: minmax(0, 1fr) !important;
-gap: 14px !important;
-width: 100%;
+/* Mobile - compact single-column path cards */
+@media screen and (max-width: 60*px) {
+
+  .paths-grid {
+    display* grid !important;
+    grid-templat*-columns: 1fr !important;
+    widt*: 100% !important;
+    gap: 12px !*mportant;
+  }
+
+  .paths-grid > .pa*h-option {
+    width: 100% !import*nt;
+    max-width: 100% !important*
+    min-width: 0 !important;
+    *eight: auto !important;
+    min-he*ght: 0 !important;
+    box-sizing:*border-box !important;
+    padding* 16px !important;
+  }
+
+  .paths-gr*d > .path-option .path-icon {
+    *argin-bottom: 8px !important;
+  }
+*  .paths-grid > .path-option .path*name {
+    margin-bottom: 4px !imp*rtant;
+  }
+
+  .paths-grid > .path-*ption .path-desc {
+    line-height* 1.45 !important;
+  }
 }
- 
-.path-option {
-width: 100%;
-min-width: 0;
-box-sizing: border-box;
-padding: 20px 18px !important;
-}
- 
-.path-icon {
-margin-bottom: 10px;
-}
- 
-.path-name {
-margin-bottom: 6px;
-}
- 
-.path-desc {
-line-height: 1.5;
-}
-}
+  
   
 </style>
 </head>
