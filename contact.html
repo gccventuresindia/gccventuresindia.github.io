@@ -190,6 +190,42 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   .hero-sub,.section-intro,.option-body,.path-desc,.faq-answer-content{font-size:0.98rem}
 }
 
+/* Tablet - 2 cards per row */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .paths-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .path-option {
+    padding: 24px 20px;
+  }
+}
+
+/* Mobile - 1 compact card per row */
+@media (max-width: 600px) {
+.paths-grid {
+grid-template-columns: 1fr;
+gap: 12px;
+}
+ 
+.path-option {
+padding: 18px 16px;
+}
+ 
+.path-icon {
+margin-bottom: 10px;
+}
+ 
+.path-name {
+margin-bottom: 6px;
+}
+ 
+.path-desc {
+line-height: 1.5;
+}
+}
+  
 </style>
 </head>
 <body>
