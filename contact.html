@@ -202,38 +202,23 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   }
 }
 
-/* Mobile - compact single-column path cards */
-@media screen and (max-width: 60*px) {
-
+/* MOBILE - 2 compact cards per row */
+@media screen and (max-width: 600px) {
   .paths-grid {
-    display* grid !important;
-    grid-templat*-columns: 1fr !important;
-    widt*: 100% !important;
-    gap: 12px !*mportant;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
   }
 
-  .paths-grid > .pa*h-option {
-    width: 100% !import*nt;
-    max-width: 100% !important*
+  .path-option {
     min-width: 0 !important;
-    *eight: auto !important;
-    min-he*ght: 0 !important;
-    box-sizing:*border-box !important;
-    padding* 16px !important;
-  }
-
-  .paths-gr*d > .path-option .path-icon {
-    *argin-bottom: 8px !important;
-  }
-*  .paths-grid > .path-option .path*name {
-    margin-bottom: 4px !imp*rtant;
-  }
-
-  .paths-grid > .path-*ption .path-desc {
-    line-height* 1.45 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 14px 10px !important;
+    box-sizing: border-box !important;
   }
 }
-  
   
 </style>
 </head>
