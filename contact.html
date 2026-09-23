@@ -202,15 +202,20 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   }
 }
 
-/* Mobile - 1 compact card per row */
+/* Mobile - force 1 card per row */
 @media (max-width: 600px) {
 .paths-grid {
-grid-template-columns: 1fr;
-gap: 12px;
+display: grid !important;
+grid-template-columns: minmax(0, 1fr) !important;
+gap: 14px !important;
+width: 100%;
 }
  
 .path-option {
-padding: 18px 16px;
+width: 100%;
+min-width: 0;
+box-sizing: border-box;
+padding: 20px 18px !important;
 }
  
 .path-icon {
