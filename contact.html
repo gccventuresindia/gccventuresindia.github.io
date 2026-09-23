@@ -190,35 +190,41 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   .hero-sub,.section-intro,.option-body,.path-desc,.faq-answer-content{font-size:0.98rem}
 }
 
-/* Tablet - 2 cards per row */
+/* PATH CARDS - TABLET */
 @media (min-width: 601px) and (max-width: 1024px) {
   .paths-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-
-  .path-option {
-    padding: 24px 20px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
   }
 }
 
-/* MOBILE - 2 compact cards per row */
-@media screen and (max-width: 600px) {
+/* PATH CARDS - MOBILE */
+@media (max-width: 600px) {
   .paths-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
   }
 
   .path-option {
-    min-width: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    padding: 14px 10px !important;
-    box-sizing: border-box !important;
+    padding: 12px 8px !important;
+  }
+
+  .path-icon {
+    font-size: 1.5rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .path-name {
+    font-size: 0.95rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .path-desc {
+    font-size: 0.78rem !important;
+    line-height: 1.3 !important;
   }
 }
+
   
 </style>
 </head>
