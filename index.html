@@ -123,6 +123,33 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 .path-leader strong{color:#fff;display:block;margin-bottom:var(--space-2)}
 .path-cta{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:600;color:var(--orange);transition:gap 150ms;margin-top:auto}
 .path-cta:hover{gap:var(--space-4)}
+  /* WHAT WE DO - OFFERING CARDS */
+.offer-card{
+  padding:var(--space-6);
+  border-top:3px solid var(--orange);
+}
+
+.offer-card .path-icon{
+  width:42px;
+  height:42px;
+  border:2px solid var(--orange);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--orange);
+  font-size:var(--text-sm);
+  font-weight:700;
+  margin-bottom:var(--space-5);
+}
+
+.offer-card .path-title{
+  font-size:var(--text-xl);
+}
+
+.offer-card .path-desc{
+  margin-bottom:var(--space-4);
+}
 
 /* ── CREDIBILITY STRIP ── */
 #credibility{background:var(--navy-2)}
@@ -398,7 +425,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
     <div class="paths-grid">
 
       <!-- 1. GCC SETUP & SCALE -->
-      <div class="path-card reveal">
+      <div class="path-card offer-card reveal">
         <div class="path-icon">01</div>
         <h3 class="path-title">GCC SETUP &amp; SCALE</h3>
         <p class="path-desc"><strong>GCC &amp; Global Capability</strong></p>
@@ -407,7 +434,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
       </div>
 
       <!-- 2. OPERATIONS TRANSFORMATION -->
-      <div class="path-card reveal">
+     <div class="path-card offer-card reveal">
         <div class="path-icon">02</div>
         <h3 class="path-title">OPERATIONS TRANSFORMATION</h3>
         <p class="path-desc"><strong>GCC • GBS • Finance • Business Operations</strong></p>
@@ -416,7 +443,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
       </div>
 
       <!-- 3. VENTURES, GROWTH & VALUE CREATION -->
-      <div class="path-card reveal">
+      <div class="path-card offer-card reveal">
         <div class="path-icon">03</div>
         <h3 class="path-title">VENTURES, GROWTH &amp; VALUE CREATION</h3>
         <p class="path-desc"><strong>Build Smarter. Grow Faster. Exit Stronger.</strong></p>
