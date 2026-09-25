@@ -123,10 +123,11 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 .path-leader strong{color:#fff;display:block;margin-bottom:var(--space-2)}
 .path-cta{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:600;color:var(--orange);transition:gap 150ms;margin-top:auto}
 .path-cta:hover{gap:var(--space-4)}
-  /* WHAT WE DO - OFFERING CARDS */
+/* WHAT WE DO - OFFERING CARDS */
 .offer-card{
   padding:var(--space-6);
   border-top:3px solid var(--orange);
+  min-height:0;
 }
 
 .offer-card .path-icon{
@@ -144,11 +145,23 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 }
 
 .offer-card .path-title{
-  font-size:var(--text-xl);
+  font-size:1.55rem;
+  line-height:1.15;
+  margin-bottom:var(--space-4);
 }
 
 .offer-card .path-desc{
+  color:#43C59E;
   margin-bottom:var(--space-4);
+  font-weight:700;
+}
+
+.offer-card p{
+  line-height:1.6;
+}
+
+.offer-card .path-cta{
+  margin-top:auto;
 }
 
 /* ── CREDIBILITY STRIP ── */
