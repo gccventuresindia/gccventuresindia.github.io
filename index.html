@@ -165,6 +165,85 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 }
 
 /* ── CREDIBILITY STRIP ── */
+/* COMPACT CAPABILITIES */
+.capability-compact{
+  display:g*id;
+  grid-template-columns:repeat*3,1fr);
+  gap:0;
+  margin-top:var(*-space-8);
+  border-top:1px solid *ar(--border);
+  border-bottom:1px *olid var(--border);
+}
+
+.capability*item{
+  display:flex;
+  gap:var(--*pace-4);
+  align-items:flex-start;*  padding:var(--space-6) var(--spa*e-5);
+  border-right:1px solid var*--border);
+  border-bottom:1px sol*d var(--border);
+}
+
+.capability-it*m:nth-child(3n){
+  border-right:no*e;
+}
+
+.capability-item:nth-child(n*4){
+  border-bottom:none;
+}
+
+.capa*ility-number{
+  color:#43C59E;
+  f*nt-size:var(--text-xs);
+  font-wei*ht:700;
+  letter-spacing:.08em;
+  *adding-top:4px;
+}
+
+.capability-ite* h3{
+  margin:0 0 var(--space-2);
+* color:var(--white);
+  font-size:v*r(--text-lg);
+  line-height:1.2;
+}*
+.capability-item p{
+  margin:0;
+ *color:var(--muted);
+  font-size:va*(--text-sm);
+  line-height:1.5;
+}
+*.capability-action{
+  margin-top:v*r(--space-6);
+  text-align:right;
+*
+
+#value .eyebrow{
+  color:#43C59E*
+}
+
+#value .section-head p{
+  colo*:var(--muted);
+}
+
+@media(max-width*760px){
+  .capability-compact{
+   *grid-template-columns:1fr;
+  }
+
+  *capability-item,
+  .capability-ite*:nth-child(3n),
+  .capability-item*nth-child(n+4){
+    border-right:n*ne;
+    border-bottom:1px solid va*(--border);
+  }
+
+  .capability-ite*:last-child{
+    border-bottom:non*;
+  }
+
+  .capability-action{
+    t*xt-align:left;
+  }
+}  
 #credibility{background:var(--navy-2)}
 .credibility-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:var(--space-8)}
 .credibility-item{text-align:center;padding:var(--space-6);font-size:var(--text-base);line-height:1.6;color:var(--muted)}
@@ -473,71 +552,65 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   <div class="section-head">
 <div class="eyebrow">OUR CAPABILITIES</div>
 <h2>Built Around the Opportunity.</h2>
-<p>We bring together the capabilities and expertise each opportunity needs.</p>
+<p>We bring the right capabilities and expertise around each opportunity.</p>
 </div> 
     
-   <div class="paths-grid">
+<div class="capability-compact">
 
-
-
-
-     
-
-      <!-- 1. BUILD -->
-      <div class="path-card reveal">
-        <div class="path-icon">◆</div>
-        <h3 class="path-title">BUILD</h3>
-        <p class="path-desc"><strong>GCC &amp; Global Capability</strong></p>
-        <p>Build and scale India capabilities, from emerging and Nano GCCs to global operating models, with the right talent, governance and execution foundation.</p>
-        <a href="start-venture.html" class="path-cta">Explore Build →</a>
-      </div>
-
-      <!-- 2. INCUBATE -->
-      <div class="path-card reveal">
-        <div class="path-icon">◎</div>
-        <h3 class="path-title">INCUBATE</h3>
-        <p class="path-desc"><strong>Capability Incubation</strong></p>
-        <p>Bring together customers, domain expertise, talent, frameworks and ecosystem partners to build new capabilities faster and more efficiently.</p>
-     <a href="#contact" class="path-cta"> Explore Incubation →</a>
-      </div>
-
-      <!-- 3. TRANSFORM -->
-      <div class="path-card reveal">
-        <div class="path-icon">△</div>
-        <h3 class="path-title">TRANSFORM</h3>
-        <p class="path-desc"><strong>Business &amp; Digital Transformation</strong></p>
-        <p>Transform operations, processes and global delivery through operating-model redesign, technology, automation and AI-enabled capabilities.</p>
-       <a href="#contact" class="path-cta">Explore Transformation →</a>
-      </div>
-
-      <!-- 4. INNOVATE -->
-      <div class="path-card reveal">
-        <div class="path-icon">✦</div>
-        <h3 class="path-title">INNOVATE</h3>
-        <p class="path-desc"><strong>Domain-Led Innovation &amp; IP</strong></p>
-        <p>Turn validated industry problems into scalable solutions by combining customer insight, domain expertise and India's innovation ecosystem.</p>
-        <a href="#contact" class="path-cta"> Explore Innovation →</a>
-      </div>
-
-      <!-- 5. CREATE VALUE -->
-      <div class="path-card reveal">
-        <div class="path-icon">◇</div>
-        <h3 class="path-title">CREATE VALUE</h3>
-        <p class="path-desc"><strong>Ventures &amp; Enterprise Value</strong></p>
-        <p>Shape promising opportunities into scalable businesses and capabilities with a clear focus on sustainable enterprise value.</p>
-        <a href="exit-readiness.html" class="path-cta">Explore Value Creation →</a>
-      </div>
-
-      <!-- 6. CONNECT -->
-      <div class="path-card reveal">
-        <div class="path-icon">○</div>
-        <h3 class="path-title">CONNECT</h3>
-        <p class="path-desc"><strong>Experts, Ecosystems &amp; Capital</strong></p>
-        <p>Connect companies, practitioners, domain experts, ecosystem partners and capital around opportunities where each can create meaningful value.</p>
-        <a href="#contact" class="path-cta"> Start a Conversation → </a>
-      </div>
-
+  <div class="capability-item">
+    <span class="capability-number">01</span>
+    <div>
+      <h3>BUILD</h3>
+      <p>GCC &amp; Global Capability</p>
     </div>
+  </div>
+
+  <div class="capability-item">
+    <span class="capability-number">02</span>
+    <div>
+      <h3>INCUBATE</h3>
+      <p>Capability Incubation</p>
+    </div>
+  </div>
+
+  <div class="capability-item">
+    <span class="capability-number">03</span>
+    <div>
+      <h3>TRANSFORM</h3>
+      <p>Business &amp; Digital Transformation</p>
+    </div>
+  </div>
+
+  <div class="capability-item">
+    <span class="capability-number">04</span>
+    <div>
+      <h3>INNOVATE</h3>
+      <p>Domain-Led Innovation &amp; IP</p>
+    </div>
+  </div>
+
+  <div class="capability-item">
+    <span class="capability-number">05</span>
+    <div>
+      <h3>CREATE VALUE</h3>
+      <p>Ventures &amp; Enterprise Value</p>
+    </div>
+  </div>
+
+  <div class="capability-item">
+    <span class="capability-number">06</span>
+    <div>
+      <h3>CONNECT</h3>
+      <p>Experts, Ecosystems &amp; Capital</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="capability-action">
+  <a href="services.html" class="path-cta">Explore Capabilities →</a>
+</div>
+    
   </div>
 </section>
 
