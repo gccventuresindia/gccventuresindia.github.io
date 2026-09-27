@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Offerings | GCC Ventures India</title>
+<meta name="description" content="Explore GCC Ventures India offerings across GCC strategy and build, talent and transformation, finance operations, ventures and growth, and cybersecurity and digital risk."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#080e1c;--navy-2:#0d1628;--navy-3:#111e35;--border:oklch(1 0 0 / .08);
+  --orange:#ff9500;--orange-h:#e07800;--teal:#2ec4b6;--gold:#ffd700;
+  --text:#e8e6e0;--muted:#9b988f;--font-display:'Instrument Serif',Georgia,serif;
+  --font-body:'DM Sans','Helvetica Neue',sans-serif;--text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
+  --text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);
+  --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+  --text-3xl:clamp(2.5rem,1rem + 4vw,5rem);--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+  --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;
+  --space-16:4rem;--space-20:5rem;--radius-md:.5rem;--radius-xl:1rem;--content-wide:1200px;
+  --content-default:960px;--ease:cubic-bezier(.16,1,.3,1)
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);font-size:var(--text-base);color:var(--text);background:var(--navy);line-height:1.65;min-height:100dvh}
+a{color:inherit;text-decoration:none}button{cursor:pointer;background:none;border:0;font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:6px}
+.container{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+.container--narrow{max-width:var(--content-default);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.75rem 1.5rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:700;white-space:nowrap;transition:all .18s var(--ease)}
+.btn-primary{background:var(--orange);color:#000}.btn-primary:hover{background:var(--orange-h);transform:translateY(-1px)}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}.btn-ghost:hover{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
+.label{font-size:var(--text-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.section-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-top:var(--space-3);margin-bottom:var(--space-4)}
+.section-intro{color:var(--muted);max-width:62ch;line-height:1.7}
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(8,14,28,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.8rem;gap:var(--space-4)}
+.brand{display:flex;align-items:center;gap:.6rem}.brand-name{font-size:var(--text-sm);font-weight:700;color:var(--orange);letter-spacing:.04em}.brand-tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text);opacity:.7}
+.nav-links{display:flex;align-items:center;gap:var(--space-6)}.nav-links a{font-size:var(--text-sm);font-weight:600;color:var(--orange)}.nav-links a:hover{color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:var(--space-2)}.hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px}
+.mobile-menu{display:none;flex-direction:column;background:var(--navy-2);border-top:1px solid var(--border);padding:var(--space-5) var(--space-6)}.mobile-menu.open{display:flex}.mobile-menu a{padding:.75rem 0;color:var(--gold);border-bottom:1px solid var(--border)}
+#hero{padding-top:calc(var(--space-20) + 3.8rem);background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(28,71,112,.38),transparent)}
+.hero-inner{text-align:center;max-width:var(--content-wide);margin:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}.hero-headline{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:400;line-height:1.06;color:#fff;max-width:900px;margin:0 auto var(--space-6)}.hero-sub{color:var(--muted);max-width:62ch;margin:0 auto var(--space-8);font-size:var(--text-lg)}.hero-actions{display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap}
+#core{background:var(--navy-2)}.core-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6);margin-top:var(--space-8)}
+#specialist{background:var(--navy)}.specialist-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-6);margin-top:var(--space-8)}
+.offer-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-8);display:flex;flex-direction:column;min-height:100%;transition:transform .18s var(--ease),border-color .18s var(--ease)}.offer-card:hover{transform:translateY(-2px);border-color:rgba(255,149,0,.42)}
+.offer-no{font-size:var(--text-xs);letter-spacing:.1em;color:var(--orange);font-weight:700;margin-bottom:var(--space-4)}.offer-title{font-size:var(--text-lg);line-height:1.2;color:#fff;margin-bottom:var(--space-3)}.offer-hook{color:var(--teal);font-weight:700;margin-bottom:var(--space-4)}.offer-copy{color:var(--muted);font-size:var(--text-sm);line-height:1.65;margin-bottom:var(--space-5)}.offer-list{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:var(--space-6)}.offer-list span{font-size:.8rem;color:#c7c4bb;border:1px solid var(--border);border-radius:999px;padding:.35rem .65rem;background:rgba(255,255,255,.02)}.offer-outcome{margin-top:auto;padding-top:var(--space-4);border-top:1px solid var(--border);color:#fff;font-size:var(--text-sm);font-weight:600}.offer-outcome strong{color:var(--orange)}
+#model{background:var(--navy-2)}.model-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5);margin-top:var(--space-8)}.model-item{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)}.model-item h3{font-size:var(--text-base);color:#fff;margin-bottom:var(--space-2)}.model-item p{color:var(--muted);font-size:var(--text-sm)}
+#contact{background:var(--navy)}.cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-10),6vw,var(--space-16));text-align:center}.cta-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--space-4)}.cta-body{max-width:56ch;margin:0 auto var(--space-8);color:var(--muted)}.cta-actions{display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
+footer{background:var(--navy-2);border-top:1px solid var(--border);padding:var(--space-8) 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-6);flex-wrap:wrap}.footer-brand{font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--orange);font-weight:700}.footer-copy{font-size:var(--text-xs);color:var(--teal)}.footer-links{display:flex;gap:var(--space-5);flex-wrap:wrap}.footer-links a{font-size:var(--text-xs);color:var(--orange)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .45s var(--ease),transform .45s var(--ease)}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.core-grid,.specialist-grid{grid-template-columns:1fr 1fr}.model-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.core-grid,.specialist-grid,.model-grid{grid-template-columns:1fr}.hero-actions,.cta-actions{flex-direction:column;align-items:stretch}.btn{width:100%}.offer-card{padding:var(--space-6)}.footer-inner{flex-direction:column;align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="brand"><span class="brand-name">GCC VENTURES INDIA</span><span class="brand-tag">Offerings</span></a>
+    <div class="nav-links">
+      <a href="/">Home</a><a href="/offerings.html" aria-current="page">Offerings</a><a href="/services.html">Capabilities</a><a href="/about.html">About</a><a href="/team.html">Practitioners</a><a href="/insights.html">Insights</a><a href="/contact.html">Contact</a>
+    </div>
+    <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/">Home</a><a href="/offerings.html">Offerings</a><a href="/services.html">Capabilities</a><a href="/about.html">About</a><a href="/team.html">Practitioners</a><a href="/insights.html">Insights</a><a href="/contact.html">Contact</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-inner">
+    <span class="label">Our Offerings</span>
+    <h1 class="hero-headline">What Can We Help You Build, Transform or Grow?</h1>
+    <p class="hero-sub">From GCC strategy and talent to operations, ventures and digital risk, we bring the right expertise around the opportunity.</p>
+    <div class="hero-actions"><a href="#core" class="btn btn-primary">Explore Offerings →</a><a href="/contact.html" class="btn btn-ghost">Start a Conversation</a></div>
+  </div>
+</section>
+
+<section id="core">
+  <div class="container">
+    <span class="label">Build & Scale Your GCC</span>
+    <h2 class="section-title">From decision to stronger capability.</h2>
+    <p class="section-intro">Two core offerings cover the GCC journey from strategy and launch through talent, transformation and scale.</p>
+    <div class="core-grid">
+      <article class="offer-card reveal">
+        <div class="offer-no">01</div><h3 class="offer-title">GCC Strategy & Build</h3><p class="offer-hook">From strategy to operating GCC.</p>
+        <p class="offer-copy">For businesses evaluating, setting up or expanding an India capability.</p>
+        <div class="offer-list"><span>Strategy</span><span>Business Case</span><span>Location</span><span>Operating Model</span><span>Talent Plan</span><span>Governance</span><span>Launch PMO</span></div>
+        <p class="offer-outcome"><strong>Outcome:</strong> A GCC built on the right business case, operating model and execution plan.</p>
+      </article>
+      <article class="offer-card reveal">
+        <div class="offer-no">02</div><h3 class="offer-title">GCC Talent, Transform & Scale</h3><p class="offer-hook">Build the team. Strengthen the GCC. Scale the capability.</p>
+        <p class="offer-copy">For GCCs ready to build leadership, improve performance and expand higher-value capabilities.</p>
+        <div class="offer-list"><span>GCC Leadership</span><span>Specialist Talent</span><span>Workforce Planning</span><span>Productivity</span><span>AI & Automation</span><span>CoEs</span><span>Capability Expansion</span></div>
+        <p class="offer-outcome"><strong>Outcome:</strong> Stronger talent. Better productivity. Greater capability.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="specialist">
+  <div class="container">
+    <span class="label">Specialist Business Capabilities</span>
+    <h2 class="section-title">Bring the problem. We bring the right expertise.</h2>
+    <div class="specialist-grid">
+      <article class="offer-card reveal">
+        <div class="offer-no">03</div><h3 class="offer-title">Finance & Business Operations</h3><p class="offer-hook">Transform operations. Improve performance.</p>
+        <div class="offer-list"><span>Finance Operations</span><span>GBS</span><span>Shared Services</span><span>Operating Models</span><span>Digital & Automation</span><span>Working Capital</span></div>
+        <p class="offer-outcome"><strong>Outcome:</strong> Better control. Higher productivity. Stronger cash performance.</p>
+      </article>
+      <article class="offer-card reveal">
+        <div class="offer-no">04</div><h3 class="offer-title">Ventures, Growth & Value Creation</h3><p class="offer-hook">Build stronger businesses. Create strategic value.</p>
+        <div class="offer-list"><span>Venture Building</span><span>Growth</span><span>Business Scaling</span><span>Partnerships</span><span>M&A</span><span>Transactions</span><span>Exit Readiness</span></div>
+        <p class="offer-outcome"><strong>Outcome:</strong> Build. Grow. Scale. Create Value.</p>
+      </article>
+      <article class="offer-card reveal">
+        <div class="offer-no">05</div><h3 class="offer-title">Cybersecurity, Privacy & Digital Risk</h3><p class="offer-hook">Protect growth. Strengthen resilience.</p>
+        <div class="offer-list"><span>Cyber Strategy</span><span>CISO Advisory</span><span>Governance</span><span>DPDP</span><span>GDPR</span><span>Digital Risk</span></div>
+        <p class="offer-outcome"><strong>Outcome:</strong> Stronger governance. Lower risk. Greater resilience.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="model">
+  <div class="container">
+    <span class="label">How We Work</span>
+    <h2 class="section-title">Built Around the Opportunity.</h2>
+    <div class="model-grid">
+      <div class="model-item reveal"><h3>Understand</h3><p>Start with the opportunity and desired outcome.</p></div>
+      <div class="model-item reveal"><h3>Assemble</h3><p>Bring together the right expertise and partners.</p></div>
+      <div class="model-item reveal"><h3>Execute</h3><p>Build, transform or solve what matters.</p></div>
+      <div class="model-item reveal"><h3>Create Value</h3><p>Improve performance, growth and enterprise value.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container--narrow">
+    <div class="cta-box reveal">
+      <h2 class="cta-title">Not Sure Where Your Opportunity Fits?</h2>
+      <p class="cta-body">Start with the opportunity. We'll bring the right expertise together.</p>
+      <div class="cta-actions"><a href="/contact.html" class="btn btn-primary">Start a Conversation →</a><a href="/team.html" class="btn btn-ghost">Explore Our Practitioners →</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container"><div class="footer-inner"><div><div class="footer-brand">GCC Ventures India</div><div class="footer-copy">Build Smarter. Transform Faster. Grow Stronger.</div></div><div class="footer-links"><a href="/">Home</a><a href="/about.html">About</a><a href="/team.html">Practitioners</a><a href="/contact.html">Contact</a></div><div class="footer-links"><a href="mailto:contact@gccventuresindia.com">contact@gccventuresindia.com</a></div></div></div>
+</footer>
+
+<script>
+const hamburger=document.querySelector('.hamburger');
+const mobileMenu=document.getElementById('mobile-menu');
+hamburger?.addEventListener('click',()=>{const isOpen=mobileMenu.classList.toggle('open');hamburger.setAttribute('aria-expanded',String(isOpen));});
+mobileMenu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{mobileMenu.classList.remove('open');hamburger?.setAttribute('aria-expanded','false');}));
+const revealElements=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.12});revealElements.forEach(el=>observer.observe(el));}else{revealElements.forEach(el=>el.classList.add('visible'));}
+</script>
+</body>
+</html>
