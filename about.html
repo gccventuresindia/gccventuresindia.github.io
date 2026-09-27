@@ -131,8 +131,8 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 
 /* ── PRINCIPLES ── */
 #principles{background:var(--navy)}
-.principles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-6)}
-.principle-card{background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));transition:border-color 200ms var(--ease)}
+.principles-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5)}
+.principle-card{background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6);transition:border-color 200ms var(--ease)}
 .principle-card:hover{border-color:var(--orange)}
 .principle-icon{font-size:2rem;margin-bottom:var(--space-6);display:inline-block}
 .principle-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
@@ -166,7 +166,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   .hero-headline{font-size:clamp(2.3rem, 10vw, 4.2rem)}
   .hero-sub{font-size:var(--text-base)}
   .section-title{font-size:clamp(1.8rem, 6vw, 3rem)}
-  .principles-grid{grid-template-columns:1fr}
+  .principles-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cta-actions{width:100%}
   .cta-actions .btn{min-width:0;flex:1 1 100%;width:100%;font-size:0.96rem}
   .cta-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
@@ -174,6 +174,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 }
 
 @media(max-width: 640px){
+  .principles-grid{grid-template-columns:1fr}
   section{padding-block:4.5rem}
   #hero{padding-top:6.5rem;padding-bottom:4.5rem}
   .hero-inner,.container,.container--narrow{padding-inline:1rem}
@@ -350,15 +351,13 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
     <div class="principles-grid">
 
       <div class="principle-card reveal">
-        <div class="principle-icon">◆</div>
-        <h3 class="principle-title">Opportunity First</h3>
+      <h3 class="principle-title">Opportunity First</h3>
         <p class="principle-body">
           We start by understanding the opportunity before defining the solution.
         </p>
       </div>
 
       <div class="principle-card reveal">
-        <div class="principle-icon">◎</div>
         <h3 class="principle-title">Practitioner-Led</h3>
         <p class="principle-body">
           Experienced operators and domain specialists remain close to the opportunity and the decisions that matter.
@@ -366,7 +365,6 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
       </div>
 
       <div class="principle-card reveal">
-        <div class="principle-icon">△</div>
         <h3 class="principle-title">Built Around the Need</h3>
         <p class="principle-body">
           The right functional, domain and ecosystem expertise is assembled according to the requirement, not forced into a standard template.
@@ -374,7 +372,6 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
       </div>
 
       <div class="principle-card reveal">
-        <div class="principle-icon">✦</div>
         <h3 class="principle-title">Value Focused</h3>
         <p class="principle-body">
           Capability, transformation, innovation and sustainable enterprise value guide what we build and how we scale.
