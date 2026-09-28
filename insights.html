@@ -105,7 +105,9 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 .filter-btn{padding:0.5rem 1rem;border-radius:var(--radius-xl);border:1px solid var(--border);color:var(--muted);font-size:var(--text-sm);font-weight:600;transition:all 150ms var(--ease);cursor:pointer}
 .filter-btn.active{background:var(--orange);color:#000;border-color:var(--orange)}
 .filter-btn:hover{border-color:var(--orange)}
-
+.filter-count{font-size:0.8em;opacity:0.75;margin-left:4px}
+.filter-btn.active .filter-count{opacity:0.95}
+  
 /* ── FEATURED ARTICLE ── */
 #featured{background:var(--navy)}
 .featured-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:center}
@@ -231,12 +233,12 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 <section id="filters">
   <div class="container">
     <div class="filters-inner">
-      <button class="filter-btn active" onclick="filterArticles('all')">All</button>
-      <button class="filter-btn" onclick="filterArticles('gcc')">GCC</button>
-      <button class="filter-btn" onclick="filterArticles('transformation')">Transformation</button>
-      <button class="filter-btn" onclick="filterArticles('ventures')">Ventures</button>
-      <button class="filter-btn" onclick="filterArticles('cybersecurity')">Cybersecurity</button>
-      <button class="filter-btn" onclick="filterArticles('ai-technology')">AI &amp; Technology</button>
+      <button class="filter-btn active" data-filter="all">All <span class="filter-count">(0)</span></button>
+      <button class="filter-btn" data-filter="gcc">GCC <span class="filter-count">(0)</span></button>
+      <button class="filter-btn" data-filter="transformation">Transformation <span class="filter-count">(0)</span></button>
+      <button class="filter-btn" data-filter="ventures">Ventures <span class="filter-count">(0)</span></button>
+      <button class="filter-btn" data-filter="cybersecurity">Cybersecurity <span class="filter-count">(0)</span></button>
+      <button class="filter-btn" data-filter="ai-technology">AI &amp; Technology <span class="filter-count">(0)</span></button>
     </div>
   </div>
 </section>
@@ -359,22 +361,44 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-// Filter articles
-function filterArticles(category) {
+/ Filter articles & dynamic counters
+document.addEventListener('DOMContentLoaded', () => {
+  const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.article-card');
-  const buttons = document.querySelectorAll('.filter-btn');
-  
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-  
-  cards.forEach(card => {
-    if (category === 'all' || card.getAttribute('data-category') === category) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
+
+  function updateCounts() {
+    const counts = { all: cards.length };
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      if (cat) counts[cat] = (counts[cat] || 0) + 1;
+    });
+
+    filterBtns.forEach(btn => {
+      const filter = btn.getAttribute('data-filter');
+      const countSpan = btn.querySelector('.filter-count');
+      if (countSpan) countSpan.textContent = `(${counts[filter] || 0})`;
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
   });
-}
+
+  updateCounts();
+});
 </script>
 
 </body>
