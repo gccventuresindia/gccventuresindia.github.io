@@ -212,7 +212,15 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 
 /* ── TEAM ── */
 #team{background:var(--navy)}
-.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:var(--space-8);align-items:stretch}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);align-items:stretch}
+
+@media (max-width: 1024px) {
+  .team-grid{grid-template-columns:repeat(2,1fr);gap:var(--space-6)}
+}
+
+@media (max-width: 600px) {
+  .team-grid{grid-template-columns:1fr;gap:var(--space-4)}
+}
 .team-card{background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));display:flex;flex-direction:column;min-height:360px}
 
 .team-photo{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--border);margin-bottom:var(--space-6);box-shadow:0 4px 20px oklch(0 0 0 / 0.4)}
@@ -717,21 +725,22 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
     </p>
     <a href="team.html#rajesh" class="path-cta">View Profile &rarr;</a>
   </div>
-
- <!-- SECTION FOOTER CALLOUT -->
-  <p class="section-intro reveal" style="
-    text-align: center; 
-    max-width: 850px; 
-    margin: 3.5rem auto 1rem; 
-    width: 100%; 
-    font-size: 1.2rem; 
-    font-weight: 500; 
-    line-height: 1.6; 
-    color: #E2E8F0;
-  ">
-    <strong style="color: var(--orange, #FF8C00); font-weight: 700;">Have an opportunity?</strong> 
-    We bring the right practitioners, experts and partners together.
-  </p>
+</div> <!-- <-- MAKE SURE THIS CLOSES .team-grid -->
+      
+ <!-- SECTION FOOTER CALLOUT (OUTSIDE THE GRID) -->
+<p class="section-intro reveal" style="
+  text-align: center; 
+  max-width: 850px; 
+  margin: 3.5rem auto 1rem; 
+  width: 100%; 
+  font-size: 1.2rem; 
+  font-weight: 500; 
+  line-height: 1.6; 
+  color: #E2E8F0;
+">
+  <strong style="color: var(--orange, #FF8C00); font-weight: 700;">Have an opportunity?</strong> 
+  We bring the right practitioners, experts and partners together.
+</p>
 
 </section>
 <!-- CTA -->
