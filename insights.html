@@ -107,7 +107,7 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 .filter-btn:hover{border-color:var(--orange)}
 .filter-count{font-size:0.8em;opacity:0.75;margin-left:4px}
 .filter-btn.active .filter-count{opacity:0.95}
-  
+
 /* ── FEATURED ARTICLE ── */
 #featured{background:var(--navy)}
 .featured-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:center}
@@ -147,7 +147,7 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 
 /* ── FOOTER ── */
 footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--space-10) 0}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6)}
+.footer-inner{display:flex;align-items:center;justify-between;flex-wrap:wrap;gap:var(--space-6)}
 .footer-brand{font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);font-weight:700}
 .footer-copy{font-size:var(--text-xs);color:var(--teal)}
 .footer-links{display:flex;gap:var(--space-6)}
@@ -361,10 +361,12 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-/ Filter articles & dynamic counters
-document.addEventListener('DOMContentLoaded', () => {
+// Filter articles & dynamic counters
+function initArticleFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.article-card');
+
+  if (!cards.length) return;
 
   function updateCounts() {
     const counts = { all: cards.length };
@@ -376,7 +378,9 @@ document.addEventListener('DOMContentLoaded', () => {
     filterBtns.forEach(btn => {
       const filter = btn.getAttribute('data-filter');
       const countSpan = btn.querySelector('.filter-count');
-      if (countSpan) countSpan.textContent = `(${counts[filter] || 0})`;
+      if (countSpan && filter) {
+        countSpan.textContent = `(${counts[filter] || 0})`;
+      }
     });
   }
 
@@ -389,7 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cards.forEach(card => {
         const cat = card.getAttribute('data-category');
         if (filter === 'all' || cat === filter) {
-          card.style.display = 'flex';
+          card.style.display = '';
         } else {
           card.style.display = 'none';
         }
@@ -398,7 +402,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   updateCounts();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initArticleFilters);
+} else {
+  initArticleFilters();
+}
 </script>
 
 </body>
