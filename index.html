@@ -305,22 +305,64 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 @media (min-width: 769px) {
   .nav-inner {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    gap: 2rem;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
   }
 
   .nav-links {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
+    gap: 0.75rem;
+    margin: 0 auto;
+  }
+
+  /* Navigation Links: Larger Font + Glass Hover Box */
+  .nav-links a {
+    position: relative;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #E2E8F0;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid transparent;
+  }
+
+  /* Modern Glass Hover Effect */
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    color: var(--orange, #FF8C00);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 140, 0, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 10px rgba(255, 140, 0, 0.15);
+  }
+
+  /* Active Press Effect */
+  .nav-links a:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.14);
   }
 
   .nav-email {
-    font-size: var(--text-sm);
+    font-size: 0.95rem;
     font-weight: 600;
-    color: var(--orange);
+    color: var(--orange, #FF8C00);
     white-space: nowrap;
+    flex-shrink: 0;
   }
 }
   
