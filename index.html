@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script>document.documentElement.className+=' js'</script>
 <title>GCC Ventures India | Global Capability · Transformation · Value Creation</title>
 <meta name="description" content="We help businesses set up and scale GCCs, transform operations and grow ventures."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -254,9 +255,9 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 .footer-links a:hover{color:var(--text)}
 
 /* ── SCROLL REVEAL ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+.js .reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none}}
 .btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:52px;min-width:220px;padding:0.75rem 1.5rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;letter-spacing:0.02em;background:#25D366;color:#fff;transition:all 180ms var(--ease);white-space:nowrap}.btn-whatsapp:hover{background:#1da851;transform:translateY(-1px);box-shadow:0 8px 24px oklch(0.55 0.18 150 / 0.35)}
 
 /* smaller pill variant used in header/CTAs */
