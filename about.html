@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script>document.documentElement.className+=' js'</script>
 <title>About | GCC Ventures India</title>
 <meta name="description" content="GCC Ventures India builds and scales Global Capability Centres in India, transforms global operations, and helps ventures reach scale and value."/>
   <link rel="canonical" href="https://www.gccventuresindia.com/about.html"/>
@@ -161,7 +162,7 @@ box-shadow:0 8px 24px rgba(46,196,182,.22);
 .track-card:hover{border-color:oklch(1 0 0 / 0.18);transform:translateY(-3px)}
 .track-num{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.75rem);line-height:1;color:var(--orange);margin-bottom:var(--space-4)}
 .track-label{font-size:var(--text-sm);color:var(--muted);line-height:1.6}  
-#contact{background:var(--navy-2)}
+#contact{background:var(--navy)}
 .cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-12),6vw,var(--space-20));text-align:center;position:relative;overflow:hidden}
 .cta-box::before{content:'';position:absolute;top:-60%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(circle,oklch(0.65 0.2 50 / 0.06) 0%,transparent 70%);pointer-events:none}
 .cta-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--space-6)}
@@ -180,8 +181,11 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 
 /* ── SCROLL REVEAL ── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+  <script>document.documentElement.className+=' js'</script>
 .reveal.visible{opacity:1;transform:translateY(0)}
+  <script>document.documentElement.className+=' js'</script>
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  <script>document.documentElement.className+=' js'</script>
 
 /* ── RESPONSIVE ── */
 @media(max-width: 900px){
@@ -416,19 +420,19 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
       Figures from transition and operations work. Each engagement is different — these are representative, not a portfolio.
     </p>
     <div class="track-grid">
-      <div class="track-card reveal">
+     <div class="track-card">
         <div class="track-num">51 &rarr; 42</div>
         <div class="track-label">Days Sales Outstanding, reduced while the business grew</div>
       </div>
-      <div class="track-card reveal">
+      <div class="track-card">
         <div class="track-num">$10M+</div>
         <div class="track-label">Value captured through operational improvement</div>
       </div>
-      <div class="track-card reveal">
+     <div class="track-card">
         <div class="track-num">60% &rarr; 87%</div>
         <div class="track-label">Quality rate lifted, at 98% throughput</div>
       </div>
-      <div class="track-card reveal">
+      <div class="track-card">
         <div class="track-num">$500M+</div>
         <div class="track-label">Transaction value supported through diligence</div>
       </div>
