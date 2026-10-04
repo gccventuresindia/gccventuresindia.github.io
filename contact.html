@@ -130,6 +130,8 @@ textarea{resize:vertical;min-height:120px}
 .path-icon{font-size:2.5rem;margin-bottom:var(--space-4);display:inline-block}
 .path-name{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-2)}
 .path-desc{font-size:var(--text-sm);color:var(--muted)}
+.path-hint{font-size:var(--text-sm);color:var(--muted);margin-top:var(--space-6);text-align:center;transition:color 200ms var(--ease)}
+.path-hint.chosen{color:var(--orange);font-weight:600}
 
 /* ── FAQ-LITE ── */
 #faq{background:var(--navy)}
@@ -347,7 +349,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
     <div class="path-name">PARTNERSHIP / Other</div>
     <div class="path-desc">Expertise, partnership or another opportunity</div>
   </div>
-
+<p class="path-hint" id="path-hint">Optional — but picking one helps us route your enquiry to the right practitioner.</p>
 </div>
 
 
@@ -540,6 +542,8 @@ document.querySelectorAll('.path-option').forEach(item => {
 item.classList.remove('selected');
 });
 this.classList.add('selected');
+document.getElementById('path-hint').textContent = 'Selected: ' + this.querySelector('.path-name').textContent;
+document.getElementById('path-hint').classList.add('chosen');
 });
 });
   
