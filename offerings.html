@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script>document.documentElement.className+=' js'</script>
 <title>Offerings | GCC Ventures India</title>
 <meta name="description" content="Explore GCC Ventures India offerings across GCC strategy and build, talent and transformation, finance operations, ventures and growth, and cybersecurity and digital risk."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -50,10 +51,10 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 #model{background:var(--navy-2)}.model-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5);margin-top:var(--space-8)}.model-item{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)}.model-item h3{font-size:var(--text-base);color:#fff;margin-bottom:var(--space-2)}.model-item p{color:var(--muted);font-size:var(--text-sm)}
 #contact{background:var(--navy)}.cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-10),6vw,var(--space-16));text-align:center}.cta-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--space-4)}.cta-body{max-width:56ch;margin:0 auto var(--space-8);color:var(--muted)}.cta-actions{display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
 footer{background:var(--navy-2);border-top:1px solid var(--border);padding:var(--space-8) 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-6);flex-wrap:wrap}.footer-brand{font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--orange);font-weight:700}.footer-copy{font-size:var(--text-xs);color:var(--teal)}.footer-links{display:flex;gap:var(--space-5);flex-wrap:wrap}.footer-links a{font-size:var(--text-xs);color:var(--orange)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .45s var(--ease),transform .45s var(--ease)}.reveal.visible{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .45s var(--ease),transform .45s var(--ease)}.js .reveal.visible{opacity:1;transform:none}
 @media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.core-grid,.specialist-grid{grid-template-columns:1fr 1fr}.model-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.core-grid,.specialist-grid,.model-grid{grid-template-columns:1fr}.hero-actions,.cta-actions{flex-direction:column;align-items:stretch}.btn{width:100%}.offer-card{padding:var(--space-6)}.footer-inner{flex-direction:column;align-items:flex-start}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
