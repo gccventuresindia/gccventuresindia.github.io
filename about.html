@@ -4,7 +4,12 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>About | GCC Ventures India</title>
-<meta name="description" content="GCC Ventures India. We coach companies and leaders. We build Global Capability Centers in India. We guide ventures to exit."/>
+<meta name="description" content="GCC Ventures India builds and scales Global Capability Centres in India, transforms global operations, and helps ventures reach scale and value."/>
+  <link rel="canonical" href="https://www.gccventuresindia.com/about.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="About | GCC Ventures India"/>
+<meta property="og:description" content="We build and scale Global Capability Centres in India, transform global operations, and help ventures reach value."/>
+<meta property="og:url" content="https://www.gccventuresindia.com/about.html"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet"/>
@@ -149,6 +154,13 @@ box-shadow:0 8px 24px rgba(46,196,182,.22);
 .principle-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
 
 /* ── CTA ── */
+/* ── TRACK RECORD ── */
+#track-record{background:var(--navy-2)}
+.track-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5)}
+.track-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-6),3vw,var(--space-8));transition:border-color 200ms var(--ease),transform 200ms var(--ease)}
+.track-card:hover{border-color:oklch(1 0 0 / 0.18);transform:translateY(-3px)}
+.track-num{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.75rem);line-height:1;color:var(--orange);margin-bottom:var(--space-4)}
+.track-label{font-size:var(--text-sm);color:var(--muted);line-height:1.6}  
 #contact{background:var(--navy-2)}
 .cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-12),6vw,var(--space-20));text-align:center;position:relative;overflow:hidden}
 .cta-box::before{content:'';position:absolute;top:-60%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(circle,oklch(0.65 0.2 50 / 0.06) 0%,transparent 70%);pointer-events:none}
@@ -176,13 +188,16 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   .hero-headline{font-size:clamp(2.3rem, 10vw, 4.2rem)}
   .hero-sub{font-size:var(--text-base)}
   .section-title{font-size:clamp(1.8rem, 6vw, 3rem)}
-  .principles-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .principles-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .track-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cta-actions{width:100%}
   .cta-actions .btn{min-width:0;flex:1 1 100%;width:100%;font-size:0.96rem}
   .cta-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
   .nav-inner{height:4.25rem}
 }
-
+@media(max-width: 480px){
+  .track-grid{grid-template-columns:1fr}
+}
 @media(max-width: 640px){
   .principles-grid{grid-template-columns:1fr}
   section{padding-block:4.5rem}
@@ -392,6 +407,34 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   </div>
 </section>
 
+<!-- ── TRACK RECORD ── -->
+<section id="track-record" aria-label="Track record">
+  <div class="container">
+    <span class="label">Track Record</span>
+    <h2 class="section-title">Selected outcomes.</h2>
+    <p class="section-intro">
+      Figures from transition and operations work. Each engagement is different — these are representative, not a portfolio.
+    </p>
+    <div class="track-grid">
+      <div class="track-card reveal">
+        <div class="track-num">51 &rarr; 42</div>
+        <div class="track-label">Days Sales Outstanding, reduced while the business grew</div>
+      </div>
+      <div class="track-card reveal">
+        <div class="track-num">$10M+</div>
+        <div class="track-label">Value captured through operational improvement</div>
+      </div>
+      <div class="track-card reveal">
+        <div class="track-num">60% &rarr; 87%</div>
+        <div class="track-label">Quality rate lifted, at 98% throughput</div>
+      </div>
+      <div class="track-card reveal">
+        <div class="track-num">$500M+</div>
+        <div class="track-label">Transaction value supported through diligence</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CTA -->
 <section id="contact">
