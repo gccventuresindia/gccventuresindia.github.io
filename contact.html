@@ -68,7 +68,7 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 /* ── SECTION LABEL & TITLE ── */
 .label{font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
 .section-title{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--text);margin-top:var(--space-3);margin-bottom:var(--space-4)}
-.section-intro{font-size:var(--text-base);color:color-mix(in oklab,var(--teal) 60%,var(--navy-2));max-width:56ch;margin-bottom:var(--space-10)}
+.section-intro{font-size:var(--text-base);color:var(--teal);max-width:56ch;margin-bottom:var(--space-10)}
 
 /* ── NAV ── */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:oklch(0.08 0.02 240 / 0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
@@ -333,7 +333,9 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 <span class="label">WHAT ARE YOU EXPLORING?</span>
 
 <h2 class="section-title">Where can we help?</h2>
-
+    <p class="section-intro">
+      <span style="color:var(--orange)">→</span> Four directions we work in. Pick the closest fit - or skip it and describe the opportunity in your own words.
+    </p>
 
 
 <div class="paths-grid">
@@ -361,7 +363,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
     <div class="path-name">PARTNERSHIP / Other</div>
     <div class="path-desc">Expertise, partnership or another opportunity</div>
   </div>
-    <p class="path-hint" id="path-hint">Optional - but it helps us route you to the right practitioner.</p>
+    
 </div>
 
 
