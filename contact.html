@@ -489,6 +489,14 @@ document.querySelector('.hamburger')?.addEventListener('click', function(e) {
   this.setAttribute('aria-expanded', isOpen);
 });
 
+// Close mobile menu when a link is tapped
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.mobile-menu').classList.remove('open');
+    document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+  });
+});
+  
 // Scroll reveal
 const revealElements = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
