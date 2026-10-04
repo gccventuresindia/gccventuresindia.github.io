@@ -480,7 +480,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
     <a href="about.html">About</a>
     <a href="team.html">Practitioners</a>
     <a href="insights.html">Insights</a>
-    <a href="#contact">Contact</a>
+    <a href="contact.html">Contact</a>
     
   </div>
 </nav>
@@ -754,9 +754,9 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 
 <div class="cta-actions">
  
-<a href="mailto:contact@gccventuresindia.com?subject=Business Inquiry" class="btn btn-primary">
-Email Us
-</a>
+ <a href="contact.html" class="btn btn-primary">
+  Send a Message
+  </a>
  
 <a href="https://wa.me/919611991902?text=Hi%2C%20I%20came%20across%20GCC%20Ventures%20India%20and%20would%20like%20to%20explore%20an%20opportunity%20with%20your%20practitioner%20network.%20Could%20we%20connect%20for%20a%20brief%20conversation%3F"
 target="_blank"
@@ -809,6 +809,14 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, {threshold: 0.12});
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Close mobile menu when a link is tapped
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburgerBtn').setAttribute('aria-expanded', 'false');
+  });
+});  
 </script>
 </body>
 </html>
