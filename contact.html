@@ -127,6 +127,14 @@ textarea{resize:vertical;min-height:120px}
 .path-option{padding:var(--space-8);background:var(--navy-3);border:2px solid var(--border);border-radius:var(--radius-xl);cursor:pointer;transition:border-color 200ms var(--ease),transform 200ms var(--ease);text-align:center}
 .path-option:hover{border-color:var(--orange);transform:translateY(-2px)}
 .path-option.selected{border-color:var(--orange);background:var(--navy-2);transform:translateY(-4px);box-shadow:0 10px 30px rgba(255,149,0,.12)} 
+/* ── PATH CARDS: standing attention ── */
+.path-option::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:0 0 0 1px rgba(255,149,0,.5),0 0 26px -6px rgba(255,149,0,.45);opacity:.14;animation:pathPulse 3.6s var(--ease) infinite}
+@keyframes pathPulse{0%,100%{opacity:.14}50%{opacity:.6}}
+.path-option:hover::after{opacity:1;animation:none}
+.path-option.selected::after{opacity:1;animation:none;box-shadow:0 0 0 2px var(--orange),0 12px 34px -8px rgba(255,149,0,.55)}
+.path-icon{color:var(--orange);line-height:0;margin-bottom:var(--space-4)}
+.path-icon svg{width:40px;height:40px}
+  
 .path-icon{font-size:2.5rem;margin-bottom:var(--space-4);display:inline-block}
 .path-name{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-2)}
 .path-desc{font-size:var(--text-sm);color:var(--muted)}
@@ -158,7 +166,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 /* ── SCROLL REVEAL ── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
 .reveal.visible{opacity:1;transform:translateY(0)}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.path-option::after{animation:none;opacity:.35}}
 
 /* ── RESPONSIVE ── */
 @media(max-width: 900px){
@@ -213,11 +221,13 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
     align-items: center !important;
   }
 
-  .path-icon {
+    .path-icon {
     grid-row: 1 / 3;
     font-size: 1.25rem !important;
     margin: 0 !important;
   }
+
+  .path-icon svg { width: 20px; height: 20px; }
 
   .path-name {
     font-size: 0.9rem !important;
@@ -331,21 +341,25 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
 <div class="paths-grid">
 
   <div class="path-option reveal" onclick="document.getElementById('path').value='GCC Setup & Scale';">
+      <div class="path-icon"><svg viewBox="0 0 24 24"><rect x="3" y="14" width="5" height="7"/><rect x="10" y="9" width="5" height="12"/><rect x="17" y="4" width="4" height="17"/></svg></div>  
     <div class="path-name">GCC SETUP &amp; SCALE</div>
     <div class="path-desc">Build or scale a GCC</div>
   </div>
 
   <div class="path-option reveal" onclick="document.getElementById('path').value='Operations Transformation';">
+      <div class="path-icon"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></svg></div>  
     <div class="path-name">OPERATIONS TRANSFORMATION</div>
     <div class="path-desc">Improve GCC, GBS or global operations</div>
   </div>
 
   <div class="path-option reveal" onclick="document.getElementById('path').value='Ventures, Growth & Value Creation';">
+    <div class="path-icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-7"/><path d="M15 8h6v6"/></svg></div>
     <div class="path-name">VENTURES, GROWTH &amp; VALUE CREATION</div>
     <div class="path-desc">Build, grow or strengthen a venture</div>
   </div>
 
   <div class="path-option reveal" onclick="document.getElementById('path').value='Partnership / Something Else';">
+  <div class="path-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg></div>
     <div class="path-name">PARTNERSHIP / Other</div>
     <div class="path-desc">Expertise, partnership or another opportunity</div>
   </div>
