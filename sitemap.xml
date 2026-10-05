@@ -67,5 +67,9 @@
   <url>
     <loc>https://www.gccventuresindia.com/blog/why-mid-market-gccs-should-be-innovation-hubs-not-cost-centers.html</loc>
     <priority>0.6</priority>
+      <url>
+    <loc>https://www.gccventuresindia.com/blog/the-shadow-ai-challenge.html</loc>
+    <priority>0.6</priority>
+  </url>
   </url>
 </urlset>
