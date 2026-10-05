@@ -528,7 +528,8 @@ document.querySelectorAll('.path-option').forEach(card => {
     this.classList.add('selected');
     this.setAttribute('aria-pressed', 'true');
     document.getElementById('path-hint').textContent =
-      'Selected — ' + this.dataset.num + ' · ' + this.querySelector('.path-name').textContent;
+    'Selected — ' + this.dataset.num + ' · ' + this.querySelector('.path-name').textContent;
+    document.getElementById('path').value = this.dataset.num + ' · ' + this.querySelector('.path-name').textContent;
   });
   card.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); }
