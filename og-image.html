@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>OG Image</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  width:1200px;height:630px;overflow:hidden;
+  font-family:'DM Sans',sans-serif;
+  background:linear-gradient(135deg,#080e1c 0%,#0d1628 55%,#111e35 100%);
+  color:#e8e6e0;
+  position:relative;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:72px 80px;
+}
+.bar{
+  position:absolute;top:0;left:0;right:0;height:8px;
+  background:linear-gradient(90deg,#e94560 0%,#ff9500 50%,#ffd700 100%);
+}
+.glow{
+  position:absolute;width:620px;height:620px;right:-160px;bottom:-260px;
+  background:radial-gradient(circle,rgba(255,149,0,.16) 0%,rgba(255,149,0,0) 70%);
+}
+.brand{
+  font-size:22px;font-weight:700;letter-spacing:.20em;
+  text-transform:uppercase;color:#ff9500;
+}
+h1{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-weight:400;font-size:104px;line-height:1.02;
+  letter-spacing:-.015em;color:#ffffff;
+  margin-top:34px;
+}
+h1 em{font-style:italic;color:#ff9500}
+.tagline{
+  font-size:29px;font-weight:300;line-height:1.45;
+  color:#8a8880;margin-top:30px;max-width:820px;
+}
+.rule{width:96px;height:3px;background:#ff9500;margin-top:38px}
+.foot{display:flex;align-items:flex-end;justify-content:space-between}
+.loc{font-size:22px;font-weight:400;color:#8a8880;letter-spacing:.03em}
+.tags{font-size:21px;font-weight:500;color:#e8e6e0;letter-spacing:.02em}
+.tags span{color:#4a4845;margin:0 12px}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<div class="glow"></div>
+
+<div>
+  <div class="brand">GCC Ventures India</div>
+  <h1>Global Capability.<br/>Built in <em>India.</em></h1>
+  <div class="tagline">We build and scale Global Capability Centres, transform global operations, and help ventures reach value.</div>
+  <div class="rule"></div>
+</div>
+
+<div class="foot">
+  <div class="loc">Bengaluru, India</div>
+  <div class="tags">Capability<span>/</span>Transformation<span>/</span>Value</div>
+</div>
+</body>
+</html>
