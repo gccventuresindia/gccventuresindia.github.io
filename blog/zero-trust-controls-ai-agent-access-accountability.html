@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script>document.documentElement.className+=' js'</script>
+<title>How Zero Trust Controls AI Agent Access - Agent Accountability</title>
+<meta name="description" content="Implementing zero trust for AI agents requires strict identity verification and continuous monitoring. Learn how to enforce agent accountability in secure environments."/>
+  <link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+  <link rel="canonical" href="https://www.gccventuresindia.com/about.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="About | GCC Ventures India"/>
+<meta property="og:description" content="We build and scale Global Capability Centres in India, transform global operations, and help ventures reach value."/>
+<meta property="og:url" content="https://www.gccventuresindia.com/about.html"/>
+<meta property="og:image" content="https://www.gccventuresindia.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="GCC Ventures India — Global Capability. Built in India."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="About | GCC Ventures India"/>
+<meta name="twitter:image" content="https://www.gccventuresindia.com/og-image.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet"/>
+<style>
+/* ── DESIGN TOKENS (shared with homepage) ── */
+:root {
+  --navy:    #080e1c;
+  --navy-2:  #0d1628;
+  --navy-3:  #111e35;
+  --navy-4:  #162340;
+  --border:  oklch(1 0 0 / 0.08);
+  --orange:  #ff9500;
+  --orange-h:#e07800;
+  --teal:    #2ec4b6;
+  --gold:    #ffd700;
+  --text:    #e8e6e0;
+  --muted:   #8a8880;
+  --faint:   #4a4845;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-6: 1.5rem; --space-8: 2rem;   --space-10: 2.5rem;
+  --space-12: 3rem;  --space-16: 4rem;  --space-20: 5rem;
+  --space-24: 6rem;
+  --radius-sm: 0.375rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;  --radius-xl: 1rem;
+  --content-narrow: 640px; --content-default: 960px; --content-wide: 1200px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);font-size:var(--text-base);color:var(--text);background:var(--navy);line-height:1.65;min-height:100dvh}
+img,svg{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.15}
+p{text-wrap:pretty;max-width:68ch}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:var(--radius-sm)}
+
+/* ── LAYOUT ── */
+.container{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+.container--narrow{max-width:var(--content-default);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10))}
+section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:52px;padding:0.75rem 1.5rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;letter-spacing:0.02em;transition:all 180ms var(--ease);white-space:nowrap}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-h);transform:translateY(-1px);box-shadow:0 8px 24px oklch(0.6 0.2 50 / 0.3)}
+  btn-teal{
+background:var(--teal);
+color:#000;
+}
+ 
+.btn-teal:hover{
+background:#25a99d;
+transform:translateY(-1px);
+box-shadow:0 8px 24px rgba(46,196,182,.22);
+}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:oklch(1 0 0 / 0.2);background:oklch(1 0 0 / 0.04)}
+.btn:active{transform:translateY(0)}
+
+/* ── SECTION LABEL & TITLE ── */
+.label{font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
+.section-title{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--text);margin-top:var(--space-3);margin-bottom:var(--space-4)}
+.section-intro{font-size:var(--text-base);color:var(--muted);max-width:56ch;margin-bottom:var(--space-10)}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:oklch(0.08 0.02 240 / 0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem;gap:var(--space-4);padding-inline:calc(var(--space-2));}
+.brand{display:flex;flex-direction:row;align-items:center;gap:0.6rem;text-decoration:none}
+.brand-name{font-size:var(--text-sm);font-weight:700;color:var(--orange);letter-spacing:0.04em}
+.brand-tag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);opacity:0.7}
+.nav-links{display:flex;align-items:center;gap:var(--space-6)}
+.nav-links a{font-size:var(--text-sm);font-weight:500;color:var(--orange);letter-spacing:0.02em;transition:color 150ms}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{margin-left:var(--space-4)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:var(--space-2);cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 200ms var(--ease)}
+.mobile-menu{display:none;flex-direction:column;background:var(--navy-2);border-top:1px solid var(--border);padding:var(--space-6) clamp(var(--space-4),4vw,var(--space-10))}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:var(--text-base);color:var(--gold);padding:var(--space-3) 0;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu .btn{margin-top:var(--space-4);align-self:flex-start}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+}
+
+/* ── HERO ── */
+#hero{padding-block:clamp(var(--space-12),8vw,var(--space-16));padding-top:calc(clamp(var(--space-12),8vw,var(--space-16)) + 3.5rem);background:radial-gradient(ellipse 80% 60% at 50% -10%,oklch(0.28 0.08 240 / 0.5),transparent)}
+.hero-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--space-4),4vw,var(--space-10));text-align:center}
+.hero-headline{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:400;color:#fff;margin-bottom:var(--space-8);line-height:1.08}
+.hero-headline em{font-style:italic;color:var(--orange)}
+.hero-sub{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin:0 auto var(--space-10);line-height:1.6;text-align:center;
+}
+/* ── STORY SECTION ── */
+#story{background:var(--navy-2)}
+.story-content{max-width:var(--content-narrow);margin-inline:auto}
+.story-text{font-size:var(--text-base);color:var(--muted);line-height:1.8;margin-bottom:var(--space-8)}
+.story-text strong{color:#fff}
+.story-highlight{background:oklch(1 0 0 / 0.05);border-left:3px solid var(--orange);padding:var(--space-6);border-radius:var(--radius-md);margin:var(--space-10) 0}
+.story-highlight p{margin:0;color:var(--muted)}
+.story-highlight strong{color:#fff}
+
+/* ── WHY SECTION ── */
+#why{background:var(--navy)}
+.why-content{max-width:var(--content-narrow);margin-inline:auto}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)}
+.why-item{padding:var(--space-8);background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl)}
+.why-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.why-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+@media(max-width:640px){.why-grid{grid-template-columns:1fr}}
+
+/* ── TEAM ── */
+#team{background:var(--navy-2)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:var(--space-8);align-items:stretch}
+.team-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-10));display:flex;flex-direction:column}
+.team-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--border);margin-bottom:var(--space-6);box-shadow:0 4px 20px oklch(0 0 0 / 0.4)}
+.team-name{font-size:var(--text-xl);font-weight:700;color:#fff;margin-bottom:var(--space-2)}
+.team-role{font-size:var(--text-sm);color:var(--teal);font-weight:600;letter-spacing:0.04em;margin-bottom:var(--space-6)}
+.team-bio{font-size:var(--text-base);color:var(--muted);line-height:1.7;margin-bottom:var(--space-6);flex-grow:1}
+.team-links{display:flex;gap:var(--space-4);font-size:var(--text-sm)}
+.team-links a{color:var(--orange);text-decoration:underline;text-decoration-color:oklch(from var(--orange) l c h / 0.4);transition:color 150ms}
+.team-links a:hover{color:var(--text)}
+
+/* ── PRINCIPLES ── */
+#principles{background:var(--navy)}
+.principles-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5)}
+.principle-card{background:var(--navy-2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6);transition:border-color 200ms var(--ease)}
+.principle-card:hover{border-color:var(--orange)}
+.principle-icon{font-size:2rem;margin-bottom:var(--space-6);display:inline-block}
+.principle-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--space-3)}
+.principle-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+
+/* ── CTA ── */
+/* ── TRACK RECORD ── */
+#track-record{background:var(--navy-2)}
+.track-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5)}
+.track-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-6),3vw,var(--space-8));transition:border-color 200ms var(--ease),transform 200ms var(--ease)}
+.track-card:hover{border-color:oklch(1 0 0 / 0.18);transform:translateY(-3px)}
+.track-num{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.75rem);line-height:1;color:var(--orange);margin-bottom:var(--space-4)}
+.track-label{font-size:var(--text-sm);color:var(--muted);line-height:1.6}  
+#contact{background:var(--navy)}
+.cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-12),6vw,var(--space-20));text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-60%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(circle,oklch(0.65 0.2 50 / 0.06) 0%,transparent 70%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--space-6)}
+.cta-body{font-size:var(--text-lg);color:var(--muted);max-width:52ch;margin-inline:auto;margin-bottom:var(--space-10)}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
+.cta-actions .btn{min-width:220px}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--space-10) 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6)}
+.footer-brand{font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.footer-copy{font-size:var(--text-xs);color:var(--teal)}
+.footer-links{display:flex;gap:var(--space-6)}
+.footer-links a{font-size:var(--text-xs);color:var(--orange);letter-spacing:0.04em;transition:color 150ms}
+.footer-links a:hover{color:var(--text)}
+
+/* ── SCROLL REVEAL ── */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+  
+.js .reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none}}
+
+
+/* ── RESPONSIVE ── */
+@media(max-width: 900px){
+  .hero-headline{font-size:clamp(2.3rem, 10vw, 4.2rem)}
+  .hero-sub{font-size:var(--text-base)}
+  .section-title{font-size:clamp(1.8rem, 6vw, 3rem)}
+    .principles-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .track-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cta-actions{width:100%}
+  .cta-actions .btn{min-width:0;flex:1 1 100%;width:100%;font-size:0.96rem}
+  .cta-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
+  .nav-inner{height:4.25rem}
+}
+@media(max-width: 480px){
+  .track-grid{grid-template-columns:1fr}
+}
+@media(max-width: 640px){
+  .principles-grid{grid-template-columns:1fr}
+  section{padding-block:4.5rem}
+  #hero{padding-top:6.5rem;padding-bottom:4.5rem}
+  .hero-inner,.container,.container--narrow{padding-inline:1rem}
+  .hero-headline{line-height:1.04;letter-spacing:-0.02em}
+  .btn{min-height:48px}
+  .story-text,.why-item,.principle-card,.team-card,.cta-box{padding:1.25rem}
+  .team-photo{width:100px;height:100px}
+  .story-highlight{padding:1rem}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-links{flex-wrap:wrap;gap:1rem}
+}
+
+@media(max-width: 420px){
+  .nav-links{display:none}
+  .hero-headline{font-size:2.1rem}
+  .cta-title{font-size:1.9rem}
+  .section-title{font-size:1.7rem}
+  .hero-sub,.section-intro,.story-text,.why-body,.principle-body,.team-bio,.cta-body{font-size:0.98rem}
+  .team-name{font-size:1.3rem}
+}
+
+
+.post-hero{padding:6rem 0 2rem}.post-hero .label{color:var(--orange,#ff9500);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+.post-title{font-family:var(--font-display,Georgia,serif);font-size:clamp(2rem,1.2rem+3vw,3.2rem);margin-top:1rem;max-width:20ch;line-height:1.15}
+.post-byline{color:var(--muted,#8a8880);font-size:.9rem;margin-top:1.5rem}
+.post-body{padding:1rem 0 6rem}.post-body h2{font-family:var(--font-display,Georgia,serif);margin:3rem 0 1rem;font-size:1.6rem}
+.post-body h3{margin:2rem 0 .75rem;font-size:1.25rem}.post-body p{margin-bottom:1.5rem;max-width:68ch;line-height:1.7}
+.post-body ul,.post-body ol{margin:0 0 1.5rem 1.5rem;max-width:66ch}.post-body li{margin-bottom:.5rem}.post-body ul li{list-style:disc}.post-body ol li{list-style:decimal}
+.post-body blockquote{border-left:3px solid var(--orange,#ff9500);padding:1rem 1.5rem;margin:2rem 0;font-size:1.25rem;font-style:italic}
+.post-cta{margin-top:3rem;padding:2rem;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:.75rem;text-align:center}
+.post-cta a{display:inline-block;margin-top:1rem;padding:.75rem 1.5rem;background:var(--orange,#ff9500);color:#081020;border-radius:.5rem;font-weight:600}
+
+</style>
+</head>
+<body>
+
+<!-- ── HEADER/NAV ── -->
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="brand">
+      <span class="brand-name">GCC VENTURES</span>
+      <span class="brand-tag">About</span>
+    </a>
+    <div class="nav-links">
+    <a href="/#paths">Services</a>
+    <a href="/#team">Team</a>
+    <a href="/#contact">Contact</a>
+  </div>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+      <div class="mobile-menu">
+    <a href="/#paths">Services</a>
+    <a href="/#team">Team</a>
+    <a href="/#contact">Contact</a>
+    <button class="btn btn-primary" style="width:100%">Get in Touch</button>
+  </div>
+</nav>
+<section class="post-hero"><div class="container--narrow container">
+<span class="label">Insights</span>
+<h1 class="post-title">How Zero Trust Controls AI Agent Access - Agent Accountability</h1>
+<div class="post-byline">2026-10-09</div>
+</div></section>
+<article class="post-body"><div class="container--narrow container">
+<h2>The Identity Crisis of Autonomous Agents</h2>
+<p>In traditional IT security, we assume a human is behind the keyboard. Zero Trust architectures handle this well because human intent can be verified through multi-factor authentication and behavioral analysis. However, AI agents operate differently. They act with autonomy, executing tasks at machine speed without a human in the loop for every step.</p>
+<p>This shift creates a critical gap in security. If an AI agent is compromised, it can move laterally across your network faster than any human defender can react. Treating an agent like a static service account is no longer sufficient. We must view every agent as a distinct, verifiable identity that requires the same rigorous controls as a privileged human user.</p>
+<h2>Strict Identity Verification for Non-Human Entities</h2>
+<p>The foundation of agent accountability begins with identity. You cannot secure what you cannot uniquely identify. In a Zero Trust model, every AI agent must have a cryptographically verifiable identity. This is not a simple username and password. It requires machine-to-machine authentication protocols that prove the agent’s legitimacy before it is granted any network access.</p>
+<p>Consider the difference between a legacy service account and a modern AI agent. A service account often has broad, static permissions. An AI agent, however, should operate under the principle of least privilege, scoped to the specific task it is performing. For example, a data retrieval agent should only have read access to specific databases, never write access to production systems.</p>
+<p>To enforce this, organizations should implement:</p>
+<ul>
+  <li><strong>Short-lived credentials:</strong> Use token-based authentication that expires quickly, reducing the window of exposure if credentials are leaked.</li>
+  <li><strong>Hardware-backed identity:</strong> Where possible, anchor agent identity to hardware security modules or secure enclaves to prevent cloning or spoofing.</li>
+  <li><strong>Dynamic permission scopes:</strong> Allow agents to request additional permissions only when necessary, rather than granting them upfront.</li>
+</ul>
+<p>By treating agent identity as a dynamic, verifiable credential rather than a static key, you create a baseline for accountability. Every action can be traced back to a specific, authenticated entity.</p>
+<h2>Continuous Monitoring and Behavioral Baselines</h2>
+<p>Once an agent is authenticated, the Zero Trust model demands continuous verification. Static permissions are not enough because threats evolve. An agent might be legitimate but compromised, or it might be acting maliciously within its permitted scope. Continuous monitoring ensures that any deviation from expected behavior triggers an immediate response.</p>
+<p>This involves establishing behavioral baselines for each agent. What is "normal" for a billing agent is different from a code generation agent. Monitoring systems should track metrics such as request frequency, data volume accessed, and time of execution. Significant deviations from these baselines should trigger alerts or automatic suspension of the agent’s privileges.</p>
+<p>> "Zero Trust is not a product; it is a strategy. For AI agents, this means assuming breach and verifying every single interaction, regardless of where it originates."</p>
+<p>Implementing this requires robust logging and telemetry. Every API call, data fetch, and decision made by the agent must be recorded. This creates an audit trail that is essential for forensic analysis. If a security incident occurs, you need to know exactly what the agent did, when it did it, and whether it violated policy.</p>
+<h2>Enforcing Accountability Through Policy Enforcement</h2>
+<p>Accountability is not just about monitoring; it is about enforcement. Zero Trust architectures rely on policy engines that evaluate requests in real-time. For AI agents, these policies must be context-aware. They should consider not just who the agent is, but what it is doing, where it is located, and the sensitivity of the data involved.</p>
+<p>Policy enforcement points (PEPs) act as the gatekeepers. They intercept requests from agents and evaluate them against the defined security policies. If an agent attempts to access data outside its scope, the PEP denies the request immediately. This prevents unauthorized actions before they cause damage.</p>
+<p>To ensure accountability, organizations should also implement:</p>
+<ol>
+  <li><strong>Immutable audit logs:</strong> Store logs in a write-once, read-many (WORM) format to prevent tampering.</li>
+  <li><strong>Automated remediation:</strong> Configure policies to automatically revoke access or isolate agents that exhibit suspicious behavior.</li>
+  <li><strong>Regular policy reviews:</strong> As agents evolve, their permissions and behaviors may change. Regularly review and update policies to reflect current operational needs.</li>
+</ol>
+<p>By combining strict identity verification, continuous monitoring, and real-time enforcement, you create a robust framework for AI agent accountability. This approach reduces risk and ensures that your AI initiatives remain secure and compliant.</p>
+<h2>Moving Forward with Confidence</h2>
+<p>Securing AI agents is not a one-time project. It is an ongoing process that requires vigilance and adaptation. As AI capabilities grow, so do the potential risks. By adopting a Zero Trust mindset, you can manage these risks effectively.</p>
+<p>Start by auditing your current AI agents. Identify their identities, permissions, and behaviors. Then, implement the controls necessary to secure them. This proactive approach will help you build trust in your AI systems and protect your organization from emerging threats.</p>
+<p>If you are ready to strengthen your AI security posture, consider reviewing your current Zero Trust implementation. Small changes in identity management and monitoring can yield significant improvements in accountability and risk reduction.</p>
+<div class="post-cta"><h3>Want to talk this through?</h3>
+<p>Get in touch with our team for a confidential conversation.</p>
+<a href="/contact.html">Get in touch</a></div>
+</div></article>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <div class="footer-brand">GCC Ventures India</div>
+        <div class="footer-copy">
+          A practitioner-led platform connecting global opportunities with domain expertise, capability building, transformation and value creation.
+        </div>
+      </div>
+
+           <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/team.html">Practitioners</a>
+        <a href="faq.html">FAQ</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+
+      <div class="footer-copy" style="margin-top:var(--space-4);">
+        Bengaluru, India • Global Perspective
+      </div>
+
+      <div class="footer-links" style="margin-top:var(--space-2);">
+        <a href="mailto:contact@gccventuresindia.com">contact@gccventuresindia.com</a>
+      </div>
+
+    </div>
+  </div>
+</footer> 
+ 
+<script>
+// Hamburger menu toggle
+document.querySelector('.hamburger')?.addEventListener('click', function(e) {
+  const menu = document.querySelector('.mobile-menu');
+  const isOpen = menu.classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen);
+});
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 60);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
