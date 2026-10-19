@@ -66,20 +66,8 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.gccventuresindia.com/blog/the-gcc-mirage-cost-savings-vs-strategic-transformation.html</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.gccventuresindia.com/blog/gcc-mirage-cost-vs-strategy-for-us-firms.html</loc>
     <lastmod>2026-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.gccventuresindia.com/blog/building-a-high-performing-gcc-leadership-team-in-india.html</loc>
-    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -96,19 +84,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.gccventuresindia.com/blog/india-gcc-finance-transformation-to-value-center.html</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.gccventuresindia.com/blog/gcc-reality-check-why-us-firms-stall-in-india.html</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.gccventuresindia.com/blog/gcc-leadership-bench-depth-through-executive-coaching.html</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -197,10 +173,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.gccventuresindia.com/blog/measuring-gcc-success-the-kpis-that-matter.html</loc>
-    <lastmod>2026-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-</urlset>
+  </urlset>
