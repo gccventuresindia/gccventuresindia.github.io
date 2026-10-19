@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <script>document.documentElement.className+=' js'</script>
 <title>Insights | GCC Ventures India</title>
-<meta name="description" content="GCC strategy, leadership, venture insights, and exit readiness. Practical wisdom for building in India."/>
+<meta name="description" content="GCC strategy, leadership, venture insights, and exit readiness. 23 practical articles on building in India, published by Sanjeev, Nagaraj, Rajesh and Jacob."/>
   <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link rel="canonical" href="https://www.gccventuresindia.com/insights.html"/>
@@ -152,6 +152,39 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 .article-cta{display:inline-flex;align-items:center;gap:var(--space-2);margin-top:var(--space-6);font-size:var(--text-sm);font-weight:600;color:var(--orange);transition:gap 150ms}
 .article-cta:hover{gap:var(--space-4)}
 
+/* ── TICKER (latest publishes) ── */
+#ticker{background:var(--navy-3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
+.ticker-track{display:flex;align-items:stretch;max-width:var(--content-wide);margin-inline:auto}
+.ticker-label{flex:0 0 auto;display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-5);background:var(--orange);color:#000;font-size:var(--text-xs);font-weight:700;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap}
+.ticker-label::before{content:'';width:7px;height:7px;border-radius:50%;background:#000;animation:pulse 1.8s var(--ease) infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+.ticker-window{flex:1 1 auto;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.ticker-list{display:flex;width:max-content;animation:tickerscroll 42s linear infinite}
+.ticker-window:hover .ticker-list,.ticker-window:focus-within .ticker-list{animation-play-state:paused}
+@keyframes tickerscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-6);font-size:var(--text-sm);color:var(--muted);white-space:nowrap;border-right:1px solid var(--border);transition:color 150ms}
+.ticker-item:hover{color:var(--orange)}
+.ticker-item .ticker-new{font-size:var(--text-xs);font-weight:700;color:var(--teal);letter-spacing:0.06em;text-transform:uppercase}
+.ticker-item .ticker-date{color:var(--faint);font-size:var(--text-xs)}
+@media(prefers-reduced-motion:reduce){
+  .ticker-list{animation:none;flex-wrap:wrap;width:auto}
+  .ticker-window{overflow-x:auto}
+  .ticker-label::before{animation:none}
+}
+
+/* ── PUBLISHED COUNTER ── */
+.countbar{background:var(--navy);border-bottom:1px solid var(--border)}
+.countbar-inner{display:flex;align-items:center;justify-content:center;gap:clamp(var(--space-4),3vw,var(--space-8));flex-wrap:wrap;padding:var(--space-5) 0;text-align:center}
+.stat{display:flex;align-items:baseline;gap:var(--space-2)}
+.stat-num{font-family:var(--font-display);font-size:var(--text-xl);color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.stat-label{font-size:var(--text-xs);color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
+.stat-sep{width:1px;height:26px;background:var(--border)}
+.countbar-note{width:100%;font-size:var(--text-xs);color:var(--faint);margin-top:var(--space-2)}
+@media(max-width:640px){
+  .ticker-label{font-size:0.68rem;padding:var(--space-2) var(--space-3)}
+  .stat-sep{display:none}
+}
+
 /* ── CTA ── */
 #contact{background:var(--navy)}
 .cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(var(--space-12),6vw,var(--space-20));text-align:center;position:relative;overflow:hidden}
@@ -248,6 +281,54 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
   </div>
 </section>
 
+<!-- ── TICKER: LATEST PUBLISHES ── -->
+<section id="ticker" aria-label="Latest published insights">
+  <div class="ticker-track">
+    <span class="ticker-label">Latest</span>
+    <div class="ticker-window">
+      <ul class="ticker-list">
+        <li><a class="ticker-item" href="/blog/the-gcc-mirage-cost-savings-vs-strategic-transformation.html"><span class="ticker-new">New</span> The GCC Mirage: Cost Savings vs. Strategic Transformation <span class="ticker-date">&middot; 18 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/gcc-mirage-cost-vs-strategy-for-us-firms.html"><span class="ticker-new">New</span> GCC Mirage: Cost vs. Strategy for US Firms <span class="ticker-date">&middot; 18 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/building-a-high-performing-gcc-leadership-team-in-india.html">Building a High-Performing GCC Leadership Team in India <span class="ticker-date">&middot; 14 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/building-high-performing-gcc-leadership-in-india.html">Building High-Performing GCC Leadership in India <span class="ticker-date">&middot; 12 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/gcc-reality-check-why-us-firms-stall-in-india.html">The GCC Reality Check: Why US Companies Hit a Wall in India <span class="ticker-date">&middot; 11 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/gcc-leadership-bench-depth-through-executive-coaching.html">Executive Coaching for India GCCs: Building Leadership Bench Depth <span class="ticker-date">&middot; 11 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/india-gcc-finance-transformation-to-value-center.html">From Cost Center to Value Center: India GCCs <span class="ticker-date">&middot; 11 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/5-lessons-japanese-executives-indian-business-culture.html">5 Lessons Japanese Executives Can Learn from Indian Business Culture <span class="ticker-date">&middot; 11 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/zero-trust-controls-ai-agent-access-accountability.html">How Zero Trust Controls AI Agent Access <span class="ticker-date">&middot; 09 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/from-cost-center-to-value-center-the-modern-gcc-mandate.html">From Cost Center to Value Center: The Modern GCC Mandate <span class="ticker-date">&middot; 07 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/the-shadow-ai-challenge.html">The Shadow AI Challenge: Safeguarding Business Data <span class="ticker-date">&middot; 05 Oct 2026</span></a></li>
+        <!-- duplicate of the list above, for a seamless marquee loop -->
+        <li><a class="ticker-item" href="/blog/the-gcc-mirage-cost-savings-vs-strategic-transformation.html"><span class="ticker-new">New</span> The GCC Mirage: Cost Savings vs. Strategic Transformation <span class="ticker-date">&middot; 18 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/gcc-mirage-cost-vs-strategy-for-us-firms.html"><span class="ticker-new">New</span> GCC Mirage: Cost vs. Strategy for US Firms <span class="ticker-date">&middot; 18 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/building-a-high-performing-gcc-leadership-team-in-india.html">Building a High-Performing GCC Leadership Team in India <span class="ticker-date">&middot; 14 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/building-high-performing-gcc-leadership-in-india.html">Building High-Performing GCC Leadership in India <span class="ticker-date">&middot; 12 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/gcc-reality-check-why-us-firms-stall-in-india.html">The GCC Reality Check: Why US Companies Hit a Wall in India <span class="ticker-date">&middot; 11 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/gcc-leadership-bench-depth-through-executive-coaching.html">Executive Coaching for India GCCs: Building Leadership Bench Depth <span class="ticker-date">&middot; 11 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/india-gcc-finance-transformation-to-value-center.html">From Cost Center to Value Center: India GCCs <span class="ticker-date">&middot; 11 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/5-lessons-japanese-executives-indian-business-culture.html">5 Lessons Japanese Executives Can Learn from Indian Business Culture <span class="ticker-date">&middot; 11 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/zero-trust-controls-ai-agent-access-accountability.html">How Zero Trust Controls AI Agent Access <span class="ticker-date">&middot; 09 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/from-cost-center-to-value-center-the-modern-gcc-mandate.html">From Cost Center to Value Center: The Modern GCC Mandate <span class="ticker-date">&middot; 07 Oct 2026</span></a></li>
+        <li><a class="ticker-item" href="/blog/the-shadow-ai-challenge.html">The Shadow AI Challenge: Safeguarding Business Data <span class="ticker-date">&middot; 05 Oct 2026</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── PUBLISHED COUNTER ── -->
+<section class="countbar" aria-label="Insights published so far">
+  <div class="container">
+    <div class="countbar-inner">
+      <div class="stat"><span class="stat-num" id="stat-articles">&mdash;</span><span class="stat-label">articles published</span></div>
+      <div class="stat-sep" aria-hidden="true"></div>
+      <div class="stat"><span class="stat-num" id="stat-categories">&mdash;</span><span class="stat-label">topics covered</span></div>
+      <div class="stat-sep" aria-hidden="true"></div>
+      <div class="stat"><span class="stat-num" id="stat-latest">&mdash;</span><span class="stat-label">latest publish</span></div>
+      <p class="countbar-note" id="stat-note">New insights are published here every week. Bookmark this page &mdash; Sanjeev, Nagaraj, Rajesh and Jacob publish directly to it.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ── CATEGORY FILTERS ── -->
 <section id="filters">
   <div class="container">
@@ -290,12 +371,127 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
     <span class="label">More Insights</span>
     <h2 class="section-title">Latest articles and thinking.</h2>
     <div class="articles-grid">
+      <div class="article-card reveal" data-category="transformation">
+        <span class="article-tag">Transformation</span>
+        <h3 class="article-title">The GCC Mirage: Cost Savings vs. Strategic Transformation</h3>
+        <p class="article-excerpt">Why US companies build GCCs for cost savings but miss strategic value. A practitioner's guide to building capability centers that deliver transformation.</p>
+        <p class="article-meta">18 Oct 2026 &middot; 9 min read</p>
+        <a href="/blog/the-gcc-mirage-cost-savings-vs-strategic-transformation.html" class="article-cta">Read &rarr;</a>
+      </div>
+
       <div class="article-card reveal" data-category="gcc">
         <span class="article-tag">GCC</span>
         <h3 class="article-title">GCC Mirage: Cost vs. Strategy for US Firms</h3>
         <p class="article-excerpt">GCCs typically save 30-40% on cost. So why does yours still feel like the needle is not moving? The five mistakes we see most often, and what to do about each.</p>
+        <p class="article-meta">18 Oct 2026 &middot; 10 min read</p>
         <a href="/blog/gcc-mirage-cost-vs-strategy-for-us-firms.html" class="article-cta">Read &rarr;</a>
       </div>
+
+      <div class="article-card reveal" data-category="gcc">
+        <span class="article-tag">GCC</span>
+        <h3 class="article-title">Building a High-Performing GCC Leadership Team in India</h3>
+        <p class="article-excerpt">Strategic guidance for establishing effective GCC leadership in India, focusing on governance, talent retention, and operational maturity.</p>
+        <p class="article-meta">14 Oct 2026 &middot; 9 min read</p>
+        <a href="/blog/building-a-high-performing-gcc-leadership-team-in-india.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="gcc">
+        <span class="article-tag">GCC</span>
+        <h3 class="article-title">Building High-Performing GCC Leadership in India</h3>
+        <p class="article-excerpt">A practical guide to structuring, staffing, and sustaining effective GCC leadership teams in India for global enterprises.</p>
+        <p class="article-meta">12 Oct 2026 &middot; 6 min read</p>
+        <a href="/blog/building-high-performing-gcc-leadership-in-india.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="transformation">
+        <span class="article-tag">Transformation</span>
+        <h3 class="article-title">The GCC Reality Check: Why US Companies Hit a Wall in India</h3>
+        <p class="article-excerpt">US firms often hit operational walls in India. Learn why strategic misalignment fails and how to build a resilient GCC that delivers actual value.</p>
+        <p class="article-meta">11 Oct 2026 &middot; 7 min read</p>
+        <a href="/blog/gcc-reality-check-why-us-firms-stall-in-india.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="gcc">
+        <span class="article-tag">GCC</span>
+        <h3 class="article-title">Executive Coaching for India GCCs: Building Leadership Bench Depth</h3>
+        <p class="article-excerpt">How India GCCs can proactively build leadership bench depth through executive coaching, ensuring continuity before key roles become vacant.</p>
+        <p class="article-meta">11 Oct 2026 &middot; 6 min read</p>
+        <a href="/blog/gcc-leadership-bench-depth-through-executive-coaching.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="transformation">
+        <span class="article-tag">Transformation</span>
+        <h3 class="article-title">From Cost Center to Value Center: India GCCs</h3>
+        <p class="article-excerpt">How finance transformation and digital maturity redefine India GCCs as strategic value centers, not just cost arbitrage hubs.</p>
+        <p class="article-meta">11 Oct 2026 &middot; 7 min read</p>
+        <a href="/blog/india-gcc-finance-transformation-to-value-center.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="gcc">
+        <span class="article-tag">GCC</span>
+        <h3 class="article-title">5 Lessons Japanese Executives Can Learn from Indian Business Culture</h3>
+        <p class="article-excerpt">Explore practical cultural bridges between Japanese and Indian business practices. Learn how empathy, adaptability, and speed can enhance global operations.</p>
+        <p class="article-meta">11 Oct 2026 &middot; 8 min read</p>
+        <a href="/blog/5-lessons-japanese-executives-indian-business-culture.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="transformation">
+        <span class="article-tag">Transformation</span>
+        <h3 class="article-title">From Cost Center to Value Center: The Modern GCC Mandate</h3>
+        <p class="article-excerpt">Shift GCCs from transactional support to strategic innovation hubs. Learn how to build value, not just save costs.</p>
+        <p class="article-meta">7 Oct 2026 &middot; 7 min read</p>
+        <a href="/blog/from-cost-center-to-value-center-the-modern-gcc-mandate.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="gcc">
+        <span class="article-tag">GCC</span>
+        <h3 class="article-title">GCC vs BOT: Choosing India's Right Setup</h3>
+        <p class="article-excerpt">Compare GCCs and BOTs for India expansion. Learn structural differences, control levels, and how to choose the right model for your business.</p>
+        <p class="article-meta">20 Jul 2026 &middot; 6 min read</p>
+        <a href="/blog/gcc-vs-bot-choosing-india-s-right-setup.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="ventures">
+        <span class="article-tag">Ventures</span>
+        <h3 class="article-title">Preparing Your Venture for Exit: A Founder's Readiness Guide</h3>
+        <p class="article-excerpt">A practical guide for founders on preparing their venture for exit, focusing on governance, financial hygiene, and strategic positioning.</p>
+        <p class="article-meta">13 Jul 2026 &middot; 8 min read</p>
+        <a href="/blog/preparing-your-venture-for-exit-a-founder-s-readiness-guide.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="gcc">
+        <span class="article-tag">GCC</span>
+        <h3 class="article-title">Governance Models for Multi-Time-Zone GCCs</h3>
+        <p class="article-excerpt">Practical governance frameworks for Global Capability Centers operating across multiple time zones. Align teams, streamline decision-making, and reduce latency.</p>
+        <p class="article-meta">8 Jul 2026 &middot; 7 min read</p>
+        <a href="/blog/governance-models-for-multi-time-zone-gccs.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="gcc">
+        <span class="article-tag">GCC</span>
+        <h3 class="article-title">Executive Coaching for GCC Leaders: Building Bench Strength</h3>
+        <p class="article-excerpt">Discover how executive coaching builds leadership bench strength in Global Capability Centers, ensuring resilience and strategic alignment for global enterprises.</p>
+        <p class="article-meta">3 Jul 2026 &middot; 9 min read</p>
+        <a href="/blog/executive-coaching-for-gcc-leaders-building-bench-strength.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="gcc">
+        <span class="article-tag">GCC</span>
+        <h3 class="article-title">Succession Planning and Coaching for GCC Bench Strength</h3>
+        <p class="article-excerpt">Learn how executive coaching builds leadership depth in Global Capability Centers. Practical strategies for succession, retention, and strategic impact.</p>
+        <p class="article-meta">29 Jun 2026 &middot; 10 min read</p>
+        <a href="/blog/gcc-succession-planning-and-coaching-bench-strength.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      <div class="article-card reveal" data-category="transformation">
+        <span class="article-tag">Transformation</span>
+        <h3 class="article-title">GCC KPIs: The Metrics That Matter to Global Leaders</h3>
+        <p class="article-excerpt">Discover the essential KPIs for measuring Global Capability Center success. Move beyond cost savings to focus on innovation, quality, and strategic impact.</p>
+        <p class="article-meta">26 Jun 2026 &middot; 11 min read</p>
+        <a href="/blog/gcc-kpis-metrics-that-matter-to-global-leaders.html" class="article-cta">Read &rarr;</a>
+      </div>
+
+      
 
 
       <div class="article-card reveal" data-category="cybersecurity">
@@ -405,6 +601,36 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 revealElements.forEach(el => revealObserver.observe(el));
+
+// Published counter — derived from the page itself, so it can never drift
+function initPublishedCounter() {
+  const cards = document.querySelectorAll('.article-card');
+  const featured = document.querySelector('.featured-card');
+  if (!document.getElementById('stat-articles')) return;
+
+  const total = cards.length + (featured ? 1 : 0);
+  const cats = new Set();
+  cards.forEach(c => { const k = c.getAttribute('data-category'); if (k) cats.add(k); });
+
+  const latestLink = document.querySelector('#ticker .ticker-item .ticker-date');
+  const latest = latestLink ? latestLink.textContent.replace('·', '').trim() : '—';
+
+  document.getElementById('stat-articles').textContent = total;
+  document.getElementById('stat-categories').textContent = cats.size;
+  document.getElementById('stat-latest').textContent = latest;
+
+  // Update the page title/meta so the published count is visible to search engines too
+  const note = document.getElementById('stat-note');
+  if (note) {
+    note.textContent = total + ' insights published and counting. Sanjeev, Nagaraj, Rajesh and Jacob publish directly to this page.';
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPublishedCounter);
+} else {
+  initPublishedCounter();
+}
 
 // Filter articles & dynamic counters
 function initArticleFilters() {

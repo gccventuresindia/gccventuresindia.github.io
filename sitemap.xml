@@ -2,74 +2,205 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.gccventuresindia.com/</loc>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.gccventuresindia.com/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.gccventuresindia.com/offerings.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.gccventuresindia.com/services.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.gccventuresindia.com/contact.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.gccventuresindia.com/faq.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gccventuresindia.com/about.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gccventuresindia.com/team.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.gccventuresindia.com/insights.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.gccventuresindia.com/start-venture.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.gccventuresindia.com/exit-readiness.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.gccventuresindia.com/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/faq.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/insights.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/team.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.gccventuresindia.com/cybersecurity.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/thank-you.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/the-gcc-mirage-cost-savings-vs-strategic-transformation.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/gcc-mirage-cost-vs-strategy-for-us-firms.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/building-a-high-performing-gcc-leadership-team-in-india.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.gccventuresindia.com/blog/how-to-set-up-a-global-capability-center-in-india-2026-cxo-playbook.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.gccventuresindia.com/blog/india-gcc-boom-2026-playbook-innovation-exit.html</loc>
+    <loc>https://www.gccventuresindia.com/blog/building-high-performing-gcc-leadership-in-india.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/india-gcc-finance-transformation-to-value-center.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/gcc-reality-check-why-us-firms-stall-in-india.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/gcc-leadership-bench-depth-through-executive-coaching.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/5-lessons-japanese-executives-indian-business-culture.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/zero-trust-controls-ai-agent-access-accountability.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/from-cost-center-to-value-center-the-modern-gcc-mandate.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/the-shadow-ai-challenge.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.gccventuresindia.com/blog/the-gcc-data-privacy-playbook.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.gccventuresindia.com/blog/why-global-enterprises-choose-india-for-their-next-gcc.html</loc>
-    <priority>0.6</priority>
+    <loc>https://www.gccventuresindia.com/blog/gcc-vs-bot-choosing-india-s-right-setup.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.gccventuresindia.com/blog/measuring-gcc-success-the-kpis-that-matter.html</loc>
-    <priority>0.6</priority>
+    <loc>https://www.gccventuresindia.com/blog/preparing-your-venture-for-exit-a-founder-s-readiness-guide.html</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/governance-models-for-multi-time-zone-gccs.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/executive-coaching-for-gcc-leaders-building-bench-strength.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/gcc-succession-planning-and-coaching-bench-strength.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/gcc-kpis-metrics-that-matter-to-global-leaders.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.gccventuresindia.com/blog/why-mid-market-gccs-should-be-innovation-hubs-not-cost-centers.html</loc>
-    <priority>0.6</priority>
-      <url>
-    <loc>https://www.gccventuresindia.com/blog/the-shadow-ai-challenge.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/india-gcc-boom-2026-playbook-innovation-exit.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/why-global-enterprises-choose-india-for-their-next-gcc.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/measuring-gcc-success-the-kpis-that-matter.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
