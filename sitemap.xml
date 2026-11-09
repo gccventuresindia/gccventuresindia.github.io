@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.gccventuresindia.com/</loc>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
@@ -47,7 +47,7 @@
   </url>
   <url>
     <loc>https://www.gccventuresindia.com/insights.html</loc>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -62,8 +62,56 @@
   </url>
   <url>
     <loc>https://www.gccventuresindia.com/thank-you.html</loc>
-    <changefreq>monthly</changefreq>
+    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/gcc-cost-state-benchmark-2026.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/gcc-setup-cost-tamil-nadu-vs-karnataka-vs-telangana-2026.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/gcc-vs-shared-services-decision-2026.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/gcc-vs-shared-services-strategic-decision-framework-2026.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/japan-multinationals-gcc-2026.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/japanese-multinationals-in-india-gcc-leadership-guide.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/state-of-gccs-in-india-2026-benchmarks-timelines-roi.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/state-of-gccs-india-2026.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.gccventuresindia.com/blog/gcc-cost-optimization-quality-no-compromise.html</loc>
@@ -84,25 +132,25 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.gccventuresindia.com/blog/how-to-set-up-a-global-capability-center-in-india-2026-cxo-playbook.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.gccventuresindia.com/blog/building-high-performing-gcc-leadership-in-india.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.gccventuresindia.com/blog/gcc-reality-check-why-us-firms-stall-in-india.html</loc>
-    <lastmod>2026-10-11</lastmod>
+    <loc>https://www.gccventuresindia.com/blog/how-to-set-up-a-global-capability-center-in-india-2026-cxo-playbook.html</loc>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.gccventuresindia.com/blog/5-lessons-japanese-executives-indian-business-culture.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gccventuresindia.com/blog/gcc-reality-check-why-us-firms-stall-in-india.html</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -185,4 +233,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  </urlset>
+</urlset>
