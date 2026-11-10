@@ -154,6 +154,29 @@ function injectPublishedTime(html, date) {
   return html;
 }
 
+/**
+ * Update the visible byline date in the post HTML so it reflects the
+ * actual publish date (not the date the draft was first generated).
+ */
+function injectBylineDate(html, date) {
+  const formatted = formatDate(date);
+  // Match the post-byline div and replace any old date with the publish date
+  const re = /<div class="post-byline"[^>]*>[\s\S]*?(June|July|August|September|October|November|December|January|February|March|April|May)[\s.]+[0-9]{1,2},?\s+[0-9]{4}[^<]*<\//i;
+  if (re.test(html)) {
+    return html.replace(re, function(m) {
+      return m.replace(/(June|July|August|September|October|November|December|January|February|March|April|May)[\s.]+[0-9]{1,2},?\s+[0-9]{4}/i, formatted);
+    });
+  }
+  // Broader fallback: find any date-like string in a post-byline
+  const fb = /post-byline[^>]*>[\s\S]*?\d{1,3}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[\s.]+\d{4}/i;
+  if (fb.test(html)) {
+    return html.replace(fb, function(m) {
+      return m.slice(0, m.indexOf(">") + 1) + "GCC Ventures India &middot; " + formatted;
+    });
+  }
+  return html;
+}
+
 function escapeHtml(s) {
   return String(s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -478,6 +501,7 @@ function runPublish() {
 
   html = injectCanonical(html, SITE + '/blog/' + slug + '.html');
   html = injectPublishedTime(html, date);
+  html = injectBylineDate(html, date);
 
   writeFileSync(join(BLOG_DIR, slug + '.html'), html, 'utf8');
   console.log('  wrote  blog/' + slug + '.html');
