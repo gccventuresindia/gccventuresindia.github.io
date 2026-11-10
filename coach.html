@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script>document.documentElement.className+=" js"</script>
+<title>Executive Coaching — Where Strategy Meets Human Capability | GCC Ventures India</title>
+<meta name="description" content="Senior-led executive coaching for CEOs, founders, and C-suite leaders. Individual coaching, leadership team development, cross-cultural leadership, and succession planning by practitioners who have built and scaled global operations."/>
+<link rel="canonical" href="https://www.gccventuresindia.com/coach.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#080e1c;--navy-2:#0d1628;--navy-3:#111e35;--border:oklch(1 0 0/.08);--orange:#ff9500;--orange-h:#e07800;--teal:#2ec4b6;--text:#e8e6e0;--muted:#8a8880;--faint:#4a4845;--font-display:Instrument Serif,Georgia,serif;--font-body:DM Sans,Helvetica Neue,sans-serif;--text-xs:clamp(.75rem,.7rem+.25vw,.875rem);--text-sm:clamp(.875rem,.8rem+.35vw,1rem);--text-base:clamp(1rem,.95rem+.25vw,1.125rem);--text-lg:clamp(1.125rem,1rem+.75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem+1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem+2.5vw,3.5rem);--s2:.5rem;--s3:.75rem;--s4:1rem;--s6:1.5rem;--s8:2rem;--s10:2.5rem;--s12:3rem;--s16:4rem;--s20:5rem;--r-sm:.375rem;--r-md:.5rem;--r-full:999px;--r-xl:1rem;--content-wide:1200px;--content-default:960px;--ease:cubic-bezier(.16,1,.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);font-size:var(--text-base);color:var(--text);background:var(--navy);line-height:1.65;min-height:100dvh}
+img,svg{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.15}
+p{text-wrap:pretty;max-width:68ch}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:var(--r-sm)}
+.container{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(var(--s4),4vw,var(--s10))}
+.section{padding-block:clamp(var(--s12),6vw,var(--s20))}
+.section--alt{background:var(--navy-2)}
+.section--narrow{max-width:var(--content-default);margin-inline:auto;padding-inline:clamp(var(--s4),4vw,var(--s10))}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin:0 0 8px;color:var(--teal)}
+.section-head{margin-bottom:var(--s10)}
+.section-title{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--text);margin-top:var(--s3);margin-bottom:var(--s4)}
+.section-intro{font-size:var(--text-base);color:var(--muted);max-width:56ch;margin-bottom:var(--s10)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:52px;padding:.75rem 1.5rem;border-radius:var(--r-md);font-size:var(--text-sm);font-weight:600;letter-spacing:.02em;transition:all 180ms var(--ease);white-space:nowrap;cursor:pointer}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-h);transform:translateY(-1px)}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:oklch(1 0 0/.2);background:oklch(1 0 0/.04)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:oklch(.08 .02 240/.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem;padding-inline:calc(var(--s2))}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand-name{font-size:var(--text-sm);font-weight:700;color:var(--orange);letter-spacing:.04em}
+.nav-links{display:flex;align-items:center;gap:var(--s6)}
+.nav-links a{font-size:var(--text-sm);font-weight:500;color:var(--text);letter-spacing:.02em;transition:color 150ms;padding:.5rem .75rem;border-radius:var(--r-sm)}
+.nav-links a:hover{color:var(--orange);background:oklch(1 0 0/.06)}
+.nav-links a.active{color:var(--orange)}
+.nav-cta{margin-left:var(--s4)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:var(--s2);cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 200ms var(--ease)}
+.mobile-menu{display:none;flex-direction:column;background:var(--navy-2);border-top:1px solid var(--border);padding:var(--s6) clamp(var(--s4),4vw,var(--s10))}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:var(--text-base);color:var(--text);padding:var(--s3) 0;border-bottom:1px solid var(--border)}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}}
+@media(max-width:900px){.nav-links{gap:var(--s4)}.nav-links a{font-size:.9rem;padding:.4rem .6rem}}
+.card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--r-xl);padding:clamp(var(--s8),4vw,var(--s10));transition:border-color 200ms var(--ease),transform 200ms var(--ease)}
+.card:hover{border-color:var(--orange);transform:translateY(-4px)}
+.card-icon{font-size:3rem;margin-bottom:var(--s6);display:inline-block}
+.card-title{font-size:var(--text-xl);font-weight:700;color:#fff;margin-bottom:var(--s4)}
+.card-desc{font-size:var(--text-base);color:var(--muted);line-height:1.7;margin-bottom:var(--s6)}
+.link-orange{display:inline-flex;align-items:center;gap:var(--s2);font-size:var(--text-sm);font-weight:600;color:var(--orange);transition:gap 150ms}
+.link-orange:hover{gap:var(--s4)}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--s6)}
+.process-step{text-align:center;padding:var(--s8);background:var(--navy-3);border:1px solid var(--border);border-radius:var(--r-xl)}
+.process-step-num{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--orange);margin-bottom:var(--s3)}
+.process-step-title{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--s3)}
+.process-step-desc{font-size:var(--text-sm);color:var(--muted);line-height:1.6}
+.program-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:var(--s8)}
+.program-card{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--r-xl);padding:var(--s8)}
+.program-card h3{font-size:var(--text-lg);font-weight:700;color:#fff;margin-bottom:var(--s4)}
+.program-card .program-meta{font-size:var(--text-xs);color:var(--teal);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--s4)}
+.program-card p{font-size:var(--text-sm);color:var(--muted);line-height:1.7;margin-bottom:var(--s4)}
+.program-card ul{margin-bottom:var(--s6)}
+.program-card li{font-size:var(--text-sm);color:var(--muted);padding:var(--s2) 0;padding-left:var(--s6);position:relative}
+.program-card li::before{content:"•";color:var(--orange);position:absolute;left:0;font-weight:700}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--s6);padding:var(--s10) 0;border-top:1px solid var(--border);margin-top:var(--s10)}
+.stat-num{font-family:var(--font-display);font-size:var(--text-xl);color:#fff}
+.stat-label{font-size:var(--text-xs);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:var(--s2)}
+.cta-box{background:var(--navy-3);border:1px solid var(--border);border-radius:var(--r-xl);padding:clamp(var(--s12),6vw,var(--s20));text-align:center}
+.cta-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--s6)}
+.cta-body{font-size:var(--text-base);color:var(--muted);max-width:52ch;margin-inline:auto;margin-bottom:var(--s10)}
+.footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s10) 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--s6)}
+.footer-brand{font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.footer-copy{font-size:var(--text-xs);color:var(--muted)}
+.footer-links{display:flex;gap:var(--s6)}
+.footer-links a{font-size:var(--text-xs);color:var(--orange);letter-spacing:.04em;transition:color 150ms}
+.footer-links a:hover{color:var(--text)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+@media(max-width:640px){.nav-links{display:none}.hamburger{display:flex}.footer-inner{flex-direction:column;align-items:flex-start}.footer-links{flex-wrap:wrap;gap:1rem}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-name">GCC VENTURES INDIA</span>
+      </a>
+      <div class="nav-links" role="list">
+        <a href="index.html">Home</a>
+        <a href="offerings.html">Offerings</a>
+        <a href="services.html">Capabilities</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="testimonials.html">Testimonials</a>
+        <a href="about.html">About</a>
+        <a href="team.html">Practitioners</a>
+        <a href="insights.html">Insights</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="contact.html" class="btn btn-primary nav-cta" style="min-height:38px;padding:.45rem 1rem;font-size:.85rem">Get in Touch</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" role="navigation">
+    <a href="index.html">Home</a>
+    <a href="offerings.html">Offerings</a>
+    <a href="services.html">Capabilities</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="about.html">About</a>
+    <a href="team.html">Practitioners</a>
+    <a href="insights.html">Insights</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="section" style="background:radial-gradient(ellipse 80% 60% at 50% -10%,oklch(.28 .08 240/.5),transparent);padding-top:calc(clamp(var(--s12),8vw,var(--s16)) + 4rem)">
+  <div class="container" style="text-align:center">
+    <div class="eyebrow" style="color:var(--orange);margin-bottom:var(--s8)">EXECUTIVE COACHING</div>
+    <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.5rem);color:#fff;margin-bottom:var(--s6)">
+      Where Strategy Meets Human Capability
+    </h1>
+    <p class="section-intro" style="max-width:64ch;margin:0 auto var(--s10);font-size:var(--text-lg);color:var(--muted)">
+      Executive coaching for leaders who build and scale global operations. Not external consultants — senior operators who have built, scaled, and led multinational organizations from the inside.
+    </p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:var(--s4);flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-primary">Begin Your Coaching Journey</a>
+      <a href="#programs" class="btn btn-ghost">Explore Programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- Who It's For -->
+<section class="section section--alt" id="who">
+  <div class="container--narrow" style="text-align:center">
+    <div class="eyebrow">WHO IT'S FOR</div>
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.5rem)">Built for Senior Leaders Who Shape Strategy</h2>
+    <p class="section-intro" style="margin:0 auto var(--s10)">
+      Our coaching engagements serve leaders at the apex of their organisations — people who carry the weight of strategy, culture, and execution.
+    </p>
+  </div>
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--s6)">
+      <div class="card" style="text-align:center;padding:var(--s8)">
+        <div style="font-size:2rem;margin-bottom:var(--s4)">🎯</div>
+        <h3 style="font-size:var(--text-lg);color:#fff;margin-bottom:var(--s3)">CEOs &amp; Founders</h3>
+        <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">
+          Leaders navigating the transition from builder to architect — where operational instinct must give way to strategic clarity and institutional resilience.
+        </p>
+      </div>
+      <div class="card" style="text-align:center;padding:var(--s8)">
+        <div style="font-size:2rem;margin-bottom:var(--s4)">⚙️</div>
+        <h3 style="font-size:var(--text-lg);color:#fff;margin-bottom:var(--s3)">C-Suite &amp; VPs</h3>
+        <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">
+          Senior executives accelerating through critical transitions — new roles, organisational scaling, or the leap from functional leadership to enterprise-wide impact.
+        </p>
+      </div>
+      <div class="card" style="text-align:center;padding:var(--s8)">
+        <div style="font-size:2rem;margin-bottom:var(--s4)">🌐</div>
+        <h3 style="font-size:var(--text-lg);color:#fff;margin-bottom:var(--s3)">GCC &amp; Global Leaders</h3>
+        <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">
+          Leaders managing cross-border operations, building multi-regional teams, and bridging cultural and governance gaps that generic coaching never addresses.
+        </p>
+      </div>
+      <div class="card" style="text-align:center;padding:var(--s8)">
+        <div style="font-size:2rem;margin-bottom:var(--s4)">🏗️</div>
+        <h3 style="font-size:var(--text-lg);color:#fff;margin-bottom:var(--s3)">Senior Practitioners</h3>
+        <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">
+          Professionals with 15+ years of experience seeking to deepen their strategic impact, build executive presence, and sustain performance beyond founder dependency.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programs -->
+<section class="section" id="programs">
+  <div class="container--narrow" style="text-align:center">
+    <div class="eyebrow">PROGRAMS</div>
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.5rem)">Four Programmes, One Objective</h2>
+    <p class="section-intro" style="margin:0 auto var(--s10)">
+      Each programme is structured around the specific inflection point your career or organisation faces. The format is bespoke — typically 6–12 months with bi-weekly engagement.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="program-grid">
+
+      <!-- Program 1 -->
+      <div class="program-card reveal">
+        <div class="program-meta">Programme 01</div>
+        <h3>Individual Executive Coaching</h3>
+        <p>One-on-one engagement between practitioner and executive. Focuses on the individual's strategic lens, decision-making under ambiguity, executive presence, and the specific challenges their role demands.</p>
+        <ul>
+          <li>Strategic decision-making frameworks for complex, high-stakes scenarios</li>
+          <li>Executive presence and board-level communication</li>
+          <li>Stakeholder alignment across geographies and time zones</li>
+          <li>Personal leadership operating model and habit architecture</li>
+        </ul>
+        <p style="font-size:var(--text-sm);color:var(--teal);font-weight:600">
+          Format: Bi-weekly 90-minute sessions · 6–12 month engagement · Confidential
+        </p>
+        <p style="font-size:var(--text-sm);color:var(--muted);margin-top:var(--s4)">
+          <strong style="color:#fff">Outcome:</strong> Sharpened strategic judgment, elevated executive presence, and a repeatable personal operating model that sustains performance through scaling cycles.
+        </p>
+      </div>
+
+      <!-- Program 2 -->
+      <div class="program-card reveal">
+        <div class="program-meta">Programme 02</div>
+        <h3>Leadership Team Coaching</h3>
+        <p>Engagement with the entire senior leadership team. Addresses team dynamics, cross-functional alignment, and the collective capability required to execute strategy at scale.</p>
+        <ul>
+          <li>Leadership team diagnostic and capability gap mapping</li>
+          <li>Working agreement for cross-functional collaboration</li>
+          <li>Strategic planning cycles that actually execute</li>
+          <li>Conflict navigation and high-trust team architecture</li>
+        </ul>
+        <p style="font-size:var(--text-sm);color:var(--teal);font-weight:600">
+          Format: Monthly offsites · Bi-monthly review sessions · 6–9 month engagement
+        </p>
+        <p style="font-size:var(--text-sm);color:var(--muted);margin-top:var(--s4)">
+          <strong style="color:#fff">Outcome:</strong> A leadership team that operates as a unified strategic unit — fewer silos, faster decisions, and collective ownership of outcomes.
+        </p>
+      </div>
+
+      <!-- Program 3 -->
+      <div class="program-card reveal">
+        <div class="program-meta">Programme 03</div>
+        <h3>Cross-Cultural Leadership</h3>
+        <p>For leaders managing multi-regional operations, particularly India-based GCCs reporting to global HQs. Addresses the cultural, governance, and communication dimensions that generic coaching misses.</p>
+        <ul>
+          <li>Cross-cultural communication frameworks for India–global dynamics</li>
+          <li>Talent management across time zones and regulatory environments</li>
+          <li>Building trust-based relationships with global senior stakeholders</li>
+          <li>Navigating power distance, directness, and decision-making norms</li>
+        </ul>
+        <p style="font-size:var(--text-sm);color:var(--teal);font-weight:600">
+          Format: Combination of individual and team sessions · Ongoing · Can run alongside coaching programmes
+        </p>
+        <p style="font-size:var(--text-sm);color:var(--muted);margin-top:var(--s4)">
+          <strong style="color:#fff">Outcome:</strong> Leaders who navigate cultural complexity without losing strategic clarity — building trust across borders while executing on global objectives.
+        </p>
+      </div>
+
+      <!-- Program 4 -->
+      <div class="program-card reveal">
+        <div class="program-meta">Programme 04</div>
+        <h3>Succession &amp; Continuity Planning</h3>
+        <p>Structured engagement for founders and CEOs preparing for transition — whether handing over to a successor, selling the business, or stepping into an advisory role. This is where strategy meets human capability at its most critical moment.</p>
+        <ul>
+          <li>Successor identification and capability development roadmap</li>
+          <li>Knowledge transfer and institutional memory preservation</li>
+          <li>Personal transition planning — from operator to advisor</li>
+          <li>Board alignment and governance structuring for the transition</li>
+        </ul>
+        <p style="font-size:var(--text-sm);color:var(--teal);font-weight:600">
+          Format: Intensive engagement · 6–18 month programme · High-touch advisory
+        </p>
+        <p style="font-size:var(--text-sm);color:var(--muted);margin-top:var(--s4)">
+          <strong style="color:#fff">Outcome:</strong> A leader who exits with intention — the organisation is ready, the
+<!-- Differentiators -->
+<section class="section section--alt" id="why">
+  <div class="container--narrow" style="text-align:center">
+    <div class="eyebrow">WHY GCC VENTURES</div>
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.5rem)">A Different Kind of Coaching</h2>
+    <p class="section-intro" style="margin:0 auto var(--s10)">
+      Most executive coaching is delivered by professional coaches who have never sat in the seat you occupy. We do.
+    </p>
+  </div>
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s6)">
+      <div class="card" style="padding:var(--s8)">
+        <div style="color:var(--teal);font-size:1.5rem;margin-bottom:var(--s3)">✓</div>
+        <h3 style="font-size:var(--text-lg);color:#fff;margin-bottom:var(--s3)">Senior Operators, Not Consultants</h3>
+        <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">
+          We have built and scaled global operations. We have sat in boardrooms, hired and fired C-suite executives, and navigated the exact transitions you are facing now. We speak the language of operators.
+        </p>
+      </div>
+      <div class="card" style="padding:var(--s8)">
+        <div style="color:var(--teal);font-size:1.5rem;margin-bottom:var(--s3)">✓</div>
+        <h3 style="font-size:var(--text-lg);color:#fff;margin-bottom:var(--s3)">Built for India Context</h3>
+        <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">
+          Our coaching is rooted in deep India operating experience — talent architecture, governance, regulatory complexity, and the unique challenges of managing India GCCs for global enterprises.
+        </p>
+      </div>
+      <div class="card" style="padding:var(--s8)">
+        <div style="color:var(--teal);font-size:1.5rem;margin-bottom:var(--s3)">✓</div>
+        <h3 style="font-size:var(--text-lg);color:#fff;margin-bottom:var(--s3)">Confidential &amp; Discretionary</h3>
+        <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">
+          Executive coaching requires absolute trust. Our engagements are fully confidential, structured around your agenda, and designed to build your capability — not create dependency on the coach.
+        </p>
+      </div>
+      <div class="card" style="padding:var(--s8)">
+        <div style="color:var(--teal);font-size:1.5rem;margin-bottom:var(--s3)">✓</div>
+        <h3 style="font-size:var(--text-lg);color:#fff;margin-bottom:var(--s3)">End-to-End View</h3>
+        <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">
+          Unlike specialists who focus on one dimension, we bring a holistic view — covering strategy, operations, talent, governance, and value creation. Every coaching conversation connects to your broader objectives.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" id="contact">
+  <div class="container--narrow">
+    <div class="cta-box reveal">
+      <div class="eyebrow" style="margin-bottom:var(--s4)">START YOUR JOURNEY</div>
+      <h2 class="cta-title">Ready to Invest in Your Leadership Capability?</h2>
+      <p class="cta-body">
+        Executive coaching is a personal commitment. Let's start with a confidential conversation to understand where you are, where you want to be, and whether we can help.
+      </p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:var(--s4);flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-primary">Begin Your Coaching Journey</a>
+        <a href="https://wa.me/919611991902?text=Hi%2C%20I%27d%20like%20to%20discuss%20executive%20coaching%20with%20GCC%20Ventures%20India." target="_blank" class="btn btn-ghost" style="color:var(--teal);border-color:var(--teal)">
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">GCC VENTURES INDIA</div>
+      <div class="footer-copy">&copy; 2026 GCC Ventures India</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Capabilities</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="testimonials.html">Testimonials</a>
+        <a href="team.html">Practitioners</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+  <div style="max-width:1180px;margin:1.25rem auto 0;padding:1.1rem 1.5rem 0;border-top:1px solid rgba(255,255,255,.14);font-size:.82rem;line-height:1.6">
+    <div style="display:flex;flex-wrap:wrap;gap:.55rem 1.5rem;align-items:center">
+      <strong style="color:#ff9500;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem;font-weight:700">Contact</strong>
+      <a href="mailto:contact@gccventuresindia.com" style="color:#ffb84d;text-decoration:none">&#128231;&nbsp;contact@gccventuresindia.com</a>
+      <a href="tel:+919611991902" style="color:#ffb84d;text-decoration:none">&#128222;&nbsp;Business&nbsp;Contact:&nbsp;+91&nbsp;96119&nbsp;91902</a>
+    </div>
+    <div style="margin-top:.6rem;font-size:.78rem;color:rgba(255,255,255,.75)">
+      <strong style="color:#ff9500;letter-spacing:.07em;text-transform:uppercase;font-size:.68rem;font-weight:700">Business hours</strong>
+      &nbsp;Mon&ndash;Fri | 9:00 AM &ndash; 6:00 PM IST (GMT+5:30)
+    </div>
+    <div style="margin-top:.35rem;font-size:.78rem;color:rgba(255,255,255,.75)">
+      Bengaluru, Karnataka, India (Serving India, APAC, Japan, Middle East &amp; Global GCC Ecosystem)
+    </div>
+  </div>
+</footer>
+
+<script>
+// Hamburger menu
+const btn=document.getElementById('hamburgerBtn');
+const menu=document.getElementById('mobileMenu');
+btn.addEventListener('click',()=>{const o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');btn.setAttribute('aria-expanded','false')}));
+
+// Scroll reveal
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);observer.unobserve(e.target)}})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
