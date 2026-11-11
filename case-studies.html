@@ -66,10 +66,10 @@ section{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
 .cta-actions{display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
 .cta-actions .btn{min-width:220px}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:oklch(0.08 0.02 240 / 0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem;gap:var(--space-4);padding-inline:calc(var(--space-2))}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem;gap:var(--space-4);padding-inline:calc(var(--space-2));flex-wrap:nowrap;}
 .brand{display:flex;flex-direction:row;align-items:center;gap:0.6rem;text-decoration:none}
 .brand-name{font-size:var(--text-sm);font-weight:700;color:var(--orange);letter-spacing:0.04em}
-.nav-links{display:flex;align-items:center;gap:var(--space-6)}
+.nav-links{display:flex;align-items:center;gap:var(--space-3);flex-shrink:1;min-width:0;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none}
 .nav-links a{font-size:var(--text-sm);font-weight:500;color:var(--orange);letter-spacing:0.02em;transition:color 150ms}
 .nav-links a:hover{color:var(--orange)}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:var(--space-2);cursor:pointer}
@@ -133,7 +133,9 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:var(--s
         <a href="case-studies.html">Case Studies</a>
         <a href="contact.html">Contact</a>
       </div>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu">
+      <a href="contact.html" class="btn btn-primary nav-cta" style="min-height:36px;padding:0.45rem 1rem;font-size:var(--text-xs)">Book a Call</a>
+    
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu">
         <span></span><span></span><span></span>
       </button>
     </div>
